@@ -104,7 +104,7 @@
   ],
   "packageManager": "yarn@3.6.1",
   "codegenConfig": {
-    "name": "RNIosVisualEffectViewViewSpec",
+    "name": "RNIVisualEffectViewViewSpec",
     "type": "components",
     "jsSrcsDir": "src"
   },
