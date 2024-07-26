@@ -1,2 +1,3 @@
-export { default as IosVisualEffectViewView } from './IosVisualEffectViewViewNativeComponent';
-export * from './IosVisualEffectViewViewNativeComponent';
+export { default as IosVisualEffectViewView } from './native_components/IosVisualEffectViewViewNativeComponent';
+
+export * from './native_components/IosVisualEffectViewViewNativeComponent';
