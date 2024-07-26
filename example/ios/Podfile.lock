@@ -935,6 +935,8 @@ PODS:
     - ReactCommon/turbomodule/core
     - Yoga
   - react-native-ios-visual-effect-view (0.1.0):
+    - ComputableLayout
+    - DGSwiftUtilities
     - DoubleConversion
     - glog
     - RCT-Folly (= 2024.01.01.00)
@@ -948,7 +950,9 @@ PODS:
     - React-graphics
     - React-ImageManager
     - React-jsi
+    - react-native-ios-utilities
     - React-NativeModulesApple
+    - React-RCTAppDelegate
     - React-RCTFabric
     - React-rendererdebug
     - React-utils
@@ -1414,7 +1418,7 @@ SPEC CHECKSUMS:
   React-logger: fa92ba4d3a5d39ac450f59be2a3cec7b099f0304
   React-Mapbuffer: 9f68550e7c6839d01411ac8896aea5c868eff63a
   react-native-ios-utilities: 7c4af67196d2d1eee6271c8880a09d1c12dacdc1
-  react-native-ios-visual-effect-view: 3f0c791e51c360ad5905215e702b880c3135bc32
+  react-native-ios-visual-effect-view: fcfb7bdf2daea727c1ff2f04781f141ab1c62bee
   React-nativeconfig: fa5de9d8f4dbd5917358f8ad3ad1e08762f01dcb
   React-NativeModulesApple: a6c18ebe96428589977f43c41a2c811b27bbd9cc
   React-perflogger: 7bb9ba49435ff66b666e7966ee10082508a203e8
