@@ -94,22 +94,47 @@ public final class RNIVisualEffectViewDelegate: UIView, RNIContentView {
       ),
     ]);
     
+    try! visualEffectView.setFiltersViaEffectDesc(
+      withFilterTypes: [
+        .variadicBlur(
+          radius: 0,
+          maskImage: gradientImage.cgImage,
+          shouldNormalizeEdges: true
+        ),
+        .colorBlackAndWhite(amount: 0.1),
+      ],
+      shouldImmediatelyApplyFilter: true
+    );
+
     let tapGesture = UITapGestureRecognizer();
     tapGesture.isEnabled = true;
+    
     tapGesture.addAction { _ in
-      try! visualEffectView.setFiltersViaEffectDesc(
+      try! visualEffectView.updateCurrentFiltersViaEffectDesc(
         withFilterTypes: [
           .variadicBlur(
             radius: 16,
             maskImage: gradientImage.cgImage,
             shouldNormalizeEdges: true
           ),
-          .colorBlackAndWhite(amount: 0.75),
-        ],
-        shouldImmediatelyApplyFilter: true
+        ]
       );
-    };
     
+      UIView.animate(withDuration: 1) {
+        try! visualEffectView.applyRequestedFilterEffects();
+        
+      } completion: { _ in
+          try! visualEffectView.updateCurrentFiltersViaEffectDesc(
+            withFilterTypes: [
+              .colorBlackAndWhite(amount: 0.75),
+            ]
+          );
+          UIView.animate(withDuration: 1) {
+            try! visualEffectView.applyRequestedFilterEffects();
+          };
+        };
+      };
+      
     visualEffectView.addGestureRecognizer(tapGesture);
   };
 };
