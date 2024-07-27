@@ -1,10 +1,15 @@
-import { StyleSheet, View } from 'react-native';
-import { IosVisualEffectViewView } from 'react-native-ios-visual-effect-view';
+import { StyleSheet, View, Text } from 'react-native';
+import { RNIVisualEffectView } from 'react-native-ios-visual-effect-view';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <IosVisualEffectViewView color="#32a852" style={styles.box} />
+      <Text style={styles.label}>
+        {'❤️\n🧡\n💛\n💚\n💙\n💜\n💖\n💃\n✨'}
+      </Text>
+      <RNIVisualEffectView
+        style={styles.effectOverlay}
+      />
     </View>
   );
 }
@@ -15,9 +20,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  label: {
+    fontSize: 72,
+  },
+  effectOverlay: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
   },
 });

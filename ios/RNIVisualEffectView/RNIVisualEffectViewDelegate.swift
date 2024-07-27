@@ -8,6 +8,7 @@
 import UIKit
 import react_native_ios_utilities
 import DGSwiftUtilities
+import VisualEffectBlurView
 
 @objc(RNIVisualEffectViewDelegate)
 public final class RNIVisualEffectViewDelegate: UIView, RNIContentView {
@@ -24,6 +25,9 @@ public final class RNIVisualEffectViewDelegate: UIView, RNIContentView {
   // ----------------
   
   var _didSendEvents = false;
+  
+  
+  var visualEffectView: VisualEffectView?;
   
   // MARK: - Properties - RNIContentViewDelegate
   // -------------------------------------------
@@ -58,22 +62,55 @@ public final class RNIVisualEffectViewDelegate: UIView, RNIContentView {
   };
   
   func _setupContent(){
-    self.backgroundColor = .systemPink;
-  
-    let label = UILabel();
-    label.text = "Fabric View (sort of) in Swift";
     
-    label.translatesAutoresizingMaskIntoConstraints = false;
-    self.addSubview(label);
+    let imageConfig: ImageConfigGradient = ImageConfigGradient(
+      colors: [.black, .clear],
+      startPointPreset: .top,
+      endPointPreset: .bottom,
+      size: UIScreen.main.bounds.size
+    );
+    
+    let gradientImage = imageConfig.makeImage();
+    
+    let visualEffectView = try! VisualEffectView(rawFilterTypes: []);
+    self.visualEffectView = visualEffectView;
+    
+    self.addSubview(visualEffectView);
+    visualEffectView.translatesAutoresizingMaskIntoConstraints = false;
+    visualEffectView.shouldOnlyShowBgLayer = true;
     
     NSLayoutConstraint.activate([
-      label.centerXAnchor.constraint(
-        equalTo: self.centerXAnchor
+      visualEffectView.leadingAnchor.constraint(
+        equalTo: self.leadingAnchor
       ),
-      label.centerYAnchor.constraint(
-        equalTo: self.centerYAnchor
+      visualEffectView.trailingAnchor.constraint(
+        equalTo: self.trailingAnchor
+      ),
+      visualEffectView.topAnchor.constraint(
+        equalTo: self.topAnchor
+      ),
+      visualEffectView.bottomAnchor.constraint(
+        equalTo: self.bottomAnchor
       ),
     ]);
+    
+    let tapGesture = UITapGestureRecognizer();
+    tapGesture.isEnabled = true;
+    tapGesture.addAction { _ in
+      try! visualEffectView.setFiltersViaEffectDesc(
+        withFilterTypes: [
+          .variadicBlur(
+            radius: 16,
+            maskImage: gradientImage.cgImage,
+            shouldNormalizeEdges: true
+          ),
+          .colorBlackAndWhite(amount: 0.75),
+        ],
+        shouldImmediatelyApplyFilter: true
+      );
+    };
+    
+    visualEffectView.addGestureRecognizer(tapGesture);
   };
 };
 
