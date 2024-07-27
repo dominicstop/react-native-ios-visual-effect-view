@@ -26,7 +26,7 @@ export type RNIVisualEffectViewBaseProps = {
   // TBA
 };
 
-export type RNIContextMenuViewProps = PropsWithChildren<
+export type RNIVisualEffectViewProps = PropsWithChildren<
     RNIVisualEffectViewInheritedProps 
   & RNIVisualEffectViewBaseProps
   & ViewProps

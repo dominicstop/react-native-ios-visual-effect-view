@@ -3,7 +3,7 @@ import * as React from 'react';
 import { RNIVisualEffectNativeView } from './RNIVisualEffectNativeView';
 
 import type { 
-	RNIContextMenuViewProps, 
+	RNIVisualEffectViewProps, 
 	RNIVisualEffectViewRef, 
 	StateReactTag, 
 	StateViewID 
@@ -11,7 +11,7 @@ import type {
 
 export const RNIVisualEffectView = React.forwardRef<
 	RNIVisualEffectViewRef, 
-	RNIContextMenuViewProps
+	RNIVisualEffectViewProps
 >((props, ref) => {
 
 	const [viewID, setViewID] = React.useState<StateViewID>();
