@@ -17,7 +17,7 @@ public final class RNIVisualEffectViewDelegate: UIView, RNIContentView {
   };
   
   public enum Events: String, CaseIterable {
-    case placeholderEvent;
+    case onDidSetViewID;
   }
   
   // MARK: Properties
@@ -55,10 +55,6 @@ public final class RNIVisualEffectViewDelegate: UIView, RNIContentView {
     guard self.window != nil,
           let parentReactView = self.parentReactView
     else { return };
-    
-    DispatchQueue.main.asyncAfter(deadline: .now() + 10){
-      parentReactView.setSize(.init(width: 300, height: 300));
-    };
   };
   
   func _setupContent(){
