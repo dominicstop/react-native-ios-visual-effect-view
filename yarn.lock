@@ -9357,12 +9357,12 @@ __metadata:
   linkType: hard
 
 "react-native-ios-utilities@npm:next":
-  version: 5.0.0-2
-  resolution: "react-native-ios-utilities@npm:5.0.0-2"
+  version: 5.0.0-4
+  resolution: "react-native-ios-utilities@npm:5.0.0-4"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: a3241751b9ea933a004ce9bc573f65b9f8901bfe41ba77607cacdf31c12daefb0b31f1f0170f8c3c405784c099516bfb9bff0db242daff1b341d6ae9a6c7c25a
+  checksum: c50f66ea840cfbb048f7cf3977b2eea986b5c0e49fbd54d7c1ee82d989951b3dc3930b10cf0cdf619aaac69e7fa71f07f6343ffb8ff55ea866ec6171228d2332
   languageName: node
   linkType: hard
 
