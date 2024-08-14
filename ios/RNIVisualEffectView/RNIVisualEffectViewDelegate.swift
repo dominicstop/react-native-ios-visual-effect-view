@@ -70,7 +70,7 @@ public final class RNIVisualEffectViewDelegate: UIView, RNIContentView {
       size: UIScreen.main.bounds.size
     );
     
-    let gradientImage = imageConfig.makeImage();
+    let gradientImage = try! imageConfig.makeImage();
     
     let visualEffectView = try! VisualEffectView(rawFilterTypes: []);
     self.visualEffectView = visualEffectView;
