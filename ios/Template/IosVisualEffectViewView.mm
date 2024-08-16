@@ -1,9 +1,9 @@
 #import "IosVisualEffectViewView.h"
 
-#import <react/renderer/components/RNIVisualEffectViewViewSpec/ComponentDescriptors.h>
-#import <react/renderer/components/RNIVisualEffectViewViewSpec/EventEmitters.h>
-#import <react/renderer/components/RNIVisualEffectViewViewSpec/Props.h>
-#import <react/renderer/components/RNIVisualEffectViewViewSpec/RCTComponentViewHelpers.h>
+#import <react/renderer/components/RNIVisualEffectViewSpec/ComponentDescriptors.h>
+#import <react/renderer/components/RNIVisualEffectViewSpec/EventEmitters.h>
+#import <react/renderer/components/RNIVisualEffectViewSpec/Props.h>
+#import <react/renderer/components/RNIVisualEffectViewSpec/RCTComponentViewHelpers.h>
 
 #import "RCTFabricComponentsPlugins.h"
 

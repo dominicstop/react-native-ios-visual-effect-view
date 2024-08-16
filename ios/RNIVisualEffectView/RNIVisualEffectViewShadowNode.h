@@ -12,8 +12,8 @@
 #include <react-native-ios-utilities/RNIBaseViewProps.h>
 #include <react-native-ios-utilities/RNIBaseViewEventEmitter.h>
 
-#include <react/renderer/components/RNIVisualEffectViewViewSpec/EventEmitters.h>
-#include <react/renderer/components/RNIVisualEffectViewViewSpec/Props.h>
+#include <react/renderer/components/RNIVisualEffectViewSpec/EventEmitters.h>
+#include <react/renderer/components/RNIVisualEffectViewSpec/Props.h>
 
 #include <react/renderer/components/view/ConcreteViewShadowNode.h>
 #include <jsi/jsi.h>
