@@ -9512,13 +9512,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-ios-utilities@npm:next":
-  version: 5.0.0-4
-  resolution: "react-native-ios-utilities@npm:5.0.0-4"
+"react-native-ios-utilities@npm:5.0.0-6":
+  version: 5.0.0-6
+  resolution: "react-native-ios-utilities@npm:5.0.0-6"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: c50f66ea840cfbb048f7cf3977b2eea986b5c0e49fbd54d7c1ee82d989951b3dc3930b10cf0cdf619aaac69e7fa71f07f6343ffb8ff55ea866ec6171228d2332
+  checksum: ec167ce77cf9689567de9ae47494f0ee7a1fb650de2b9ccf7cc2fd9ce2e1fca222e8e2ba46596ec7c4e3d118d310a50b63075e2f22053fbf758fb87cb1fb849d
   languageName: node
   linkType: hard
 
@@ -9538,7 +9538,7 @@ __metadata:
     babel-plugin-module-resolver: ^5.0.0
     react: 18.2.0
     react-native: 0.74.3
-    react-native-ios-utilities: next
+    react-native-ios-utilities: 5.0.0-6
     react-native-safe-area-context: ^4.10.8
     react-native-screens: ^3.34.0
   languageName: unknown
@@ -9558,7 +9558,7 @@ __metadata:
     react: 18.2.0
     react-native: 0.74.3
     react-native-builder-bob: ^0.26.0
-    react-native-ios-utilities: next
+    react-native-ios-utilities: 5.0.0-6
     release-it: ^15.0.0
     turbo: ^1.10.7
     typescript: ^5.2.2
