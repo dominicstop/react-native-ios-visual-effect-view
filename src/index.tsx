@@ -6,3 +6,4 @@ export * from './constants/LayerFilterNames';
 
 export * from './types/ColorMatrixRGBA';
 export * from './types/LayerFilterType';
+export * from './types/FilterMetadata';
