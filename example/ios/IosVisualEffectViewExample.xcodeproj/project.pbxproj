@@ -45,7 +45,7 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-IosVisualEffectViewExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IosVisualEffectViewExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = IosVisualEffectViewExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.release.xcconfig"; path = "Target Support Files/Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests/Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.release.xcconfig"; sourceTree = "<group>"; };
-		E0CB7BBAC20AEEC04DF86BF1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = IosVisualEffectViewExample/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		E0CB7BBAC20AEEC04DF86BF1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = IosVisualEffectViewExample/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -472,8 +472,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZC7A6XV8GR;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = IosVisualEffectViewExample/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "RNIVisualEffectView Example";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,10 +486,13 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = iosvisualeffectview.example;
+				PRODUCT_BUNDLE_IDENTIFIER = dominicgo.RNIVisualEffectView;
 				PRODUCT_NAME = IosVisualEffectViewExample;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -499,7 +504,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZC7A6XV8GR;
 				INFOPLIST_FILE = IosVisualEffectViewExample/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "RNIVisualEffectView Example";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -510,9 +517,12 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = iosvisualeffectview.example;
+				PRODUCT_BUNDLE_IDENTIFIER = dominicgo.RNIVisualEffectView;
 				PRODUCT_NAME = IosVisualEffectViewExample;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
