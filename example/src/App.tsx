@@ -77,6 +77,7 @@ export default function App() {
         >
           {ROUTE_ITEMS.map((item) => (
             <Stack.Screen
+              key={item.routeKey}
               name={item.routeKey}
               component={item.component}
               options={{
