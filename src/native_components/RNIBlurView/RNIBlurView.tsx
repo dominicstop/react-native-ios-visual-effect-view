@@ -1,13 +1,13 @@
 import * as React from 'react';
 
+import type { StateViewID, StateReactTag } from "react-native-ios-utilities";
 import { RNIBlurNativeView } from './RNIBlurNativeView';
 
 import type { 
 	RNIBlurViewProps, 
 	RNIBlurViewRef, 
-	StateReactTag, 
-	StateViewID 
 } from './RNIBlurViewTypes';
+
 
 export const RNIBlurView = React.forwardRef<
 	RNIBlurViewRef, 

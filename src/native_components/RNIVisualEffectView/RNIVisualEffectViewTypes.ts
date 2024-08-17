@@ -1,11 +1,8 @@
 import type { PropsWithChildren } from "react";
 import type { ViewProps } from "react-native";
 
-import type { OnDidSetViewIDEventPayload } from "react-native-ios-utilities";
+import type { StateViewID, StateReactTag } from "react-native-ios-utilities";
 import type { RNIVisualEffectNativeViewProps } from "./RNIVisualEffectNativeView";
-
-export type StateViewID = OnDidSetViewIDEventPayload['viewID'] | undefined;
-export type StateReactTag = OnDidSetViewIDEventPayload['reactTag'] | undefined;
 
 export type RNIVisualEffectViewRef = {
   getViewID: () => StateViewID;
