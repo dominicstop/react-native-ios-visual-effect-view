@@ -14,7 +14,9 @@ import VisualEffectBlurView
 public final class RNIBlurViewDelegate: UIView, RNIContentView {
   
   public static var propKeyPathMap: Dictionary<String, PartialKeyPath<RNIBlurViewDelegate>> {
-    return [:];
+    return [
+      "blurConfig": \.blurConfig,
+    ];
   };
   
   public enum Events: String, CaseIterable {
@@ -38,6 +40,17 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
   // ------------------------
   
   public var reactProps: NSDictionary = [:];
+  
+  @objc
+  public var blurConfig: NSDictionary? {
+    willSet {
+      print(
+        "RNIBlurViewDelegate.blurConfig",
+        "\n - willSet, newValue:", newValue?.description ?? "N/A",
+        "\n"
+      );
+    }
+  };
   
   // TBA
   
