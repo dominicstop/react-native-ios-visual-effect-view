@@ -1,5 +1,7 @@
 import { HomeScreen } from "../examples/HomeScreen";
+import { RNIBlurViewTest01Screen } from "../examples/RNIBlurViewTest01Screen";
 import { RNIVisualEffectViewTest01Screen } from "../examples/RNIVisualEffectViewTest01Screen";
+
 import type { RouteKey } from "./RouteKeys";
 
 
@@ -14,14 +16,7 @@ export const ROUTE_ITEMS: Array<RouteEntry> = [{
 }, {
   routeKey: 'visualEffectViewTest01',
   component: RNIVisualEffectViewTest01Screen,
+}, {
+  routeKey: 'blurViewTest01',
+  component: RNIBlurViewTest01Screen,
 }];
-
-export const ROUTE_MAP: Record<RouteKey, RouteEntry> = (() => {
-  const map: Record<string, RouteEntry> = {};
-
-  for (const routeItem of ROUTE_ITEMS) {
-    map[routeItem.routeKey] = routeItem;
-  };
-
-  return map;
-})();

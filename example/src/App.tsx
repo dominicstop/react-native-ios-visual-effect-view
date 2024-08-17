@@ -8,7 +8,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HomeScreen } from "./examples/HomeScreen";
 
 import { SHARED_ENV } from "./constants/SharedEnv";
-import { ROUTE_ITEMS } from "./constants/Routes";
+import { ROUTE_ITEMS } from "./constants/RouteItems";
 import { ROUTE_KEYS } from "./constants/RouteKeys";
 
 const shouldEnableTabs =
