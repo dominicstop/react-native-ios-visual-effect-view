@@ -15,7 +15,7 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
   
   public static var propKeyPathMap: Dictionary<String, PartialKeyPath<RNIBlurViewDelegate>> {
     return [
-      "blurConfig": \.blurConfig,
+      "blurConfig": \.blurConfigProp,
     ];
   };
   
@@ -26,10 +26,8 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
   // MARK: Properties
   // ----------------
   
-  var _didSendEvents = false;
-  
-  
-  var visualEffectView: VisualEffectView?;
+  var _didSetup = false;
+  var blurView: VisualEffectBlurView?;
   
   // MARK: - Properties - RNIContentViewDelegate
   // -------------------------------------------
@@ -41,14 +39,32 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
   
   public var reactProps: NSDictionary = [:];
   
-  @objc
-  public var blurConfig: NSDictionary? {
+  public var blurConfig: RNIBlurConfig = .none;
+  @objc public var blurConfigProp: NSDictionary? {
     willSet {
+      guard let newValue = newValue as? Dictionary<String, Any>,
+            let blurConfigNew = try? RNIBlurConfig(fromDict: newValue)
+      else {
+        blurConfig = .none;
+        return;
+      };
+      
+      let blurConfigOld = self.blurConfig;
+      self.blurConfig = blurConfigNew;
+      
       print(
-        "RNIBlurViewDelegate.blurConfig",
-        "\n - willSet, newValue:", newValue?.description ?? "N/A",
+        "RNIBlurViewDelegate.blurConfigProp",
+        "\n - willSet, newValue:", newValue.description,
+        "\n - blurConfigOld:", String(describing: blurConfigOld),
+        "\n - blurConfigNew:", String(describing: blurConfigNew),
         "\n"
       );
+      
+      guard blurConfigOld != blurConfigNew else {
+        return;
+      };
+      
+      
     }
   };
   
@@ -72,83 +88,45 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
     guard self.window != nil,
           let parentReactView = self.parentReactView
     else { return };
+    
+    print(
+      "RNIBlurViewDelegate.didMoveToWindow",
+      "\n - reactProps:", self.reactProps.description,
+      "\n"
+    );
+    
+    self._setupContent();
+    return;
   };
   
   func _setupContent(){
+    guard !self._didSetup else { return };
+    self._didSetup = true;
     
-    let imageConfig: ImageConfigGradient = ImageConfigGradient(
-      colors: [.black, .clear],
-      startPointPreset: .top,
-      endPointPreset: .bottom,
-      size: UIScreen.main.bounds.size
+    let blurView = try? VisualEffectBlurView(
+      blurEffectStyle: self.blurConfig.blurEffectStyle
     );
     
-    let gradientImage = try! imageConfig.makeImage();
+    guard let blurView = blurView else { return };
+    self.blurView = blurView;
     
-    let visualEffectView = try! VisualEffectView(rawFilterTypes: []);
-    self.visualEffectView = visualEffectView;
-    
-    self.addSubview(visualEffectView);
-    visualEffectView.translatesAutoresizingMaskIntoConstraints = false;
-    visualEffectView.shouldOnlyShowBgLayer = true;
+    self.addSubview(blurView);
+    blurView.translatesAutoresizingMaskIntoConstraints = false;
     
     NSLayoutConstraint.activate([
-      visualEffectView.leadingAnchor.constraint(
+      blurView.leadingAnchor.constraint(
         equalTo: self.leadingAnchor
       ),
-      visualEffectView.trailingAnchor.constraint(
+      blurView.trailingAnchor.constraint(
         equalTo: self.trailingAnchor
       ),
-      visualEffectView.topAnchor.constraint(
+      blurView.topAnchor.constraint(
         equalTo: self.topAnchor
       ),
-      visualEffectView.bottomAnchor.constraint(
+      blurView.bottomAnchor.constraint(
         equalTo: self.bottomAnchor
       ),
     ]);
-    
-    try! visualEffectView.setFiltersViaEffectDesc(
-      withFilterTypes: [
-        .variadicBlur(
-          radius: 0,
-          maskImage: gradientImage.cgImage,
-          shouldNormalizeEdges: true
-        ),
-        .colorBlackAndWhite(amount: 0.1),
-      ],
-      shouldImmediatelyApplyFilter: true
-    );
-
-    let tapGesture = UITapGestureRecognizer();
-    tapGesture.isEnabled = true;
-    
-    tapGesture.addAction { _ in
-      try! visualEffectView.updateCurrentFiltersViaEffectDesc(
-        withFilterTypes: [
-          .variadicBlur(
-            radius: 16,
-            maskImage: gradientImage.cgImage,
-            shouldNormalizeEdges: true
-          ),
-        ]
-      );
-    
-      UIView.animate(withDuration: 1) {
-        try! visualEffectView.applyRequestedFilterEffects();
-        
-      } completion: { _ in
-          try! visualEffectView.updateCurrentFiltersViaEffectDesc(
-            withFilterTypes: [
-              .colorBlackAndWhite(amount: 0.75),
-            ]
-          );
-          UIView.animate(withDuration: 1) {
-            try! visualEffectView.applyRequestedFilterEffects();
-          };
-        };
-      };
-      
-    visualEffectView.addGestureRecognizer(tapGesture);
   };
 };
 
@@ -160,7 +138,12 @@ extension RNIBlurViewDelegate: RNIContentViewDelegate {
   // --------------------
   
   public func notifyOnInit(sender: RNIContentViewParentDelegate) {
-    self._setupContent();
+    print(
+      "RNIBlurViewDelegate.notifyOnInit",
+      "\n - reactProps:", self.reactProps.description,
+      "\n"
+    );
+    return;
   };
     
   public func notifyOnMountChildComponentView(

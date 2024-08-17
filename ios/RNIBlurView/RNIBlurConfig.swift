@@ -74,10 +74,23 @@ extension RNIBlurConfig: InitializableFromDictionary {
   public init(fromDict dict: Dictionary<String, Any>) throws {
     let mode: String = try dict.getValueFromDictionary(forKey: "mode");
     
-    let blurEffectStyle = try dict.getValueFromDictionary(
-      forKey: "blurEffectStyle",
-      type: UIBlurEffect.Style.self
-    );
+    let blurEffectStyle: UIBlurEffect.Style = try {
+      let rawValue: String =
+        try dict.getValueFromDictionary(forKey: "blurEffectStyle");
+        
+      let blurStyle: UIBlurEffect.Style? = .init(fromString: rawValue);
+      guard let blurStyle = blurStyle else {
+        throw RNIVisualEffectViewError(
+          errorCode: .invalidValue,
+          extraDebugValues: [
+            "blurEffectStyle": rawValue,
+            "mode": mode,
+          ]
+        );
+      };
+      
+      return blurStyle;
+    }();
     
     switch mode {
       case "none":
