@@ -1,14 +1,16 @@
 import { RNIVisualEffectViewTest01Screen } from "../examples/RNIVisualEffectViewTest01Screen";
 import type { ExampleItemProps } from "../examples/SharedExampleTypes";
-import type { RouteEntry } from "./Routes";
+import { ROUTE_MAP, type RouteEntry } from "./Routes";
 
 type ExampleItemBase = {
   component: unknown;
-  desc?: Array<string>;
 };
 
 export type ExampleItemRoute = ExampleItemBase & RouteEntry & {
   type: 'screen';
+  title?: string;
+  subtitle?: string;
+  desc?: Array<string>;
 };
 
 export type ExampleItemCard = ExampleItemBase & {
@@ -25,8 +27,10 @@ export type ExampleListItem = {
 };
 
 export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
+  
   const screenItems: Array<ExampleItemRoute> = [{
-    component: RNIVisualEffectViewTest01Screen,
+    ...ROUTE_MAP.visualEffectViewTest01,
+    type: 'screen',
     type: 'screen',
     routeKey: 'visualEffectViewTest01',
   }];

@@ -28,9 +28,10 @@ const EXAMPLE_LIST_ITEMS = EXAMPLE_ITEMS.map(
             return (
               <ExampleItemCard
                 {...{props}}
+                style={styles.exampleListItem}
                 index={index + 1}
-                title={'RNIDetachedViewTest01'}
-                subtitle={'TBA'}
+                title={item.title ?? item.routeKey}
+                subtitle={item.subtitle}
                 description={item.desc}
               >
                 <CardButton
