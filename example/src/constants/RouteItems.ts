@@ -1,4 +1,4 @@
-import { HomeScreen } from "../examples/HomeScreen";
+import { HomeScreen } from "../components/HomeScreen";
 import { RNIBlurViewTest01Screen } from "../examples/RNIBlurViewTest01Screen";
 import { RNIVisualEffectViewTest01Screen } from "../examples/RNIVisualEffectViewTest01Screen";
 

@@ -1,7 +1,6 @@
 import * as React from "react";
 import {
   StyleSheet,
-  SafeAreaView,
   FlatList,
   type ListRenderItem,
   type ViewStyle,
@@ -75,17 +74,6 @@ export function ExampleList(props: {
       renderItem={renderItem}
       keyExtractor={(item) => `item-${item.id}`}
     />
-  );
-}
-
-export function HomeScreen() {
-  return (
-    <SafeAreaView style={styles.rootContainer}>
-      <ExampleList
-        style={styles.scrollView}
-        contentContainerStyle={styles.scrollContentContainer}
-      />
-    </SafeAreaView>
   );
 }
 
