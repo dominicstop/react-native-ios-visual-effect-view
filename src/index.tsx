@@ -1,6 +1,7 @@
 export { default as IosVisualEffectViewView } from './native_components/IosVisualEffectViewViewNativeComponent';
 
 export * from './native_components/RNIVisualEffectView';
+export * from './native_components/RNIBlurView';
 
 export * from './constants/LayerFilterNames';
 
