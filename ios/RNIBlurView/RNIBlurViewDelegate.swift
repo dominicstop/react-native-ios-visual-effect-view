@@ -60,11 +60,8 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
         "\n"
       );
       
-      guard blurConfigOld != blurConfigNew else {
-        return;
-      };
-      
-      
+      guard blurConfigOld != blurConfigNew else { return };
+      self._notifyOnChangeBlurConfig(old: blurConfigOld, new: blurConfigNew);
     }
   };
   
@@ -128,7 +125,35 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
       ),
     ]);
   };
+  
+  func _notifyOnChangeBlurConfig(
+    old blurConfigOld: RNIBlurConfig,
+    new blurConfigNew: RNIBlurConfig
+  ){
+    guard self._didSetup,
+          let blurView = self.blurView
+    else { return };
+    
+    switch self.blurConfig {
+      case .none:
+        blurView.blurEffectStyle = .none;
+        
+      case let .standard(blurEffectStyle):
+        blurView.blurEffectStyle = blurEffectStyle;
+        
+      case let .customEffectIntensity(blurEffectStyle, intensity):
+        blurView.blurEffectStyle = blurEffectStyle;
+        blurView.setEffectIntensity(intensity);
+        
+      case let .customBlurRadius(blurEffectStyle, radius):
+        blurView.blurEffectStyle = blurEffectStyle;
+        blurView.blurRadius = radius;
+    };
+  };
 };
+
+// MARK: - RNIBlurViewDelegate+RNIContentViewDelegate
+// --------------------------------------------------
 
 extension RNIBlurViewDelegate: RNIContentViewDelegate {
 
