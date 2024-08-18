@@ -1,6 +1,7 @@
 import { HomeScreen } from "../components/HomeScreen";
 import { RNIBlurViewTest01Screen } from "../examples/RNIBlurViewTest01Screen";
 import { RNIBlurViewTest02Screen } from "../examples/RNIBlurViewTest02Screen";
+import { RNIBlurViewTest03Screen } from "../examples/RNIBlurViewTest03Screen";
 import { RNIVisualEffectViewTest01Screen } from "../examples/RNIVisualEffectViewTest01Screen";
 
 import type { RouteKey } from "./RouteKeys";
@@ -23,4 +24,7 @@ export const ROUTE_ITEMS: Array<RouteEntry> = [{
 }, {
   routeKey: 'blurViewTest02',
   component: RNIBlurViewTest02Screen,
+}, {
+  routeKey: 'blurViewTest03',
+  component: RNIBlurViewTest03Screen,
 }];
