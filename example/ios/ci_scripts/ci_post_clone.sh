@@ -25,4 +25,5 @@ echo "Install example dependencies"
 cd example
 yarn install
 cd ios
+rm -rfv .xcode.env.local
 pod install
