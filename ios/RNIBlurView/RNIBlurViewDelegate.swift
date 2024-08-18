@@ -107,6 +107,11 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
     guard let blurView = blurView else { return };
     self.blurView = blurView;
     
+    self._notifyOnChangeBlurConfig(
+      old: .none,
+      new: self.blurConfig
+    );
+    
     self.addSubview(blurView);
     blurView.translatesAutoresizingMaskIntoConstraints = false;
     
