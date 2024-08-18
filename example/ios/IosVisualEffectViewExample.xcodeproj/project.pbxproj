@@ -44,6 +44,7 @@
 		5B7EB9410499542E8C5724F5 /* Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests/Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-IosVisualEffectViewExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IosVisualEffectViewExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = IosVisualEffectViewExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		883788DD2C71C0EF007F2293 /* ci_post_clone.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_clone.sh; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.release.xcconfig"; path = "Target Support Files/Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests/Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		E0CB7BBAC20AEEC04DF86BF1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = IosVisualEffectViewExample/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -121,6 +122,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				883788DC2C71C07D007F2293 /* ci_scripts */,
 				13B07FAE1A68108700A75B9A /* IosVisualEffectViewExample */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* IosVisualEffectViewExampleTests */,
@@ -140,6 +142,14 @@
 				00E356EE1AD99517003FC87E /* IosVisualEffectViewExampleTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		883788DC2C71C07D007F2293 /* ci_scripts */ = {
+			isa = PBXGroup;
+			children = (
+				883788DD2C71C0EF007F2293 /* ci_post_clone.sh */,
+			);
+			path = ci_scripts;
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
