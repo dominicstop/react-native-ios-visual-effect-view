@@ -938,7 +938,7 @@ PODS:
   - React-Mapbuffer (0.74.3):
     - glog
     - React-debug
-  - react-native-ios-utilities (5.0.0-9):
+  - react-native-ios-utilities (5.0.0-11):
     - ComputableLayout (~> 0.7)
     - DGSwiftUtilities (~> 0.27)
     - DoubleConversion
@@ -1600,7 +1600,7 @@ SPEC CHECKSUMS:
   React-jsitracing: 6b3c8c98313642140530f93c46f5a6ca4530b446
   React-logger: fa92ba4d3a5d39ac450f59be2a3cec7b099f0304
   React-Mapbuffer: 9f68550e7c6839d01411ac8896aea5c868eff63a
-  react-native-ios-utilities: 9aba18bc138ffd3fa31c615fd13754d3f21b969b
+  react-native-ios-utilities: fead010b4a24b68785ea0d1d7ba3ed0d81910fe4
   react-native-ios-visual-effect-view: 35f089b051b492d995f1a2cc5c606f112205c4eb
   react-native-safe-area-context: 1c0114777144dc0724820de71fe99c2e1e293a37
   react-native-slider: 42583bbf96c3476ed6faf6ea12e182b6e4604307
