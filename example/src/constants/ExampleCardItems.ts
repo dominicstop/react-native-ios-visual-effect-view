@@ -30,13 +30,20 @@ export type ExampleListItem = {
 
 export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
   
-  const screenItems: Array<ExampleItemRoute> = [{
-    ...ROUTE_MAP.visualEffectViewTest01,
-    type: 'screen',
-  }, {
-    ...ROUTE_MAP.blurViewTest01,
-    type: 'screen',
-  }];
+  const screenItems: Array<ExampleItemRoute> = [
+    {
+      ...ROUTE_MAP.visualEffectViewTest01,
+      type: 'screen',
+    }, 
+    {
+      ...ROUTE_MAP.blurViewTest01,
+      type: 'screen',
+    },
+    {
+      ...ROUTE_MAP.blurViewTest02,
+      type: 'screen',
+    }
+  ];
 
   const cardItems: Array<ExampleItemCard> = []; 
 
