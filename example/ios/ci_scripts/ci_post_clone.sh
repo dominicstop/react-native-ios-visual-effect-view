@@ -6,6 +6,7 @@
 #  Created by Dominic Go on 8/18/24.
 #  
 
+echo "Working DIR:" ; pwd
 echo "Install: cocoapods"
 export HOMEBREW_NO_INSTALL_CLEANUP=TRUE
 brew install cocoapods
