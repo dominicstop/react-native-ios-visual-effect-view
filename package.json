@@ -157,5 +157,17 @@
     "lib/",
     "ios/",
     "example/"
-  ]
+  ],
+  "release-it": {
+    "git": {
+      "commitMessage": "⚙️ Chore: Release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    }
+  }
 }
