@@ -1,12 +1,11 @@
 import * as React from 'react';
+import type { StateReactTag, StateViewID } from 'react-native-ios-utilities';
 
 import { RNIVisualEffectNativeView } from './RNIVisualEffectNativeView';
 
 import type { 
 	RNIVisualEffectViewProps, 
 	RNIVisualEffectViewRef, 
-	StateReactTag, 
-	StateViewID 
 } from './RNIVisualEffectViewTypes';
 
 export const RNIVisualEffectView = React.forwardRef<
