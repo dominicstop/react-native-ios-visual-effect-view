@@ -140,6 +140,16 @@
       ]
     ]
   },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@react-native",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": 0
+    }
+  },
   "eslintIgnore": [
     "node_modules/",
     "lib/",
