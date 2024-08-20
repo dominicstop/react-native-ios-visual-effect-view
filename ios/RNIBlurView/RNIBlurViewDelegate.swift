@@ -28,6 +28,8 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
   // ----------------
   
   var _didSetup = false;
+  var _animator: UIViewPropertyAnimator?;
+  
   var blurView: VisualEffectBlurView?;
   
   // MARK: - Properties - RNIContentViewDelegate
@@ -46,7 +48,7 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
       guard let newValue = newValue as? Dictionary<String, Any>,
             let blurConfigNew = try? RNIBlurConfig(fromDict: newValue)
       else {
-        blurConfig = .none;
+        self.blurConfig = .none;
         return;
       };
       
@@ -69,6 +71,15 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
   public var animationConfig: AnimationConfig?;
   @objc public var animationConfigProp: NSDictionary? {
     willSet {
+    
+      guard let newValue = newValue as? Dictionary<String, Any>,
+            let animationConfig = try? AnimationConfig(fromDict: newValue)
+      else {
+        self.animationConfig = nil;
+        return;
+      };
+      
+      self.animationConfig = animationConfig;
     }
   };
   
@@ -144,20 +155,41 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
           let blurView = self.blurView
     else { return };
     
-    switch self.blurConfig {
-      case .none:
-        blurView.blurEffectStyle = .none;
-        
-      case let .standard(blurEffectStyle):
-        blurView.blurEffectStyle = blurEffectStyle;
-        
-      case let .customEffectIntensity(blurEffectStyle, intensity):
-        blurView.blurEffectStyle = blurEffectStyle;
-        blurView.setEffectIntensity(intensity);
-        
-      case let .customBlurRadius(blurEffectStyle, radius):
-        blurView.blurEffectStyle = blurEffectStyle;
-        blurView.blurRadius = radius;
+    let animationBlock: () -> Void = {
+      switch self.blurConfig {
+        case .none:
+          blurView.blurEffectStyle = .none;
+          
+        case let .standard(blurEffectStyle):
+          blurView.blurEffectStyle = blurEffectStyle;
+          
+        case let .customEffectIntensity(blurEffectStyle, intensity):
+          blurView.blurEffectStyle = blurEffectStyle;
+          blurView.setEffectIntensity(intensity);
+          
+        case let .customBlurRadius(blurEffectStyle, radius):
+          blurView.blurEffectStyle = blurEffectStyle;
+          blurView.blurRadius = radius;
+      };
+    };
+    
+    let animator = self.animationConfig?.createAnimator(
+      gestureInitialVelocity: .zero
+    );
+    
+    if let animator = animator  {
+      self._animator?.stopAnimation(true);
+      self._animator = animator;
+      
+      animator.addAnimations(animationBlock);
+      animator.addCompletion { _ in
+        self._animator = nil;
+      };
+      
+      animator.startAnimation();
+      
+    } else {
+      animationBlock();
     };
   };
 };
