@@ -317,6 +317,12 @@ extension RNIBlurViewDelegate: RNIContentViewDelegate {
     self.blurView?.removeFromSuperview();
     self.blurView = nil;
   };
+  
+  public func shouldRecycleContentDelegate(
+    sender: RNIContentViewParentDelegate
+  ) -> Bool {
+    return false;
+  };
   #else
   
   // MARK: - Paper Only
