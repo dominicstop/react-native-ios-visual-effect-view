@@ -32,9 +32,7 @@ export function RNIBlurViewTest01Screen() {
           style={styles.debugCard}
         >
           <ObjectPropertyDisplay
-            style={{
-              backgroundColor: `${Colors.PURPLE[200]}B3`,
-            }}
+            recursiveStyle={styles.debugDisplay}
             object={{
               blurEffectStyleCounter,
               blurEffectStyleCurrent: {
@@ -83,5 +81,8 @@ const styles = StyleSheet.create({
   },
   debugCard: {
     backgroundColor: Colors.PURPLE[100],
+  },
+  debugDisplay: {
+    backgroundColor: `${Colors.PURPLE[200]}99`,
   },
 });
