@@ -281,8 +281,8 @@ extension RNIBlurViewDelegate: RNIContentViewDelegate {
     // no-op
   };
   
-  // MARK: Fabric Only
-  // -----------------
+  // MARK: - Fabric Only
+  // -------------------
 
   #if RCT_NEW_ARCH_ENABLED
   public func notifyOnUpdateProps(
@@ -310,7 +310,12 @@ extension RNIBlurViewDelegate: RNIContentViewDelegate {
   };
   
   public func notifyOnPrepareForReuse(sender: RNIContentViewParentDelegate) {
-    // no-op
+    self._didSetup = false;
+    self._animator?.stopAnimation(true);
+    
+    self.blurView?.clearAnimator();
+    self.blurView?.removeFromSuperview();
+    self.blurView = nil;
   };
   #else
   
