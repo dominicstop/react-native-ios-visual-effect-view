@@ -8,6 +8,7 @@ import type { BlurViewConfig } from './BlurViewConfig';
 export type RNIBlurNativeViewBaseProps = {
   blurConfig: BlurViewConfig;
   animationConfig?: AnimationConfig;
+  animationDelay?: number;
 };
 
 export type RNIBlurNativeViewProps = 

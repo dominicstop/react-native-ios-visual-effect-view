@@ -17,6 +17,7 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
     return [
       "blurConfig": \.blurConfigProp,
       "animationConfig": \.animationConfigProp,
+      "animationDelay": \.animationDelayProp,
     ];
   };
   
@@ -83,6 +84,13 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
     }
   };
   
+  public var animationDelay: Double?;
+  @objc public var animationDelayProp: NSNumber? {
+    willSet {
+      self.animationDelay = newValue?.doubleValue;
+    }
+  };
+  
   // MARK: Init
   // ----------
   
@@ -117,7 +125,7 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
     self._didSetup = true;
     
     let blurView = try? VisualEffectBlurView(
-      blurEffectStyle: self.blurConfig.blurEffectStyle
+      blurEffectStyle: nil
     );
     
     guard let blurView = blurView else { return };
@@ -155,7 +163,7 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
           let blurView = self.blurView
     else { return };
     
-    let animationBlock: () -> Void = {
+    let animationBlock = {
       switch self.blurConfig {
         case .none:
           blurView.blurEffectStyle = .none;
@@ -177,7 +185,11 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
       gestureInitialVelocity: .zero
     );
     
-    if let animator = animator  {
+    let startAnimation = {
+      guard let animator = animator else {
+        return animationBlock;
+      };
+      
       self._animator?.stopAnimation(true);
       self._animator = animator;
       
@@ -186,10 +198,18 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
         self._animator = nil;
       };
       
-      animator.startAnimation();
+      return {
+        animator.startAnimation();
+      };
+    }();
+    
+    if let animationDelay = self.animationDelay {
+      DispatchQueue.main.asyncAfter(deadline: .now() + animationDelay) {
+        startAnimation();
+      };
       
     } else {
-      animationBlock();
+      startAnimation();
     };
   };
 };

@@ -7,6 +7,7 @@ interface NativeProps extends ViewProps {
   onDidSetViewID: BubblingEventHandler<{}>;
   blurConfig: string;
   animationConfig?: string;
+  animationDelay?: string;
 };
 
 // stubs
