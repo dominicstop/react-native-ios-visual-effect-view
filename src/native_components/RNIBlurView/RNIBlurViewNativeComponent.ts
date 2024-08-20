@@ -6,6 +6,7 @@ import type { HostComponent, ViewProps } from 'react-native';
 interface NativeProps extends ViewProps {
   onDidSetViewID: BubblingEventHandler<{}>;
   blurConfig: string;
+  animationConfig?: string;
 };
 
 // stubs

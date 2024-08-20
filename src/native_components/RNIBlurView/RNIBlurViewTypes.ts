@@ -12,6 +12,7 @@ export type RNIBlurViewRef = {
 
 export type RNIBlurViewInheritedOptionalProps = Partial<Pick<RNIBlurNativeViewProps,
   | 'onDidSetViewID'
+  | 'animationConfig'
 >>;
 
 export type RNIBlurViewInheritedRequiredProps = Required<Pick<RNIBlurNativeViewProps,

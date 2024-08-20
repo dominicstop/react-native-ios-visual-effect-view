@@ -16,6 +16,7 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
   public static var propKeyPathMap: Dictionary<String, PartialKeyPath<RNIBlurViewDelegate>> {
     return [
       "blurConfig": \.blurConfigProp,
+      "animationConfig": \.animationConfigProp,
     ];
   };
   
@@ -65,7 +66,11 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
     }
   };
   
-  // TBA
+  public var animationConfig: AnimationConfig?;
+  @objc public var animationConfigProp: NSDictionary? {
+    willSet {
+    }
+  };
   
   // MARK: Init
   // ----------
