@@ -7,6 +7,10 @@
 #  
 
 echo "Working DIR:" ; pwd
+
+echo "Navigate to root" ; pwd
+cd ../../../
+
 echo "Install: cocoapods"
 export HOMEBREW_NO_INSTALL_CLEANUP=TRUE
 brew install cocoapods
@@ -19,12 +23,13 @@ brew install yarn
 
 # Install dependencies for library
 echo "Install library dependencies"
+echo "Working DIR:" ; pwd
 yarn install
 
 # Install dependencies for example
 echo "Install example dependencies"
-cd example
+cd example ; pwd
 yarn install
-cd ios
+cd ios ; pwd
 rm -rfv .xcode.env.local
 pod install
