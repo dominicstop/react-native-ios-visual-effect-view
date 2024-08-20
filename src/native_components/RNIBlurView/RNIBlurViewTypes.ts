@@ -2,6 +2,7 @@ import type { PropsWithChildren } from "react";
 import type { ViewProps } from "react-native";
 
 import type { RNIBlurNativeViewProps } from "./RNIBlurNativeView";
+import type { StateReactTag, StateViewID } from "react-native-ios-utilities";
 
 
 export type RNIBlurViewRef = {
