@@ -1,6 +1,6 @@
 {
   "name": "react-native-ios-visual-effect-view",
-  "version": "0.1.0-0",
+  "version": "0.1.0-1",
   "description": "TBA",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
