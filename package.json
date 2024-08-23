@@ -89,7 +89,7 @@
     "eslint-plugin-prettier": "^5.0.1",
     "prettier": "^3.0.3",
     "react": "18.2.0",
-    "react-native": "0.74.3",
+    "react-native": "0.75.2",
     "react-native-builder-bob": "^0.26.0",
     "react-native-ios-utilities": "next",
     "release-it": "^15.0.0",
