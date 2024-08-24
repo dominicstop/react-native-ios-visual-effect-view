@@ -1,15 +1,22 @@
 import type { HostComponent, ViewProps } from 'react-native';
 
-import { default as RNIBlurViewNativeComponent } from './RNIBlurViewNativeComponent';
-import type { SharedViewEvents, AnimationConfig } from 'react-native-ios-utilities';
+import { 
+  default as RNIBlurViewNativeComponent, 
+  type NativeProps as RNIBlurViewNativeComponentProps 
+} from './RNIBlurViewNativeComponent';
+
+import type { SharedViewEvents, AnimationConfig, RemapObject } from 'react-native-ios-utilities';
 import type { BlurViewConfig } from './BlurViewConfig';
 
 
-export type RNIBlurNativeViewBaseProps = {
+type RNIBlurViewNativeComponentBaseProps = 
+  Omit<RNIBlurViewNativeComponentProps, keyof (ViewProps & SharedViewEvents)>
+
+export type RNIBlurNativeViewBaseProps = RemapObject<RNIBlurViewNativeComponentBaseProps, {
   blurConfig: BlurViewConfig;
   animationConfig?: AnimationConfig;
   animationDelay?: number;
-};
+}>;
 
 export type RNIBlurNativeViewProps = 
     SharedViewEvents
