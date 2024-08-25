@@ -9883,13 +9883,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-ios-utilities@npm:5.0.0-16":
-  version: 5.0.0-16
-  resolution: "react-native-ios-utilities@npm:5.0.0-16"
+"react-native-ios-utilities@npm:5.0.0-17":
+  version: 5.0.0-17
+  resolution: "react-native-ios-utilities@npm:5.0.0-17"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: c2d297f5d4313cced8389c130d8b4e1fd0b6123a1b9ba2e22d9b6ab9809ffbdd2eda2cd0f05500ebd03b14d303e37dc1bbdc60cb00d72e41a692a0a49c25908d
+  checksum: 07dd0eca1707143556be50f59311c70e3dff89030e0c425107a26d76192470616fc2134d8fa53c6d713743da11d943daedc35d35542efa05b2df92684ec0556f
   languageName: node
   linkType: hard
 
@@ -9912,7 +9912,7 @@ __metadata:
     postinstall-postinstall: ^2.1.0
     react: 18.3.1
     react-native: 0.75.2
-    react-native-ios-utilities: 5.0.0-16
+    react-native-ios-utilities: 5.0.0-17
     react-native-safe-area-context: ^4.10.8
     react-native-screens: ^3.34.0
   languageName: unknown
@@ -9932,7 +9932,7 @@ __metadata:
     react: 18.2.0
     react-native: 0.75.2
     react-native-builder-bob: ^0.26.0
-    react-native-ios-utilities: 5.0.0-16
+    react-native-ios-utilities: 5.0.0-17
     release-it: ^15.0.0
     turbo: ^1.10.7
     typescript: ^5.2.2
