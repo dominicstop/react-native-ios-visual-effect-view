@@ -32,6 +32,10 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
   
   const screenItems: Array<ExampleItemRoute> = [
     {
+      ...ROUTE_MAP.blurViewBasicUsage01,
+      type: 'screen',
+    },
+    {
       ...ROUTE_MAP.visualEffectViewTest01,
       type: 'screen',
     }, 
