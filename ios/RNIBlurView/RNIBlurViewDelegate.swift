@@ -106,15 +106,9 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
   // ---------------
   
   public override func didMoveToWindow() {
-    guard self.window != nil,
-          let parentReactView = self.parentReactView
-    else { return };
-    
-    print(
-      "RNIBlurViewDelegate.didMoveToWindow",
-      "\n - reactProps:", self.reactProps.description,
-      "\n"
-    );
+    guard self.window != nil else {
+      return;
+    };
     
     self._setupContent();
     return;
@@ -257,18 +251,6 @@ extension RNIBlurViewDelegate: RNIContentViewDelegate {
     superBlock();
     #endif
     
-  }
-  
-  public func notifyDidSetProps(sender: RNIContentViewParentDelegate) {
-    // no-op
-  };
-  
-  public func notifyOnUpdateLayoutMetrics(
-    sender: RNIContentViewParentDelegate,
-    oldLayoutMetrics: RNILayoutMetrics,
-    newLayoutMetrics: RNILayoutMetrics
-  ) {
-    // no-op
   };
   
   public func notifyOnViewCommandRequest(
@@ -285,30 +267,6 @@ extension RNIBlurViewDelegate: RNIContentViewDelegate {
   // -------------------
 
   #if RCT_NEW_ARCH_ENABLED
-  public func notifyOnUpdateProps(
-    sender: RNIContentViewParentDelegate,
-    oldProps: NSDictionary,
-    newProps: NSDictionary
-  ) {
-    // no-op
-  };
-  
-  public func notifyOnUpdateState(
-    sender: RNIContentViewParentDelegate,
-    oldState: NSDictionary?,
-    newState: NSDictionary
-  ) {
-    // no-op
-  };
-  
-  public func notifyOnFinalizeUpdates(
-    sender: RNIContentViewParentDelegate,
-    updateMaskRaw: Int,
-    updateMask: RNIComponentViewUpdateMask
-  ) {
-    // no-op
-  };
-  
   public func notifyOnPrepareForReuse(sender: RNIContentViewParentDelegate) {
     self._didSetup = false;
     self._animator?.stopAnimation(true);
