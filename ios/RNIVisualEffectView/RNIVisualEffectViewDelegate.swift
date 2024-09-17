@@ -226,6 +226,12 @@ extension RNIVisualEffectViewDelegate: RNIContentViewDelegate {
     // no-op
   };
   
+  public func shouldRecycleContentDelegate(
+    sender: RNIContentViewParentDelegate
+  ) -> Bool {
+    return false;
+  }
+  
   public func notifyOnPrepareForReuse(sender: RNIContentViewParentDelegate) {
     // no-op
   };
