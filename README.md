@@ -10,6 +10,16 @@ This library + documentation is currently not finished yet. For now, please brow
 
 <br><br>
 
+### Acknowledgements
+
+The initial version of this library  (i.e. version `0.x`) was made possible through a generous `$3,250` sponsorship by [natew](https://github.com/natew) + [tamagui](https://github.com/tamagui/tamagui) over the course of ≈ 3.5 months (from: `05/27/24` to `09/24`) 🐦✨
+
+<br>
+
+Very special thanks to: [junzhengca](https://github.com/junzhengca), [brentvatne](https://github.com/brentvatne), and [expo](https://github.com/expo) for sponsoring my work 🥺
+
+<br><br>
+
 ## A. Introduction
 
 TBA
@@ -17,6 +27,8 @@ TBA
 <br><br>
 
 ## B. Installation
+
+**Note**: Support for the new architecture (fabric), and backwards compatibility for the old architecture (paper) is handled via a peer via a peer dependency to [`react-native-ios-utilites@v5`](https://github.com/dominicstop/react-native-ios-utilities).
 
 ```sh
 # 1. install library + dependencies
