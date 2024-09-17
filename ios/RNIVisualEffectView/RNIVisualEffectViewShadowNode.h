@@ -23,11 +23,8 @@ namespace facebook::react {
 
 JSI_EXPORT extern const char RNIVisualEffectViewComponentName[] = "RNIVisualEffectView";
 
-class JSI_EXPORT RNIVisualEffectViewShadowNode final : public RNIBaseViewShadowNode<
-  RNIVisualEffectViewComponentName,
-  RNIBaseViewProps,
-  RNIBaseViewEventEmitter
-> {
+class JSI_EXPORT RNIVisualEffectViewShadowNode final :
+  public RNIBaseViewShadowNode<RNIVisualEffectViewComponentName> {
 
 public:
   using RNIBaseViewShadowNode::RNIBaseViewShadowNode;

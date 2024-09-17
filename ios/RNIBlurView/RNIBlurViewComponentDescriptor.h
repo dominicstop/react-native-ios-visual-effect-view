@@ -9,16 +9,19 @@
 #pragma once
 
 #include "RNIBlurViewShadowNode.h"
-#include "RNIBaseViewComponentDescriptor.h"
 
+#include <react-native-ios-utilities/RNIBaseViewComponentDescriptor.h>
 #include "react-native-ios-utilities/RNIBaseViewState.h"
+
 #include <react/renderer/core/ConcreteComponentDescriptor.h>
 
 
 namespace facebook::react {
 
-class RNIBlurViewComponentDescriptor final
-  : public RNIBaseViewComponentDescriptor<RNIBlurViewShadowNode> {
+class RNIBlurViewComponentDescriptor final : public RNIBaseViewComponentDescriptor<
+  RNIBlurViewShadowNode,
+  RNIBlurViewComponentName
+> {
   
 public:
   using RNIBaseViewComponentDescriptor::RNIBaseViewComponentDescriptor;

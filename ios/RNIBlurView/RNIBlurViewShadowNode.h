@@ -23,11 +23,8 @@ namespace facebook::react {
 
 JSI_EXPORT extern const char RNIBlurViewComponentName[] = "RNIBlurView";
 
-class JSI_EXPORT RNIBlurViewShadowNode final : public RNIBaseViewShadowNode<
-  RNIBlurViewComponentName,
-  RNIBaseViewProps,
-  RNIBaseViewEventEmitter
-> {
+class JSI_EXPORT RNIBlurViewShadowNode final :
+  public RNIBaseViewShadowNode<RNIBlurViewComponentName> {
 
 public:
   using RNIBaseViewShadowNode::RNIBaseViewShadowNode;

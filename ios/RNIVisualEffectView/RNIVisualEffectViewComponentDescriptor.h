@@ -9,16 +9,19 @@
 #pragma once
 
 #include "RNIVisualEffectViewShadowNode.h"
-#include "RNIBaseViewComponentDescriptor.h"
 
+#include <react-native-ios-utilities/RNIBaseViewComponentDescriptor.h>
 #include <react-native-ios-utilities/RNIBaseViewState.h>
+
 #include <react/renderer/core/ConcreteComponentDescriptor.h>
 
 
 namespace facebook::react {
 
-class RNIVisualEffectViewComponentDescriptor final
-  : public RNIBaseViewComponentDescriptor<RNIVisualEffectViewShadowNode> {
+class RNIVisualEffectViewComponentDescriptor final : public RNIBaseViewComponentDescriptor<
+  RNIVisualEffectViewShadowNode,
+  RNIVisualEffectViewComponentName
+> {
   
 public:
   using RNIBaseViewComponentDescriptor::RNIBaseViewComponentDescriptor;
