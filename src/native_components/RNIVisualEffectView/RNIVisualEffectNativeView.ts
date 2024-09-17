@@ -1,13 +1,23 @@
 import type { HostComponent, ViewProps } from 'react-native';
 
-import { default as RNIVisualEffectViewNativeComponent } from './RNIVisualEffectViewNativeComponent';
-import type { SharedViewEvents } from 'react-native-ios-utilities';
+import { 
+  default as RNIVisualEffectViewNativeComponent, 
+  type NativeProps as RNIVisualEffectViewNativeComponentProps 
+} from './RNIVisualEffectViewNativeComponent';
 
-export interface RNIVisualEffectNativeViewBaseProps extends ViewProps {
-};
+import type { SharedViewEvents, NativeComponentBaseProps, RemapObject } from 'react-native-ios-utilities';
+
+
+type RNIBlurViewNativeComponentBaseProps = 
+  NativeComponentBaseProps<RNIVisualEffectViewNativeComponentProps>;
+
+export type RNIVisualEffectNativeViewBaseProps = RemapObject<RNIBlurViewNativeComponentBaseProps, {
+  // TBA
+}>;
 
 export type RNIVisualEffectNativeViewProps = 
     SharedViewEvents
+  & ViewProps
   & RNIVisualEffectNativeViewBaseProps;
 
 export const RNIVisualEffectNativeView = 
