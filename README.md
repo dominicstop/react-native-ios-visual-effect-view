@@ -1,28 +1,72 @@
 # react-native-ios-visual-effect-view
 
-TBA
+A simple library to use `UIVisualEffectView` in `react-native`.
+
+<br><br>
+
+## 🚧⚠️  Work in Progress ⚠️🚧
+
+This library + documentation is currently not finished yet. For now, please browse through [examples](example/src/examples) directory to get a rough idea on how to use this library.
+
+<br><br>
+
+## Introduction
+
+<br><br>
 
 ## Installation
 
 ```sh
+# 1. install library + dependencies
 npm install react-native-ios-visual-effect-view
+npm install react-native-ios-utilities@next
+
+# 2. then run pod install (uses auto-linking)
+cd ios && pod install
 ```
 
-## Usage
+<br><br>
+
+## Basic Usage
+
+hello! please see [`RNIBlurViewBasicUsage01`](example/src/examples/RNIBlurViewBasicUsage01.tsx) for the full example
 
 
 ```js
-import { IosVisualEffectViewView } from "react-native-ios-visual-effect-view";
+// 📝 Note: for the sake of brevity, some of the code is omitted...
+import { RNIBlurView } from 'react-native-ios-visual-effect-view';
 
-// ...
 
-<IosVisualEffectViewView color="tomato" />
+export function RNIBlurViewBasicUsage01() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.label}>
+        {'❤️\n🧡\n💛\n💚\n💙\n💜\n💖\n💃\n✨'}
+      </Text>
+      <RNIBlurView
+        style={styles.effectOverlay}
+        blurConfig={{
+          mode: 'standard',
+          blurEffectStyle: 'prominent',
+        }}
+        animationConfig={{
+          duration: 1,
+          mode: 'presetCurve',
+          curve: 'easeOut',
+        }}
+        animationDelay={1}
+      />
+    </View>
+  );
+}
 ```
 
 
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+
+<br><br>
 
 ## License
 
