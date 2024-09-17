@@ -6,15 +6,17 @@ A simple library to use `UIVisualEffectView` in `react-native`.
 
 ## 🚧⚠️  Work in Progress ⚠️🚧
 
-This library + documentation is currently not finished yet. For now, please browse through [examples](example/src/examples) directory to get a rough idea on how to use this library.
+This library + documentation is currently not finished yet. For now, please browse through [examples](example/src/examples) directory to get a rough idea on how to use this library. Jump to [basic usage section](#c-basic-usage) for example code + gif.
 
 <br><br>
 
-## Introduction
+## A. Introduction
+
+TBA
 
 <br><br>
 
-## Installation
+## B. Installation
 
 ```sh
 # 1. install library + dependencies
@@ -27,7 +29,7 @@ cd ios && pod install
 
 <br><br>
 
-## Basic Usage
+## C. Basic Usage
 
 hello! please see [`RNIBlurViewBasicUsage01`](example/src/examples/RNIBlurViewBasicUsage01.tsx) for the full example
 
@@ -61,6 +63,9 @@ export function RNIBlurViewBasicUsage01() {
 }
 ```
 
+![RNIBlurViewBasicUsage01](assets/RNIBlurViewBasicUsage01.gif)
+
+<br><br>
 
 ## Contributing
 
