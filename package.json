@@ -42,7 +42,7 @@
     "prepare": "bob build",
     "release": "release-it --only-version",
     "open:ios": "open -a \"Xcode\" example/ios",
-    "open:docs": "open -a \"Typora\" ./docs/README-01-Pre.md",
+    "open:docs": "open -a \"Typora\" ./README.md",
     "open:android": "open -a \"Android Studio\" example/android",
     "close:ios": "killall Xcode",
     "reopen:ios": "yarn run close:ios ; yarn run open:ios",
