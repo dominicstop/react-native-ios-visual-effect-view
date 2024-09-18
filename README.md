@@ -75,7 +75,7 @@ export function RNIBlurViewBasicUsage01() {
 }
 ```
 
-![RNIBlurViewBasicUsage01](assets/RNIBlurViewBasicUsage01.gif)
+<img src="assets/RNIBlurViewBasicUsage01.gif" width="400">
 
 <br><br>
 
