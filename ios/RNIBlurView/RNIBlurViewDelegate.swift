@@ -56,6 +56,7 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
       let blurConfigOld = self.blurConfig;
       self.blurConfig = blurConfigNew;
       
+      #if DEBUG && FALSE
       print(
         "RNIBlurViewDelegate.blurConfigProp",
         "\n - willSet, newValue:", newValue.description,
@@ -63,6 +64,7 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
         "\n - blurConfigNew:", String(describing: blurConfigNew),
         "\n"
       );
+      #endif
       
       guard blurConfigOld != blurConfigNew else { return };
       self._notifyOnChangeBlurConfig(old: blurConfigOld, new: blurConfigNew);
@@ -237,15 +239,6 @@ extension RNIBlurViewDelegate: RNIContentViewDelegate {
 
   // MARK: Paper + Fabric
   // --------------------
-  
-  public func notifyOnInit(sender: RNIContentViewParentDelegate) {
-    print(
-      "RNIBlurViewDelegate.notifyOnInit",
-      "\n - reactProps:", self.reactProps.description,
-      "\n"
-    );
-    return;
-  };
     
   public func notifyOnMountChildComponentView(
     sender: RNIContentViewParentDelegate,
