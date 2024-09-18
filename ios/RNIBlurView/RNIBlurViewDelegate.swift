@@ -160,20 +160,48 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
     let animationBlock = {
       switch self.blurConfig {
         case .none:
-          blurView.blurEffectStyle = .none;
+          return {
+            blurView.blurEffectStyle = .none;
+          };
           
         case let .standard(blurEffectStyle):
-          blurView.blurEffectStyle = blurEffectStyle;
+          return {
+            blurView.blurEffectStyle = blurEffectStyle;
+          };
           
         case let .customEffectIntensity(blurEffectStyle, intensity):
-          blurView.blurEffectStyle = blurEffectStyle;
-          blurView.setEffectIntensity(intensity);
+          return {
+            blurView.blurEffectStyle = blurEffectStyle;
+            blurView.setEffectIntensity(intensity);
+          };
           
         case let .customBlurRadius(blurEffectStyle, radius):
           blurView.blurEffectStyle = blurEffectStyle;
-          blurView.blurRadius = radius;
+          
+          // let filterDescs: [UVEFilterEntryWrapper] =
+          //  try! blurView.getCurrentFilterEntriesFromCurrentEffectDescriptor();
+      
+          
+          let blurFilterNew = LayerFilterType.gaussianBlur(
+            radius: radius,
+            shouldNormalizeEdges: true
+          );
+        
+          // try! filterDescs.updateFilterValuesRequested(with: blurFilterNew)
+          
+          try! blurView.updateMatchingFilter(
+            with: blurFilterNew,
+            shouldImmediatelyApply: false
+          );
+          
+          
+          return {
+            try! blurView.applyRequestedFilterEffects();
+            // blurView.blurRadius = radius;
+          };
+          
       };
-    };
+    }();
     
     let animator = self.animationConfig?.createAnimator(
       gestureInitialVelocity: .zero
@@ -287,4 +315,42 @@ extension RNIBlurViewDelegate: RNIContentViewDelegate {
   // ------------------
   
   #endif
+};
+
+
+
+extension Array where Element == UVEFilterEntryWrapper {
+  
+  func updateFilterValuesRequested(with newFilter: LayerFilterType) throws {
+    let filterMatch = self.first {
+      guard let filter = LayerFilterType(fromWrapper: $0) else {
+        return false;
+      };
+      
+      return filter.decodedFilterName == newFilter.decodedFilterName;
+    };
+    
+    guard let filterMatch = filterMatch else {
+      return;
+    };
+    
+    let filterValuesRequested =
+      NSDictionary(dictionary: newFilter.filterValuesRequested);
+    
+    try filterMatch.setFilterValuesRequested(filterValuesRequested);
+  };
+};
+
+extension VisualEffectView {
+  
+  public func updateMatchingFilter(
+    with newFilter: LayerFilterType,
+    shouldImmediatelyApply: Bool = true
+  ) throws {
+    
+    let filterDescs: [UVEFilterEntryWrapper] =
+      try self.getCurrentFilterEntriesFromCurrentEffectDescriptor();
+
+    try! filterDescs.updateFilterValuesRequested(with: newFilter);
+  };
 };
