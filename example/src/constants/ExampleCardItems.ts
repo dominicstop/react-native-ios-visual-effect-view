@@ -81,7 +81,12 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
       ...ROUTE_MAP.blurViewTest04,
       type: 'screen',
       title: "RNIBlurViewTest04",
-      desc: [],
+      desc: [
+        "Test for `blurConfig` (`customBlurRadius` mode) + `animationConfig`",
+        "Cycle through `UIBlurEffectStyle` + `AnimationConfig` presets, and set"
+          + " set a custom `BlurViewConfig.blurRadius`",
+        "This is an animated version of `RNIBlurViewTest03`",
+      ],
     }
   ];
 
