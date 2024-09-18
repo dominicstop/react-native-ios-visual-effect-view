@@ -57,6 +57,19 @@ export function RNIBlurViewTest04Screen() {
   const animationConfigPresetCurrent = AnimationConfigPresets[animationConfigPresetIndex]!;
   const hasAnimationConfig = animationConfigPresetCurrent != null;
 
+  // MARK: shouldAddDelay
+  // --------------------
+
+  const [shouldAddDelay, setShouldAddDelay] = React.useState(false);
+
+  React.useEffect(() => {
+    Helpers.timeout(500).then(() => {
+      setShouldAddDelay(false);
+    });
+  });
+
+  const shouldDelay = hasAnimationConfig && shouldAddDelay;
+
   return (
     <View style={styles.container}>
       <Text style={styles.label}>
@@ -71,7 +84,7 @@ export function RNIBlurViewTest04Screen() {
         }}
         {...(shouldApplyAnimationConfig && {
           animationConfig: animationConfigPresetCurrent,
-          animationDelay: hasAnimationConfig ? 0.5 : 0,
+          animationDelay: shouldDelay ? 0.5 : 0,
         })}
       />
       <SafeAreaView style={styles.debugOverlayContainer}>
