@@ -28,11 +28,11 @@ TBA
 
 ## B. Installation
 
-**Note**: Support for the new architecture (fabric), and backwards compatibility for the old architecture (paper) is handled via a peer via a peer dependency to [`react-native-ios-utilites@v5`](https://github.com/dominicstop/react-native-ios-utilities).
+**Note**: Support for the new architecture (fabric), and backwards compatibility for the old architecture (paper) is handled via a peer dependency to [`react-native-ios-utilites@v5`](https://github.com/dominicstop/react-native-ios-utilities).
 
 ```sh
 # 1. install library + dependencies
-npm install react-native-ios-visual-effect-view
+npm install react-native-ios-visual-effect-view@next
 npm install react-native-ios-utilities@next
 
 # 2. then run pod install (uses auto-linking)
