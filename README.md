@@ -22,7 +22,11 @@ Very special thanks to: [junzhengca](https://github.com/junzhengca), [brentvatne
 
 ## A. Introduction
 
-TBA
+* ❤️ Support for using `UIVisualEffectView` + all the system [`UIBlurEffectStyles`](https://github.com/dominicstop/react-native-ios-utilities/blob/master/src/constants/UIBlurEffectStyles.ts).
+* 🧡 Support for using custom blur radius and effect intensity (percent).
+* 💚 Support for animating the blur effect style + blur radius changes.
+* 💙 Support for creating and using filters (WIP)
+* 💜 Runs on the old + new architecture (paper + fabric).
 
 <br><br>
 
@@ -37,6 +41,21 @@ npm install react-native-ios-utilities@next
 
 # 2. then run pod install (uses auto-linking)
 cd ios && pod install
+```
+
+<br><br>
+
+### Updating
+
+This library has cocoapods dependency to [`VisualEffectBlurView`](https://github.com/dominicstop/VisualEffectBlurView) and [`DGSwiftUtilities`](https://github.com/dominicstop/DGSwiftUtilities), so you may need to update them separately (as needed).
+
+```sh
+# A. Either update this specific pod...
+pod update VisualEffectBlurView DGSwiftUtilities
+pod install --repo-update
+
+# B. Or update all the pods
+pod update
 ```
 
 <br><br>
