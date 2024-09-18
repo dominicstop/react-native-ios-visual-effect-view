@@ -1,7 +1,8 @@
+import { AppMetadataCard } from "../components/AppMetadataCard";
+import { ROUTE_MAP } from "./RouteMap";
+
 import type { ExampleItemProps } from "../examples/SharedExampleTypes";
 import type { RouteEntry } from "./RouteItems";
-
-import { ROUTE_MAP } from "./RouteMap";
 
 
 type ExampleItemBase = {
@@ -96,5 +97,12 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
   //   items.splice(0, 0, ...[DebugControls]);
   // }
 
-  return [...screenItems, ...cardItems];
+  return [
+    {
+      type: 'card',
+      component: AppMetadataCard,
+    },
+    ...screenItems, 
+    ...cardItems
+  ];
 })();
