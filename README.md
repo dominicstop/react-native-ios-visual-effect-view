@@ -2,6 +2,10 @@
 
 A simple library to use `UIVisualEffectView` in `react-native`.
 
+
+https://github.com/user-attachments/assets/74bf8afa-91ed-49d8-80aa-a17b8e7969b0
+
+
 <br><br>
 
 ## 🚧⚠️  Work in Progress ⚠️🚧
@@ -16,7 +20,7 @@ The initial version of this library  (i.e. version `0.x`) was made possible thro
 
 <br>
 
-Very special thanks to: [junzhengca](https://github.com/junzhengca), [brentvatne](https://github.com/brentvatne), and [expo](https://github.com/expo) for sponsoring my work 🥺
+very special thanks to: [junzhengca](https://github.com/junzhengca), [brentvatne](https://github.com/brentvatne), and [expo](https://github.com/expo) for sponsoring my work 🥺 (if you have the means to do so, please considering sponsoring [here](https://github.com/sponsors/dominicstop))
 
 <br><br>
 
