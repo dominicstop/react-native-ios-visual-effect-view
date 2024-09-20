@@ -2,8 +2,7 @@
 
 A simple library to use `UIVisualEffectView` in `react-native`.
 
-
-https://github.com/user-attachments/assets/74bf8afa-91ed-49d8-80aa-a17b8e7969b0
+<img src="./assets/example-demo-01.gif" alt="example-demo-01" style="zoom:67%;" />
 
 
 <br><br>
@@ -25,6 +24,8 @@ very special thanks to: [junzhengca](https://github.com/junzhengca), [brentvatne
 <br><br>
 
 ## A. Introduction
+
+https://github.com/user-attachments/assets/74bf8afa-91ed-49d8-80aa-a17b8e7969b0
 
 * ❤️ Support for using `UIVisualEffectView` + all the system [`UIBlurEffectStyles`](https://github.com/dominicstop/react-native-ios-utilities/blob/master/src/constants/UIBlurEffectStyles.ts).
 * 🧡 Support for using custom blur radius and effect intensity (percent).
