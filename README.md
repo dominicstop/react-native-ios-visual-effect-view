@@ -83,8 +83,8 @@ export function RNIBlurViewBasicUsage01() {
       </Text>
       <RNIBlurView
         style={styles.effectOverlay}
-        blurConfig={{
-          mode: 'standard',
+        blurMode={{
+          mode: 'blurEffectSystem',
           blurEffectStyle: 'prominent',
         }}
         animationConfig={{
