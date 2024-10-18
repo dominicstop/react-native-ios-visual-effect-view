@@ -23,10 +23,10 @@ export function RNIBlurViewTest02Screen() {
       </Text>
       <RNIBlurView
         style={styles.effectOverlay}
-        blurConfig={{
-          mode: 'customEffectIntensity',
+        blurMode={{
+          mode: 'blurEffectCustomIntensity',
           blurEffectStyle: blurEffectStyleCurrent,
-          intensity: effectIntensity,
+          effectIntensity: effectIntensity,
         }}
       />
       <SafeAreaView style={styles.debugOverlayContainer}>

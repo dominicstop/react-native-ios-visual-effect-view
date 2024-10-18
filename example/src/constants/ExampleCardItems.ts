@@ -38,7 +38,7 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
       title: 'RNIBlurViewBasicUsage01',
       subtitle: "Basic Usage - RNIBlurView",
       desc: [
-        "Basic example for demonstrating how to use: `blurConfig` + `animationConfig`"
+        "Basic example for demonstrating how to use: `blurMode` + `animationConfig`"
       ], 
     },
     {
@@ -54,7 +54,7 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
       type: 'screen',
       title: "RNIBlurViewTest01",
       desc: [
-        "Test for `blurConfig` (standard mode) + `animationConfig`",
+        "Test for `blurMode` (standard mode) + `animationConfig`",
         "Cycle through `UIBlurEffectStyle` + `AnimationConfig` presets",
       ],
     },
@@ -63,9 +63,9 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
       type: 'screen',
       title: "RNIBlurViewTest02",
       desc: [
-        "Test for `blurConfig` (`customEffectIntensity` mode) + `animationConfig`",
+        "Test for `blurMode` (`customEffectIntensity` mode) + `animationConfig`",
         "Cycle through `UIBlurEffectStyle` presets, and set a custom"
-          + "  `BlurViewConfig.intensity` (percent)",
+          + "  `VisualEffectBlurMode.intensity` (percent)",
       ],
     }, 
     {
@@ -73,9 +73,9 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
       type: 'screen',
       title: "RNIBlurViewTest03",
       desc: [
-        "Test for `blurConfig` (`customBlurRadius` mode) + `animationConfig`",
+        "Test for `blurMode` (`customBlurRadius` mode) + `animationConfig`",
         "Cycle through `UIBlurEffectStyle` presets, and set a custom"
-          + "  `BlurViewConfig.blurRadius`",
+          + "  `VisualEffectBlurMode.blurRadius`",
       ],
     },
     {
@@ -83,9 +83,9 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
       type: 'screen',
       title: "RNIBlurViewTest04",
       desc: [
-        "Test for `blurConfig` (`customBlurRadius` mode) + `animationConfig`",
+        "Test for `blurMode` (`customBlurRadius` mode) + `animationConfig`",
         "Cycle through `UIBlurEffectStyle` + `AnimationConfig` presets, and set"
-          + " set a custom `BlurViewConfig.blurRadius`",
+          + " set a custom `VisualEffectBlurMode.blurRadius`",
         "This is an animated version of `RNIBlurViewTest03`",
       ],
     }

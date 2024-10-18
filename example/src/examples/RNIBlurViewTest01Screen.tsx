@@ -65,8 +65,8 @@ export function RNIBlurViewTest01Screen() {
       </Text>
       <RNIBlurView
         style={styles.effectOverlay}
-        blurConfig={{
-          mode: 'standard',
+        blurMode={{
+          mode: 'blurEffectSystem',
           blurEffectStyle: blurEffectStyleCurrent,
         }}
         animationConfig={animationConfigPresetCurrent}

@@ -12,6 +12,8 @@ var blurEffectStyleCounterCached = 0;
 var animationConfigPresetCounterCached = 2;
 var blurRadiusCached = 0;
 
+const MAX_BLUR_RADIUS = 64;
+
 export function RNIBlurViewTest04Screen() {
 
   const [
@@ -77,10 +79,11 @@ export function RNIBlurViewTest04Screen() {
       </Text>
       <RNIBlurView
         style={styles.effectOverlay}
-        blurConfig={{
-          mode: 'customBlurRadius',
+        blurMode={{
+          mode: 'blurEffectCustomBlurRadius',
           blurEffectStyle: blurEffectStyleCurrent,
-          radius: blurRadius,
+          customBlurRadius: blurRadius,
+          effectIntensityForOtherEffects: blurRadius / MAX_BLUR_RADIUS,
         }}
         {...(shouldApplyAnimationConfig && {
           animationConfig: animationConfigPresetCurrent,
@@ -109,7 +112,7 @@ export function RNIBlurViewTest04Screen() {
             style={[styles.slider, styles.debugCardBodyItem]}
             value={blurRadiusCached}
             minimumValue={0}
-            maximumValue={64}
+            maximumValue={MAX_BLUR_RADIUS}
             minimumTrackTintColor={Colors.PURPLE.A700}
             maximumTrackTintColor={`${Colors.PURPLE[900]}50`}
             onValueChange={(newValue) => {

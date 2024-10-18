@@ -7,6 +7,8 @@ import { RNIBlurView } from 'react-native-ios-visual-effect-view';
 import Slider from '@react-native-community/slider';
 
 
+const MAX_BLUR_RADIUS = 64;
+
 export function RNIBlurViewTest03Screen() {
   const [blurEffectStyleCounter, setBlurEffectStyleCounter] = React.useState(0);
   const [blurRadius, setBlurRadius] = React.useState(0);
@@ -23,10 +25,11 @@ export function RNIBlurViewTest03Screen() {
       </Text>
       <RNIBlurView
         style={styles.effectOverlay}
-        blurConfig={{
-          mode: 'customBlurRadius',
+        blurMode={{
+          mode: 'blurEffectCustomBlurRadius',
           blurEffectStyle: blurEffectStyleCurrent,
-          radius: blurRadius,
+          customBlurRadius: blurRadius,
+          effectIntensityForOtherEffects: 1 / MAX_BLUR_RADIUS,
         }}
       />
       <SafeAreaView style={styles.debugOverlayContainer}>
@@ -48,7 +51,7 @@ export function RNIBlurViewTest03Screen() {
           <Slider
             style={[styles.slider, styles.debugCardBodyItem]}
             minimumValue={0}
-            maximumValue={64}
+            maximumValue={MAX_BLUR_RADIUS}
             minimumTrackTintColor={Colors.PURPLE.A700}
             maximumTrackTintColor={`${Colors.PURPLE[900]}50`}
             onValueChange={(newValue) => {
