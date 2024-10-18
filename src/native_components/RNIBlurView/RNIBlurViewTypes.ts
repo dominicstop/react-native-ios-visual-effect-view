@@ -17,7 +17,7 @@ export type RNIBlurViewInheritedOptionalProps = Partial<Pick<RNIBlurNativeViewPr
 >>;
 
 export type RNIBlurViewInheritedRequiredProps = Required<Pick<RNIBlurNativeViewProps,
-  | 'blurConfig'
+  | 'blurMode'
 >>;
 
 export type RNIBlurViewInheritedProps =

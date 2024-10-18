@@ -6,7 +6,7 @@ import type { HostComponent, ViewProps } from 'react-native';
 export interface NativeProps extends ViewProps {
   onDidSetViewID: BubblingEventHandler<{}>;
   
-  blurConfig: string;
+  blurMode: string;
   animationConfig?: string;
   animationDelay?: string;
 };
