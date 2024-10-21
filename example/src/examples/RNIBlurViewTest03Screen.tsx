@@ -18,6 +18,8 @@ export function RNIBlurViewTest03Screen() {
 
   const blurEffectStyleCurrent = UIBlurEffectStyleItems[blurEffectStyleIndex]!;
 
+  const effectIntensityForOtherEffects = blurRadius / MAX_BLUR_RADIUS;
+
   return (
     <View style={styles.container}>
       <Text style={styles.label}>
@@ -29,7 +31,7 @@ export function RNIBlurViewTest03Screen() {
           mode: 'blurEffectCustomBlurRadius',
           blurEffectStyle: blurEffectStyleCurrent,
           customBlurRadius: blurRadius,
-          effectIntensityForOtherEffects: 1 / MAX_BLUR_RADIUS,
+          effectIntensityForOtherEffects,
         }}
       />
       <SafeAreaView style={styles.debugOverlayContainer}>
@@ -43,6 +45,10 @@ export function RNIBlurViewTest03Screen() {
             object={{
               blurEffectStyleCounter,
               blurRadius: blurRadius.toFixed(2),
+              
+              effectIntensityForOtherEffects: 
+                effectIntensityForOtherEffects.toFixed(2),
+
               blurEffectStyleCurrent: {
                 [blurEffectStyleIndex]: blurEffectStyleCurrent,
               },
