@@ -1264,7 +1264,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-ios-visual-effect-view (0.1.0-3):
+  - react-native-ios-visual-effect-view (0.1.0-4):
     - ComputableLayout
     - DGSwiftUtilities
     - DoubleConversion
@@ -1963,7 +1963,7 @@ SPEC CHECKSUMS:
   React-Mapbuffer: 1c08607305558666fd16678b85ef135e455d5c96
   React-microtasksnativemodule: f13f03163b6a5ec66665dfe80a0df4468bb766a6
   react-native-ios-utilities: 6a50a9fc4264151b18dd9d01dec7148785f84871
-  react-native-ios-visual-effect-view: 554beda601380c2c5ddd4feb632aede9387fd326
+  react-native-ios-visual-effect-view: 6a695d693465ff21bfef8b99d04de0af7932f602
   react-native-safe-area-context: 99c581aab5411c047b2116e29ea12d8ca3059593
   react-native-slider: e1f4b4538f7de7417b626174874f4f58d4cf6c28
   React-nativeconfig: 57781b79e11d5af7573e6f77cbf1143b71802a6d
