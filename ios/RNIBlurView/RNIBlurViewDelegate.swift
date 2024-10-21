@@ -15,7 +15,7 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
   
   public static var propKeyPathMap: Dictionary<String, PartialKeyPath<RNIBlurViewDelegate>> {
     return [
-      "blurConfig": \.blurConfigProp,
+      "blurMode": \.blurModeProp,
       "animationConfig": \.animationConfigProp,
       "animationDelay": \.animationDelayProp,
     ];
@@ -31,7 +31,7 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
   var _didSetup = false;
   var _animator: UIViewPropertyAnimator?;
   
-  var blurView: VisualEffectBlurView?;
+  public var blurView: VisualEffectAnimatableBlurView?;
   
   // MARK: - Properties - RNIContentViewDelegate
   // -------------------------------------------
@@ -43,38 +43,40 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
   
   public var reactProps: NSDictionary = [:];
   
-  public var blurConfig: RNIBlurConfig = .none;
-  @objc public var blurConfigProp: NSDictionary? {
+  public var blurMode: VisualEffectBlurMode = .blurEffectNone;
+  @objc public var blurModeProp: NSDictionary? {
     willSet {
-      guard let newValue = newValue as? Dictionary<String, Any>,
-            let blurConfigNew = try? RNIBlurConfig(fromDict: newValue)
-      else {
-        self.blurConfig = .none;
-        return;
-      };
+      let blurModeNew: VisualEffectBlurMode = {
+        guard let newValue = newValue as? Dictionary<String, Any>,
+              let blurMode = try? VisualEffectBlurMode(fromDict: newValue)
+        else {
+          return .blurEffectNone;
+        };
+        
+        return blurMode;
+      }();
       
-      let blurConfigOld = self.blurConfig;
-      self.blurConfig = blurConfigNew;
+      let blurModeOld = self.blurMode;
+      self.blurMode = blurModeNew;
       
       #if DEBUG && FALSE
       print(
-        "RNIBlurViewDelegate.blurConfigProp",
+        "RNIBlurViewDelegate.blurModeProp",
         "\n - willSet, newValue:", newValue.description,
-        "\n - blurConfigOld:", String(describing: blurConfigOld),
-        "\n - blurConfigNew:", String(describing: blurConfigNew),
+        "\n - blurModeOld:", String(describing: blurModeOld),
+        "\n - blurModeNew:", String(describing: blurModeNew),
         "\n"
       );
       #endif
       
-      guard blurConfigOld != blurConfigNew else { return };
-      self._notifyOnChangeBlurConfig(old: blurConfigOld, new: blurConfigNew);
+      guard blurModeOld != blurModeNew else { return };
+      self._notifyOnChangeBlurConfig(old: blurModeOld, new: blurModeNew);
     }
   };
   
   public var animationConfig: AnimationConfig?;
   @objc public var animationConfigProp: NSDictionary? {
     willSet {
-    
       guard let newValue = newValue as? Dictionary<String, Any>,
             let animationConfig = try? AnimationConfig(fromDict: newValue)
       else {
@@ -92,7 +94,7 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
       self.animationDelay = newValue?.doubleValue;
     }
   };
-  
+
   // MARK: Init
   // ----------
   
@@ -104,32 +106,31 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
     fatalError("init(coder:) has not been implemented");
   }
   
-  // MARK: Functions
-  // ---------------
+  // MARK: - Functions - View Lifecycle
+  // ----------------------------------
   
   public override func didMoveToWindow() {
     guard self.window != nil else {
       return;
     };
     
-    self._setupContent();
-    return;
+    try? self._setupContent();
   };
   
-  func _setupContent(){
+  // MARK: - Internal Functions
+  // --------------------------
+  
+  private func _setupContent() throws {
     guard !self._didSetup else { return };
-    self._didSetup = true;
     
-    let blurView = try? VisualEffectBlurView(
-      blurEffectStyle: nil
-    );
+    let blurView =
+      try VisualEffectAnimatableBlurView(blurMode: self.blurMode);
     
-    guard let blurView = blurView else { return };
     self.blurView = blurView;
     
     self._notifyOnChangeBlurConfig(
-      old: .none,
-      new: self.blurConfig
+      old: .blurEffectNone,
+      new: self.blurMode
     );
     
     self.addSubview(blurView);
@@ -149,83 +150,121 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
         equalTo: self.bottomAnchor
       ),
     ]);
+    
+    self._didSetup = true;
   };
   
-  func _notifyOnChangeBlurConfig(
-    old blurConfigOld: RNIBlurConfig,
-    new blurConfigNew: RNIBlurConfig
+  private func _notifyOnChangeBlurConfig(
+    old blurModeOld: VisualEffectBlurMode,
+    new blurModeNew: VisualEffectBlurMode
   ){
-    guard self._didSetup,
-          let blurView = self.blurView
-    else { return };
+    guard self._didSetup else {
+      return;
+    };
     
-    let animationBlock = {
-      switch self.blurConfig {
-        case .none:
-          return {
-            blurView.blurEffectStyle = .none;
-          };
-          
-        case let .standard(blurEffectStyle):
-          return {
-            blurView.blurEffectStyle = blurEffectStyle;
-          };
-          
-        case let .customEffectIntensity(blurEffectStyle, intensity):
-          return {
-            blurView.blurEffectStyle = blurEffectStyle;
-            blurView.setEffectIntensity(intensity);
-          };
-          
-        case let .customBlurRadius(blurEffectStyle, radius):
-          blurView.blurEffectStyle = blurEffectStyle;
-          
-          let blurFilterNew = LayerFilterType.gaussianBlur(
-            radius: radius,
-            shouldNormalizeEdges: true
+    switch self.animationConfig {
+      case let .some(animationConfig):
+        do {
+          try self.applyBlurModeWithAnimation(
+            nextBlurMode: blurModeNew,
+            withAnimationConfig: animationConfig
           );
+          
+        } catch {
+          fallthrough;
+        };
         
-          try! blurView.updateMatchingFilter(
-            with: blurFilterNew,
-            shouldImmediatelyApply: false
-          );
-          
-          return {
-            try! blurView.applyRequestedFilterEffects();
-          };
-          
-      };
-    }();
+      case .none:
+        try? self.applyBlurMode(nextBlurMode: blurModeNew);
+    };
+  };
+  
+  // MARK: - Public Functions
+  // ------------------------
+  
+  public func applyBlurMode(nextBlurMode: VisualEffectBlurMode) throws {
+    guard let blurView = self.blurView else {
+      throw RNIVisualEffectViewError(errorCode: .unexpectedNilValue);
+    };
     
-    let animator = self.animationConfig?.createAnimator(
-      gestureInitialVelocity: .zero
+    try blurView.applyBlurMode(
+      nextBlurMode,
+      useAnimationFriendlyWorkaround: false
+    );
+  };
+  
+  public func applyBlurModeWithAnimation(
+    nextBlurMode: VisualEffectBlurMode,
+    withAnimationConfig animationConfig: AnimationConfig,
+    extraAnimations extraAnimationsBlock: Optional<() -> Void> = nil,
+    completion completionBlock: Optional<(_ isSuccess: Bool) -> Void> = nil
+  ) throws {
+  
+    guard let blurView = self.blurView else {
+      throw RNIVisualEffectViewError(errorCode: .unexpectedNilValue);
+    };
+    
+    let animationBlocks = try blurView.createAnimationBlocks(
+      applyingBlurMode: nextBlurMode,
+      shouldAnimateAlpha: false
     );
     
+    let animator =
+      animationConfig.createAnimator(gestureInitialVelocity: .zero);
+      
+    let animatorPrev = self._animator;
+    self._animator = animator;
+      
     let startAnimation = {
-      guard let animator = animator else {
-        return animationBlock;
-      };
+      animatorPrev?.stopAnimation(true);
       
-      self._animator?.stopAnimation(true);
-      self._animator = animator;
+      try animationBlocks.setup();
+      animator.startAnimation();
+    };
       
-      animator.addAnimations(animationBlock);
-      animator.addCompletion { _ in
-        self._animator = nil;
-      };
-      
-      return {
-        animator.startAnimation();
-      };
-    }();
+    animator.addCompletion { _ in
+      self._animator = nil;
+      animationBlocks.completion();
+    };
     
+    animator.addAnimations {
+      animationBlocks.animation();
+    }
+    
+    if let completionBlock = completionBlock {
+      animator.addCompletion {
+        let isSuccess = $0 == .end;
+        completionBlock(isSuccess);
+      };
+    };
+    
+    if let extraAnimationsBlock = extraAnimationsBlock {
+      animator.addAnimations {
+        extraAnimationsBlock();
+      }
+    };
+
+    /// NOTE:
+    /// animator delay not working correctly, so use dispatch instead
+    ///
     if let animationDelay = self.animationDelay {
       DispatchQueue.main.asyncAfter(deadline: .now() + animationDelay) {
-        startAnimation();
+        do {
+          try startAnimation();
+          
+        } catch {
+          try? self.applyBlurMode(nextBlurMode: nextBlurMode);
+          completionBlock?(false);
+        };
       };
-      
+        
     } else {
-      startAnimation();
+      do {
+        try startAnimation();
+        
+      } catch {
+        throw RNIVisualEffectViewError(errorCode: .runtimeError);
+      };
     };
   };
 };

@@ -29,7 +29,7 @@ RCT_EXPORT_MODULE(RNIBlurView)
 }
 #endif
 
-RNI_EXPORT_VIEW_PROPERTY(blurConfig, NSDictionary);
+RNI_EXPORT_VIEW_PROPERTY(blurMode, NSDictionary);
 RNI_EXPORT_VIEW_PROPERTY(animationConfig, NSDictionary);
 
 @end
