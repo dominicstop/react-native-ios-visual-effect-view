@@ -15,11 +15,11 @@ This library + documentation is currently not finished yet. For now, please brow
 
 ### Acknowledgements
 
-The initial version of this library  (i.e. version `0.x`) was made possible through a generous `$3,250` sponsorship by [natew](https://github.com/natew) + [tamagui](https://github.com/tamagui/tamagui) over the course of ≈ 3.5 months (from: `05/27/24` to `09/24`) 🐦✨
+The initial version of this library  (i.e. version `0.x`) was made possible through a generous `$3,750` sponsorship by [natew](https://github.com/natew) + [tamagui](https://github.com/tamagui/tamagui) over the course of 4 months (from: `05/27/24` to `09/30/24`) 🐦✨
 
 <br>
 
-very special thanks to: [junzhengca](https://github.com/junzhengca), [brentvatne](https://github.com/brentvatne), and [expo](https://github.com/expo) for sponsoring my work 🥺 (if you have the means to do so, please considering sponsoring [here](https://github.com/sponsors/dominicstop))
+very special thanks to: [junzhengca](https://github.com/junzhengca), [brentvatne](https://github.com/brentvatne), [expo](https://github.com/expo), [EvanBacon](https://github.com/EvanBacon), [corasan](https://github.com/corasan), [lauridskern](https://github.com/lauridskern), and [ronintechnologies](https://github.com/ronintechnologies) for becoming a monthly sponsor and [fobos531](https://github.com/fobos531) for being a one time sponsor 🥺 (if you have the means to do so, please considering sponsoring [here](https://github.com/sponsors/dominicstop))
 
 <br><br>
 
