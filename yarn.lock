@@ -10462,6 +10462,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-ios-utilities@npm:>=5.0.0-46":
+  version: 5.0.0-46
+  resolution: "react-native-ios-utilities@npm:5.0.0-46"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: b86e355945bf3fbe54a3f8e0f5430f680baf2c8c274512432b75fd703beecf24974a24729899c0458760677baaf52e86888572c3c00fea13545aa393f72371ec
+  languageName: node
+  linkType: hard
+
 "react-native-ios-visual-effect-view-example@workspace:example":
   version: 0.0.0-use.local
   resolution: "react-native-ios-visual-effect-view-example@workspace:example"
@@ -10502,7 +10512,7 @@ __metadata:
     react: 18.2.0
     react-native: 0.75.2
     react-native-builder-bob: ^0.26.0
-    react-native-ios-utilities: 5.0.0-27
+    react-native-ios-utilities: ">=5.0.0-46"
     release-it: ^15.0.0
     turbo: ^1.10.7
     typescript: ^5.2.2
