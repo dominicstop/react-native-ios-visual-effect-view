@@ -10452,23 +10452,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-ios-utilities@npm:5.0.0-27":
-  version: 5.0.0-27
-  resolution: "react-native-ios-utilities@npm:5.0.0-27"
+"react-native-ios-utilities@npm:>=5.0.0-51":
+  version: 5.0.0-51
+  resolution: "react-native-ios-utilities@npm:5.0.0-51"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: c867a2002d867597013f8aafc0aa4f980c852798c62537380562f8b5f48112af0bcad5595a045a715c5a22c3094b2da0112478e633f4ecb004ea5d4e394c71e5
-  languageName: node
-  linkType: hard
-
-"react-native-ios-utilities@npm:>=5.0.0-46":
-  version: 5.0.0-46
-  resolution: "react-native-ios-utilities@npm:5.0.0-46"
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: b86e355945bf3fbe54a3f8e0f5430f680baf2c8c274512432b75fd703beecf24974a24729899c0458760677baaf52e86888572c3c00fea13545aa393f72371ec
+  checksum: d5d7cd900f3da3e4093763fe4943d3cc443cb958af1e5edf859952cbf67d805ecc9d21a5c8c7f44c46997bec6edccb6f57af9aac1700c94d0a562794fc0289ce
   languageName: node
   linkType: hard
 
@@ -10479,7 +10469,7 @@ __metadata:
     "@babel/core": ^7.20.0
     "@babel/preset-env": ^7.20.0
     "@babel/runtime": ^7.20.0
-    "@react-native-community/slider": ^4.5.2
+    "@react-native-community/slider": ^4.5.5
     "@react-native/babel-preset": 0.74.85
     "@react-native/metro-config": 0.74.85
     "@react-native/typescript-config": 0.74.85
@@ -10492,7 +10482,7 @@ __metadata:
     react: 18.3.1
     react-native: 0.75.2
     react-native-codegen: 0.71.3
-    react-native-ios-utilities: 5.0.0-27
+    react-native-ios-utilities: ">=5.0.0-51"
     react-native-safe-area-context: ^4.10.8
     react-native-screens: ^3.34.0
   languageName: unknown
@@ -10512,7 +10502,7 @@ __metadata:
     react: 18.2.0
     react-native: 0.75.2
     react-native-builder-bob: ^0.26.0
-    react-native-ios-utilities: ">=5.0.0-46"
+    react-native-ios-utilities: ">=5.0.0-51"
     release-it: ^15.0.0
     turbo: ^1.10.7
     typescript: ^5.2.2

@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* IosVisualEffectViewExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* IosVisualEffectViewExampleTests.m */; };
+		129C03A8A86DE13B9A55D18E /* Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E86E6038B81EE8FEF42DEAC /* Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		364BBB994AEAE1FA72B005E2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = E0CB7BBAC20AEEC04DF86BF1 /* PrivacyInfo.xcprivacy */; };
-		5B1E27920D57C1DF9C7F200C /* libPods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 054751D19333B086105B8E07 /* libPods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		919060144340D503A6C261A8 /* libPods-IosVisualEffectViewExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6673EFA462BAAD21347BF8DD /* libPods-IosVisualEffectViewExample.a */; };
+		ADB9852A57DE1D3AC09343DD /* Pods_IosVisualEffectViewExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452DECF56E541F0D17ED9715 /* Pods_IosVisualEffectViewExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +31,6 @@
 		00E356EE1AD99517003FC87E /* IosVisualEffectViewExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IosVisualEffectViewExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* IosVisualEffectViewExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IosVisualEffectViewExampleTests.m; sourceTree = "<group>"; };
-		054751D19333B086105B8E07 /* libPods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* IosVisualEffectViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosVisualEffectViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = IosVisualEffectViewExample/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = IosVisualEffectViewExample/AppDelegate.mm; sourceTree = "<group>"; };
@@ -42,7 +41,8 @@
 		2671F76B142C712192EEE475 /* Pods-IosVisualEffectViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosVisualEffectViewExample.release.xcconfig"; path = "Target Support Files/Pods-IosVisualEffectViewExample/Pods-IosVisualEffectViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		290CECE6B6F56EABBB82154E /* Pods-IosVisualEffectViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosVisualEffectViewExample.debug.xcconfig"; path = "Target Support Files/Pods-IosVisualEffectViewExample/Pods-IosVisualEffectViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 		2A33319156B2D32C45C90AED /* Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests/Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6673EFA462BAAD21347BF8DD /* libPods-IosVisualEffectViewExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IosVisualEffectViewExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		452DECF56E541F0D17ED9715 /* Pods_IosVisualEffectViewExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosVisualEffectViewExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E86E6038B81EE8FEF42DEAC /* Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = IosVisualEffectViewExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		883788DD2C71C0EF007F2293 /* ci_post_clone.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_clone.sh; sourceTree = "<group>"; };
 		E0CB7BBAC20AEEC04DF86BF1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = IosVisualEffectViewExample/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B1E27920D57C1DF9C7F200C /* libPods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.a in Frameworks */,
+				129C03A8A86DE13B9A55D18E /* Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				919060144340D503A6C261A8 /* libPods-IosVisualEffectViewExample.a in Frameworks */,
+				ADB9852A57DE1D3AC09343DD /* Pods_IosVisualEffectViewExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				6673EFA462BAAD21347BF8DD /* libPods-IosVisualEffectViewExample.a */,
-				054751D19333B086105B8E07 /* libPods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.a */,
+				452DECF56E541F0D17ED9715 /* Pods_IosVisualEffectViewExample.framework */,
+				7E86E6038B81EE8FEF42DEAC /* Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -483,7 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 55;
 				DEVELOPMENT_TEAM = ZC7A6XV8GR;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = IosVisualEffectViewExample/Info.plist;
@@ -516,7 +516,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 55;
 				DEVELOPMENT_TEAM = ZC7A6XV8GR;
 				INFOPLIST_FILE = IosVisualEffectViewExample/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "RNIVisualEffectView Example";
@@ -592,6 +592,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers/react/nativemodule/core",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers/platform/ios",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-NativeModulesApple/React_NativeModulesApple.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers/react/renderer/graphics/platform/ios",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD = "";
 				LDPLUSPLUS = "";
@@ -670,6 +681,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers/react/nativemodule/core",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers/platform/ios",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-NativeModulesApple/React_NativeModulesApple.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers/react/renderer/graphics/platform/ios",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD = "";
 				LDPLUSPLUS = "";
