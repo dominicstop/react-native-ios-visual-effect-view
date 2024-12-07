@@ -25,7 +25,7 @@ RCT_EXPORT_MODULE(RNIVisualEffectView)
 #ifndef RCT_NEW_ARCH_ENABLED
 - (UIView *)view
 {
-  return [[RNIVisualEffectView new] initWithBridge:self.bridge];
+  return [[RNIVisualEffectView alloc] initWithBridge:self.bridge];
 }
 #endif
 

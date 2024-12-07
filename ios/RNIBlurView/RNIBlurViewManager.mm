@@ -25,7 +25,7 @@ RCT_EXPORT_MODULE(RNIBlurView)
 #ifndef RCT_NEW_ARCH_ENABLED
 - (UIView *)view
 {
-  return [[RNIBlurView new] initWithBridge:self.bridge];
+  return [[RNIBlurView alloc] initWithBridge:self.bridge];
 }
 #endif
 
