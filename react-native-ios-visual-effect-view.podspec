@@ -16,6 +16,13 @@ fabric_compiler_flags = '-DRN_FABRIC_ENABLED -DRCT_NEW_ARCH_ENABLED'
 folly_version = '2022.05.16.00'
 folly_compiler_flags = '-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32'
 
+linkage = ENV['USE_FRAMEWORKS']
+
+puts "react-native-ios-visual-effect-view"
+puts " - reactNativeTargetVersion: #{reactNativeVersion}"
+puts " - fabric_enabled: #{fabric_enabled}"
+puts " - linkage: #{linkage}"
+
 Pod::Spec.new do |s|
   s.name           = "react-native-ios-visual-effect-view"
   s.version        = package["version"]
@@ -39,6 +46,7 @@ Pod::Spec.new do |s|
     '"${PODS_ROOT}/Headers/Public/React-hermes"',
     '"${PODS_ROOT}/Headers/Public/hermes-engine"',
     '"${PODS_ROOT}/Headers/Private/React-Core"',
+    '"${PODS_CONFIGURATION_BUILD_DIR}/React-rendererconsistency/React_rendererconsistency.framework/Headers"',
     #'"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ios-utilities/Swift Compatibility Header"',
     #'"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ios-visual-effect-view/Swift Compatibility Header"',
     #'"${PODS_ROOT}/Headers/Public/react-native-ios-utilities"',
@@ -57,6 +65,7 @@ Pod::Spec.new do |s|
     'OTHER_SWIFT_FLAGS' => "$(inherited) #{fabric_enabled ? fabric_compiler_flags : ''}"
   }
   user_header_search_paths = [
+    '"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ios-utilities/**"',
     '"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ios-utilities/Swift Compatibility Header"',
     '"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ios-utilities/**"',
     '"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ios-visual-effect-view/Swift Compatibility Header"',
@@ -69,6 +78,7 @@ Pod::Spec.new do |s|
     '"$(PODS_CONFIGURATION_BUILD_DIR)/React-bridging/react_bridging.framework/Headers"',
     '"$(PODS_ROOT)/Headers/Private/Yoga"',
   ]
+  
   if fabric_enabled && ENV['USE_FRAMEWORKS']
     user_header_search_paths << "\"$(PODS_ROOT)/DoubleConversion\""
     user_header_search_paths << "\"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers\""
@@ -126,6 +136,8 @@ Pod::Spec.new do |s|
     exclude_files.append('ios/Fabric/')
     exclude_files.append('common/cpp/fabric/')
   end
+
+  s.public_header_files = 'ios/**/*.h'
 
   s.exclude_files = exclude_files
   s.compiler_flags = compiler_flags
