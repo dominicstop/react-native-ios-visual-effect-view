@@ -9,7 +9,7 @@
 // the module.
 // Otherwise, it's available only locally with double-quoted imports.
 #if __has_include(<react_native_ios_visual_effect_view/react_native_ios_visual_effect_view-Swift.h>)
-#import "<react_native_ios_visual_effect_view/react_native_ios_visual_effect_view-Swift.h>"
+#import <react_native_ios_visual_effect_view/react_native_ios_visual_effect_view-Swift.h>
 #else
 #import "react_native_ios_visual_effect_view-Swift.h"
 #endif

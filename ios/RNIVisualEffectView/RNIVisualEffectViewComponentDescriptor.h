@@ -10,8 +10,8 @@
 
 #include "RNIVisualEffectViewShadowNode.h"
 
-#include <react-native-ios-utilities/RNIBaseViewComponentDescriptor.h>
-#include <react-native-ios-utilities/RNIBaseViewState.h>
+#include "react_native_ios_utilities/RNIBaseViewComponentDescriptor.h"
+#include "react_native_ios_utilities/RNIBaseViewState.h"
 
 #include <react/renderer/core/ConcreteComponentDescriptor.h>
 

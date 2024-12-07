@@ -6,21 +6,18 @@
 //
 
 #import "RNIVisualEffectView.h"
+#import "../Swift.h"
 
-#import "react-native-ios-visual-effect-view/Swift.h"
-#import <react-native-ios-utilities/RNIBaseView.h>
-
-#import <react-native-ios-utilities/RNIContentViewParentDelegate.h>
-
-
-#import <react-native-ios-utilities/UIApplication+RNIHelpers.h>
-#import <react-native-ios-utilities/RNIObjcUtils.h>
+#import "react_native_ios_utilities/RNIBaseView.h"
+#import "react_native_ios_utilities/RNIContentViewParentDelegate.h"
+#import "react_native_ios_utilities/UIApplication+RNIHelpers.h"
+#import "react_native_ios_utilities/RNIObjcUtils.h"
 
 #if RCT_NEW_ARCH_ENABLED
 #include "RNIVisualEffectViewComponentDescriptor.h"
 
-#include <react-native-ios-utilities/RNIBaseViewState.h>
-#include <react-native-ios-utilities/RNIBaseViewProps.h>
+#include "react_native_ios_utilities/RNIBaseViewState.h"
+#include "react_native_ios_utilities/RNIBaseViewProps.h"
 
 #import <React/RCTConversions.h>
 #import <React/RCTFabricComponentsPlugins.h>
