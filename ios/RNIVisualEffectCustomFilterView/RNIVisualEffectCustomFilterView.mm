@@ -1,11 +1,11 @@
 //
-//  RNIVisualEffectView.mm
+//  RNIVisualEffectCustomFilterView.mm
 //  react-native-ios-visual-effect-view
 //
 //  Created by Dominic Go on 6/6/24.
 //
 
-#import "RNIVisualEffectView.h"
+#import "RNIVisualEffectCustomFilterView.h"
 #import "../Swift.h"
 
 #if __has_include(<react_native_ios_utilities/RNIBaseView.h>)
@@ -21,7 +21,7 @@
 #endif
 
 #if RCT_NEW_ARCH_ENABLED
-#include "RNIVisualEffectViewComponentDescriptor.h"
+#include "RNIVisualEffectCustomFilterViewComponentDescriptor.h"
 
 #if __has_include(<react_native_ios_utilities/RNIBaseViewState.h>)
 #include <react_native_ios_utilities/RNIBaseViewState.h>
@@ -53,10 +53,10 @@ using namespace facebook::react;
 #endif
 
 
-@interface RNIVisualEffectView () <
+@interface RNIVisualEffectCustomFilterView () <
   RNIContentViewParentDelegate,
 #ifdef RCT_NEW_ARCH_ENABLED
-  RCTRNIVisualEffectViewViewProtocol
+  RCTRNIVisualEffectCustomFilterViewViewProtocol
 #else
   RCTInvalidating
 #endif
@@ -65,7 +65,7 @@ using namespace facebook::react;
 }
 @end
 
-@implementation RNIVisualEffectView {
+@implementation RNIVisualEffectCustomFilterView {
 }
 
 // MARK: - Init
@@ -80,7 +80,7 @@ using namespace facebook::react;
 
 + (Class)viewDelegateClass
 {
-  return [RNIVisualEffectViewDelegate class];
+  return [RNIVisualEffectCustomFilterViewDelegate class];
 }
 
 // MARK: - Fabric
@@ -89,12 +89,12 @@ using namespace facebook::react;
 #if RCT_NEW_ARCH_ENABLED
 + (ComponentDescriptorProvider)componentDescriptorProvider
 {
-  return concreteComponentDescriptorProvider<RNIVisualEffectViewComponentDescriptor>();
+  return concreteComponentDescriptorProvider<RNIVisualEffectCustomFilterViewComponentDescriptor>();
 }
 
-Class<RCTComponentViewProtocol> RNIVisualEffectViewCls(void)
+Class<RCTComponentViewProtocol> RNIVisualEffectCustomFilterViewCls(void)
 {
-  return RNIVisualEffectView.class;
+  return RNIVisualEffectCustomFilterView.class;
 }
 #else
 

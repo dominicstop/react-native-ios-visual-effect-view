@@ -1,5 +1,5 @@
 //
-//  RNIVisualEffectViewShadowNode.h
+//  RNIVisualEffectCustomFilterViewShadowNode.h
 //  react-native-ios-visual-effect-view
 //
 //  Created by Dominic Go on 6/6/24.
@@ -21,10 +21,10 @@
 
 namespace facebook::react {
 
-JSI_EXPORT extern const char RNIVisualEffectViewComponentName[] = "RNIVisualEffectView";
+JSI_EXPORT extern const char RNIVisualEffectCustomFilterViewComponentName[] = "RNIVisualEffectCustomFilterView";
 
-class JSI_EXPORT RNIVisualEffectViewShadowNode final :
-  public RNIBaseViewShadowNode<RNIVisualEffectViewComponentName> {
+class JSI_EXPORT RNIVisualEffectCustomFilterViewShadowNode final :
+  public RNIBaseViewShadowNode<RNIVisualEffectCustomFilterViewComponentName> {
 
 public:
   using RNIBaseViewShadowNode::RNIBaseViewShadowNode;

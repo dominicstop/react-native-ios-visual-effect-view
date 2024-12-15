@@ -1,5 +1,5 @@
 //
-//  RNIVisualEffectViewDelegate.swift
+//  RNIVisualEffectCustomFilterViewDelegate.swift
 //  react-native-ios-visual-effect-view
 //
 //  Created by Dominic Go on 6/6/24.
@@ -10,10 +10,10 @@ import react_native_ios_utilities
 import DGSwiftUtilities
 import VisualEffectBlurView
 
-@objc(RNIVisualEffectViewDelegate)
-public final class RNIVisualEffectViewDelegate: UIView, RNIContentView {
+@objc(RNIVisualEffectCustomFilterViewDelegate)
+public final class RNIVisualEffectCustomFilterViewDelegate: UIView, RNIContentView {
   
-  public static var propKeyPathMap: Dictionary<String, PartialKeyPath<RNIVisualEffectViewDelegate>> {
+  public static var propKeyPathMap: Dictionary<String, PartialKeyPath<RNIVisualEffectCustomFilterViewDelegate>> {
     return [:];
   };
   
@@ -139,9 +139,9 @@ public final class RNIVisualEffectViewDelegate: UIView, RNIContentView {
   };
 };
 
-extension RNIVisualEffectViewDelegate: RNIContentViewDelegate {
+extension RNIVisualEffectCustomFilterViewDelegate: RNIContentViewDelegate {
 
-  public typealias KeyPathRoot = RNIVisualEffectViewDelegate;
+  public typealias KeyPathRoot = RNIVisualEffectCustomFilterViewDelegate;
 
   // MARK: Paper + Fabric
   // --------------------

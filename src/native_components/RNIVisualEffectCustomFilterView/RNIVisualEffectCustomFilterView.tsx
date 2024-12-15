@@ -1,16 +1,16 @@
 import * as React from 'react';
 import type { StateReactTag, StateViewID } from 'react-native-ios-utilities';
 
-import { RNIVisualEffectNativeView } from './RNIVisualEffectNativeView';
+import { RNIVisualEffectCustomFilterNativeView } from './RNIVisualEffectCustomFilterNativeView';
 
 import type { 
-	RNIVisualEffectViewProps, 
-	RNIVisualEffectViewRef, 
-} from './RNIVisualEffectViewTypes';
+	RNIVisualEffectCustomFilterViewProps, 
+	RNIVisualEffectCustomFilterViewRef, 
+} from './RNIVisualEffectCustomFilterViewTypes';
 
-export const RNIVisualEffectView = React.forwardRef<
-	RNIVisualEffectViewRef, 
-	RNIVisualEffectViewProps
+export const RNIVisualEffectCustomFilterView = React.forwardRef<
+	RNIVisualEffectCustomFilterViewRef, 
+	RNIVisualEffectCustomFilterViewProps
 >((props, ref) => {
 
 	const [viewID, setViewID] = React.useState<StateViewID>();
@@ -26,7 +26,7 @@ export const RNIVisualEffectView = React.forwardRef<
 	}));
 
 	return (
-		<RNIVisualEffectNativeView
+		<RNIVisualEffectCustomFilterNativeView
 			{...props}
 			onDidSetViewID={(event) => {
 				setViewID(event.nativeEvent.viewID);
@@ -35,6 +35,6 @@ export const RNIVisualEffectView = React.forwardRef<
 			}}
 		>
 			{props.children}
-		</RNIVisualEffectNativeView>
+		</RNIVisualEffectCustomFilterNativeView>
 	);
 });

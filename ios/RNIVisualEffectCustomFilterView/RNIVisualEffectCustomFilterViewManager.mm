@@ -1,11 +1,11 @@
 //
-//  RNIVisualEffectViewManager.m
+//  RNIVisualEffectCustomFilterViewManager.mm
 //  react-native-ios-visual-effect-view
 //
 //  Created by Dominic Go on 6/6/24.
 //
 
-#import "RNIVisualEffectView.h"
+#import "RNIVisualEffectCustomFilterView.h"
 #import <objc/runtime.h>
 
 #if __has_include(<react_native_ios_utilities/RNIBaseViewUtils.h>)
@@ -19,17 +19,17 @@
 #import <React/RCTUIManager.h>
 
 
-@interface RNIVisualEffectViewManager : RCTViewManager
+@interface RNIVisualEffectCustomFilterViewManager : RCTViewManager
 @end
 
-@implementation RNIVisualEffectViewManager
+@implementation RNIVisualEffectCustomFilterViewManager
 
-RCT_EXPORT_MODULE(RNIVisualEffectView)
+RCT_EXPORT_MODULE(RNIVisualEffectCustomFilterView)
 
 #ifndef RCT_NEW_ARCH_ENABLED
 - (UIView *)view
 {
-  return [[RNIVisualEffectView alloc] initWithBridge:self.bridge];
+  return [[RNIVisualEffectCustomFilterView alloc] initWithBridge:self.bridge];
 }
 #endif
 

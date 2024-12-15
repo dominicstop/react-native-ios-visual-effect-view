@@ -1,5 +1,5 @@
 //
-//  RNIVisualEffectView.h
+//  RNIVisualEffectCustomFilterView.h
 //  react-native-ios-visual-effect-view
 //
 //  Created by Dominic Go on 6/6/24.
@@ -26,6 +26,6 @@
 namespace react = facebook::react;
 #endif
 
-@interface RNIVisualEffectView : RNIBaseView
+@interface RNIVisualEffectCustomFilterView : RNIBaseView
 
 @end

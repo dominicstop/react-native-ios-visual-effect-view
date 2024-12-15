@@ -1,5 +1,5 @@
 import { StyleSheet, View, Text } from 'react-native';
-import { RNIVisualEffectView } from 'react-native-ios-visual-effect-view';
+import { RNIVisualEffectCustomFilterView } from 'react-native-ios-visual-effect-view';
 
 export function RNIVisualEffectViewTest01Screen() {
   return (
@@ -7,7 +7,7 @@ export function RNIVisualEffectViewTest01Screen() {
       <Text style={styles.label}>
         {'❤️\n🧡\n💛\n💚\n💙\n💜\n💖\n💃\n✨'}
       </Text>
-      <RNIVisualEffectView
+      <RNIVisualEffectCustomFilterView
         style={styles.effectOverlay}
       />
     </View>

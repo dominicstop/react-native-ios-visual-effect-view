@@ -8,7 +8,7 @@ export interface NativeProps extends ViewProps {
 };
 
 // stubs
-export default codegenNativeComponent<NativeProps>('RNIVisualEffectView', {
+export default codegenNativeComponent<NativeProps>('RNIVisualEffectCustomFilterView', {
   excludedPlatforms: ['android'],
   interfaceOnly: true,
 }) as HostComponent<NativeProps>;
