@@ -2,7 +2,7 @@
 export const ROUTE_KEYS = {
   home: 'home', 
   blurViewBasicUsage01: 'blurViewBasicUsage01',
-  visualEffectViewTest01: 'visualEffectViewTest01',
+  visualEffectCustomFilterViewTest01: 'visualEffectCustomFilterViewTest01',
   blurViewTest01: 'blurViewTest01',
   blurViewTest02: 'blurViewTest02',
   blurViewTest03: 'blurViewTest03',

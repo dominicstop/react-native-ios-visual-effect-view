@@ -6,7 +6,7 @@ import { RNIBlurViewTest02Screen } from "../examples/RNIBlurViewTest02Screen";
 import { RNIBlurViewTest03Screen } from "../examples/RNIBlurViewTest03Screen";
 import { RNIBlurViewTest04Screen } from "../examples/RNIBlurViewTest04Screen";
 
-import { RNIVisualEffectViewTest01Screen } from "../examples/RNIVisualEffectViewTest01Screen";
+import { RNIVisualEffectCustomFilterViewTest01Screen } from "../examples/RNIVisualEffectCustomFilterViewTest01Screen";
 
 import type { RouteKey } from "./RouteKeys";
 
@@ -25,8 +25,8 @@ export const ROUTE_ITEMS: Array<RouteEntry> = [{
     component: RNIBlurViewBasicUsage01,
   },
   {
-    routeKey: 'visualEffectViewTest01',
-    component: RNIVisualEffectViewTest01Screen,
+    routeKey: 'visualEffectCustomFilterViewTest01',
+    component: RNIVisualEffectCustomFilterViewTest01Screen,
   }, 
   {
     routeKey: 'blurViewTest01',

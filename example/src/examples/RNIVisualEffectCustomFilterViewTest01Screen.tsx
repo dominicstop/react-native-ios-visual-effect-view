@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text } from 'react-native';
 import { RNIVisualEffectCustomFilterView } from 'react-native-ios-visual-effect-view';
 
-export function RNIVisualEffectViewTest01Screen() {
+export function RNIVisualEffectCustomFilterViewTest01Screen() {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>
