@@ -1,5 +1,6 @@
 import type { UniformKeyAndValue } from "react-native-ios-utilities";
-import type { LayerFilterName } from "../types/LayerFilterType";
+import type { LayerFilterName } from "../types/LayerFilterConfig";
+
 
 export const LayerFilterNames: UniformKeyAndValue<LayerFilterName> = {
   alphaFromLuminance: 'alphaFromLuminance',
@@ -15,6 +16,11 @@ export const LayerFilterNames: UniformKeyAndValue<LayerFilterName> = {
   lightVibrant: 'lightVibrant',
   colorMatrixVibrant: 'colorMatrixVibrant',
   variadicBlur: 'variadicBlur',
+  bias: 'bias',
+  colorHueAdjust: 'colorHueAdjust',
+  colorMatrix: 'colorMatrix',
+  distanceField: 'distanceField',
+  invertColors: 'invertColors',
 };
 
 export const LayerFilterNameItems =
