@@ -114,14 +114,16 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
       return;
     };
     
-    try? self._setupContent();
+    try? self._setupContentIfNeeded();
   };
   
   // MARK: - Internal Functions
   // --------------------------
   
-  private func _setupContent() throws {
-    guard !self._didSetup else { return };
+  private func _setupContentIfNeeded() throws {
+    guard !self._didSetup else {
+      return;
+    };
     
     let blurView =
       try VisualEffectAnimatableBlurView(blurMode: self.blurMode);
@@ -301,8 +303,9 @@ extension RNIBlurViewDelegate: RNIContentViewDelegate {
   ) {
     #if !RCT_NEW_ARCH_ENABLED
     superBlock();
+    #else
+    childComponentView.removeFromSuperview();
     #endif
-    
   };
   
   public func notifyOnViewCommandRequest(
