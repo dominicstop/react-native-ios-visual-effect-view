@@ -2,7 +2,7 @@ import type { UniformKeyAndValue } from "react-native-ios-utilities";
 import type { LayerFilterName } from "../types/LayerFilterConfig";
 
 
-export const LayerFilterNames: UniformKeyAndValue<LayerFilterName> = {
+export const LayerFilterConfigTypes: UniformKeyAndValue<LayerFilterName> = {
   alphaFromLuminance: 'alphaFromLuminance',
   averagedColor: 'averagedColor',
   luminosityCurveMap: 'luminosityCurveMap',
@@ -24,4 +24,4 @@ export const LayerFilterNames: UniformKeyAndValue<LayerFilterName> = {
 };
 
 export const LayerFilterNameItems =
-  Object.keys(LayerFilterNames) as Array<LayerFilterName>;
+  Object.keys(LayerFilterConfigTypes) as Array<LayerFilterName>;
