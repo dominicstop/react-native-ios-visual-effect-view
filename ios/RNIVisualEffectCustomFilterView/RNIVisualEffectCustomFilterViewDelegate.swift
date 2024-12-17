@@ -25,7 +25,7 @@ public final class RNIVisualEffectCustomFilterViewDelegate: UIView, RNIContentVi
   // MARK: Properties
   // ----------------
   
-  var _didSendEvents = false;
+  var _didSetup = false;
   
   
   var visualEffectView: VisualEffectView?;
@@ -151,10 +151,6 @@ extension RNIVisualEffectCustomFilterViewDelegate: RNIContentViewDelegate {
   // MARK: Paper + Fabric
   // --------------------
   
-  public func notifyOnInit(sender: RNIContentViewParentDelegate) {
-    self._setupContent();
-  };
-    
   public func notifyOnMountChildComponentView(
     sender: RNIContentViewParentDelegate,
     childComponentView: UIView,
@@ -177,68 +173,19 @@ extension RNIVisualEffectCustomFilterViewDelegate: RNIContentViewDelegate {
   ) {
     #if !RCT_NEW_ARCH_ENABLED
     superBlock();
+    #else
+    childComponentView.removeFromSuperview();
     #endif
-    
-  }
-  
-  public func notifyDidSetProps(sender: RNIContentViewParentDelegate) {
-    // no-op
-  };
-  
-  public func notifyOnUpdateLayoutMetrics(
-    sender: RNIContentViewParentDelegate,
-    oldLayoutMetrics: RNILayoutMetrics,
-    newLayoutMetrics: RNILayoutMetrics
-  ) {
-    // no-op
-  };
-  
-  public func notifyOnViewCommandRequest(
-    sender: RNIContentViewParentDelegate,
-    forCommandName commandName: String,
-    withCommandArguments commandArguments: NSDictionary,
-    resolve resolveBlock: (NSDictionary) -> Void,
-    reject rejectBlock: (String) -> Void
-  ) {
-    // no-op
   };
   
   // MARK: Fabric Only
   // -----------------
 
   #if RCT_NEW_ARCH_ENABLED
-  public func notifyOnUpdateProps(
-    sender: RNIContentViewParentDelegate,
-    oldProps: NSDictionary,
-    newProps: NSDictionary
-  ) {
-    // no-op
-  };
-  
-  public func notifyOnUpdateState(
-    sender: RNIContentViewParentDelegate,
-    oldState: NSDictionary?,
-    newState: NSDictionary
-  ) {
-    // no-op
-  };
-  
-  public func notifyOnFinalizeUpdates(
-    sender: RNIContentViewParentDelegate,
-    updateMaskRaw: Int,
-    updateMask: RNIComponentViewUpdateMask
-  ) {
-    // no-op
-  };
-  
   public func shouldRecycleContentDelegate(
     sender: RNIContentViewParentDelegate
   ) -> Bool {
     return false;
-  }
-  
-  public func notifyOnPrepareForReuse(sender: RNIContentViewParentDelegate) {
-    // no-op
   };
   #else
   
