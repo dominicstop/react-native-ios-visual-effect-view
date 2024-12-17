@@ -114,7 +114,7 @@ Pod::Spec.new do |s|
   s.dependency 'ComputableLayout'
 
   s.dependency 'DGSwiftUtilities', '~> 0.35'
-  s.dependency 'VisualEffectBlurView', '~> 4.7'
+  s.dependency 'VisualEffectBlurView', '~> 4.8'
 
   if fabric_enabled
     compiler_flags << ' ' << fabric_compiler_flags
