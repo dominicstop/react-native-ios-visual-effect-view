@@ -1,9 +1,10 @@
+import type { ColorMatrixRGBAPresetInit } from "./ColorMatrixRGBAPreset";
 
 export type ColorMatrixRGBAConstant = 
   | 'zero'
   | 'identity';
 
-export type ColorMatrixRGBAInit = {
+export type ColorMatrixRGBA = {
   m11: number; 
   m12: number; 
   m13: number; 
@@ -26,7 +27,15 @@ export type ColorMatrixRGBAInit = {
   m45: number;
 };
 
+export type ColorMatrixRGBAInit = {
+  mode: 'constant';
+  value: ColorMatrixRGBAConstant;
 
-export type ColorMatrixRGBA = 
-  & ColorMatrixRGBAConstant
-  & ColorMatrixRGBAInit;
+} | {
+  mode: 'rawValue';
+  values: ColorMatrixRGBA;
+
+} | {
+  mode: 'preset';
+  preset: ColorMatrixRGBAPresetInit
+};
