@@ -1288,7 +1288,7 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - VisualEffectBlurView (~> 4.6)
+    - VisualEffectBlurView (~> 4.7)
     - Yoga
   - react-native-safe-area-context (4.14.1):
     - DoubleConversion
@@ -1726,7 +1726,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - Yoga
   - SocketRocket (0.7.0)
-  - VisualEffectBlurView (4.6.0):
+  - VisualEffectBlurView (4.7.0):
     - DGSwiftUtilities (~> 0.33)
   - Yoga (0.0.0)
 
@@ -1987,7 +1987,7 @@ SPEC CHECKSUMS:
   React-Mapbuffer: db173bede5ac5cb1c82d4a6a8597477ba87c5648
   React-microtasksnativemodule: a5cd87542a308060e645d337b036733c327dc01b
   react-native-ios-utilities: ab9399aa6a9df01acfa9173a90c25c0299a9677b
-  react-native-ios-visual-effect-view: 6d972cbc97163515f6327367d3af1f9ddb369520
+  react-native-ios-visual-effect-view: fd42d133bfd72b288ccbf082454a00435d86fdd6
   react-native-safe-area-context: d71edcee579673b370c053804f34c40c1f250976
   react-native-slider: da7c05c52827d597bb7824c5b1acb35741d41f89
   React-nativeconfig: 5fc2b05a590eb704128f5a4fc8ea6fa7b847e6e8
@@ -2019,7 +2019,7 @@ SPEC CHECKSUMS:
   RNFlashList: 67528478a3686204442522a5a4fc33e0f9b11449
   RNScreens: f493b156fe5de2434806b5a2c410800b2cd76c0e
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
-  VisualEffectBlurView: 370b0f245447a5bac8adbe444cf505e8cfc7dc64
+  VisualEffectBlurView: 95c5f2de4d2f078446a0b0d6bf0f8222860c3e88
   Yoga: 36d44f1d31d7c11be1067e5c7a70a12c2eed355c
 
 PODFILE CHECKSUM: a471e1977a5f1639988198527f518bddae24b950
