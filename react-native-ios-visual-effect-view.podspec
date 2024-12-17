@@ -111,8 +111,9 @@ Pod::Spec.new do |s|
   s.dependency 'React-NativeModulesApple' if reactNativeTargetVersion >= 72
 
   s.dependency 'react-native-ios-utilities'
-  s.dependency 'DGSwiftUtilities'
   s.dependency 'ComputableLayout'
+
+  s.dependency 'DGSwiftUtilities', '~> 0.35'
   s.dependency 'VisualEffectBlurView', '~> 4.7'
 
   if fabric_enabled
