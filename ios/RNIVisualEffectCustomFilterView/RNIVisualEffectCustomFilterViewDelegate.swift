@@ -10,12 +10,13 @@ import react_native_ios_utilities
 import DGSwiftUtilities
 import VisualEffectBlurView
 
+
 @objc(RNIVisualEffectCustomFilterViewDelegate)
 public final class RNIVisualEffectCustomFilterViewDelegate: UIView, RNIContentView {
   
-  public static var propKeyPathMap: Dictionary<String, PartialKeyPath<RNIVisualEffectCustomFilterViewDelegate>> {
-    return [:];
-  };
+  public static let propKeyPathMap: PropKeyPathMap = [
+    "currentFilters": \.currentFiltersProp,
+  ];
   
   public enum Events: String, CaseIterable {
     case onDidSetViewID;
@@ -39,7 +40,11 @@ public final class RNIVisualEffectCustomFilterViewDelegate: UIView, RNIContentVi
   
   public var reactProps: NSDictionary = [:];
   
-  // TBA
+  public var currentFilters: [LayerFilterConfig] = [];
+  @objc public var currentFiltersProp: NSArray? {
+    willSet {
+    }
+  };
   
   // MARK: Init
   // ----------

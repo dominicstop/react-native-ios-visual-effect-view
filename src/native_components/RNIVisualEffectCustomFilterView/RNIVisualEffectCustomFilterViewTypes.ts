@@ -13,7 +13,10 @@ export type RNIVisualEffectCustomFilterViewInheritedOptionalProps = Partial<Pick
   | 'onDidSetViewID'
 >>;
 
-export type RNIVisualEffectCustomFilterViewInheritedRequiredProps = {};
+export type RNIVisualEffectCustomFilterViewInheritedRequiredProps = Pick<RNIVisualEffectCustomFilterNativeViewProps,
+  | 'onDidSetViewID'
+  | 'currentFilters'
+>;
 
 export type RNIVisualEffectCustomFilterViewInheritedProps =
     RNIVisualEffectCustomFilterViewInheritedOptionalProps
