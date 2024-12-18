@@ -21,6 +21,8 @@ export const LayerFilterConfigTypes: UniformKeyAndValue<LayerFilterName> = {
   colorMatrix: 'colorMatrix',
   distanceField: 'distanceField',
   invertColors: 'invertColors',
+  colorTransform: 'colorTransform',
+  colorTransformVibrant: 'colorTransformVibrant',
 };
 
 export const LayerFilterNameItems =
