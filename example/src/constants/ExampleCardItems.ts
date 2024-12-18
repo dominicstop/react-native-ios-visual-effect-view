@@ -42,13 +42,14 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
       ], 
     },
     {
-      ...ROUTE_MAP.customFilterViewTest01,
+      ...ROUTE_MAP.customFilterViewExample01,
       type: 'screen',
-      title: "CustomFilterViewTest01",
+      title: 'CustomFilterViewExample01',
+      subtitle: 'example usage, define custom filter',
       desc: [
-        "Test for creating and combining custom filters together",
+        "Basic example for defining and combining filters"
       ],
-    }, 
+    },
     {
       ...ROUTE_MAP.blurViewTest01,
       type: 'screen',
@@ -88,7 +89,15 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
           + " set a custom `VisualEffectBlurMode.blurRadius`",
         "This is an animated version of `BlurViewTest03`",
       ],
-    }
+    },
+    {
+      ...ROUTE_MAP.customFilterViewTest01,
+      type: 'screen',
+      title: "CustomFilterViewTest01",
+      desc: [
+        "Test for creating and combining custom filters together",
+      ],
+    }, 
   ];
 
   const cardItems: Array<ExampleItemCard> = []; 
