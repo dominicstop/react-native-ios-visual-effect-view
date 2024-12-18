@@ -3,30 +3,35 @@ import { StyleSheet, View, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { CardButton, Colors, ExampleItemCard, ObjectPropertyDisplay, UIBlurEffectStyleItems, type UIBlurEffectStyle } from 'react-native-ios-utilities';
-import { RNIBlurView } from 'react-native-ios-visual-effect-view';
+import { BlurView } from 'react-native-ios-visual-effect-view';
 import Slider from '@react-native-community/slider';
 
 
-export function RNIBlurViewTest02Screen() {
+const MAX_BLUR_RADIUS = 64;
+
+export function BlurViewTest03Screen() {
   const [blurEffectStyleCounter, setBlurEffectStyleCounter] = React.useState(0);
-  const [effectIntensity, setEffectIntensity] = React.useState(0);
+  const [blurRadius, setBlurRadius] = React.useState(0);
 
   const blurEffectStyleIndex = 
     blurEffectStyleCounter % UIBlurEffectStyleItems.length;
 
   const blurEffectStyleCurrent = UIBlurEffectStyleItems[blurEffectStyleIndex]!;
 
+  const effectIntensityForOtherEffects = blurRadius / MAX_BLUR_RADIUS;
+
   return (
     <View style={styles.container}>
       <Text style={styles.label}>
         {'❤️\n🧡\n💛\n💚\n💙\n💜\n💖\n💃\n✨'}
       </Text>
-      <RNIBlurView
+      <BlurView
         style={styles.effectOverlay}
         blurMode={{
-          mode: 'blurEffectCustomIntensity',
+          mode: 'blurEffectCustomBlurRadius',
           blurEffectStyle: blurEffectStyleCurrent,
-          effectIntensity: effectIntensity,
+          customBlurRadius: blurRadius,
+          effectIntensityForOtherEffects,
         }}
       />
       <SafeAreaView style={styles.debugOverlayContainer}>
@@ -39,7 +44,11 @@ export function RNIBlurViewTest02Screen() {
             recursiveStyle={styles.debugDisplay}
             object={{
               blurEffectStyleCounter,
-              effectIntensity: effectIntensity.toFixed(2),
+              blurRadius: blurRadius.toFixed(2),
+              
+              effectIntensityForOtherEffects: 
+                effectIntensityForOtherEffects.toFixed(2),
+
               blurEffectStyleCurrent: {
                 [blurEffectStyleIndex]: blurEffectStyleCurrent,
               },
@@ -48,11 +57,11 @@ export function RNIBlurViewTest02Screen() {
           <Slider
             style={[styles.slider, styles.debugCardBodyItem]}
             minimumValue={0}
-            maximumValue={1}
+            maximumValue={MAX_BLUR_RADIUS}
             minimumTrackTintColor={Colors.PURPLE.A700}
             maximumTrackTintColor={`${Colors.PURPLE[900]}50`}
             onValueChange={(newValue) => {
-              setEffectIntensity(newValue);
+              setBlurRadius(newValue);
             }}
           />
           <CardButton

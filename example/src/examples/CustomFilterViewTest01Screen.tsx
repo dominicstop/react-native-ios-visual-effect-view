@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { StyleSheet, View, Text, Animated, Easing, Dimensions, Pressable } from 'react-native';
+import { StyleSheet, View, Animated, Easing, Dimensions, Pressable } from 'react-native';
 
-import { RNIVisualEffectCustomFilterView, type LayerFilterConfig } from 'react-native-ios-visual-effect-view';
+import { CustomFilterView, type LayerFilterConfig } from 'react-native-ios-visual-effect-view';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { CardButton, Colors, ExampleItemCard, ObjectPropertyDisplay } from 'react-native-ios-utilities';
@@ -783,7 +783,7 @@ const FILTER_GROUPS: Array<Array<LayerFilterConfig>> = [
 ];
 
 
-export function RNIVisualEffectCustomFilterViewTest01Screen() {
+export function CustomFilterViewTest01Screen() {
   const [filerGroupCounter, setFilerGroupCounter] = React.useState(0);
   const [shouldShowFilterList, setShouldShowFilterList] = React.useState(false);
 
@@ -869,7 +869,7 @@ export function RNIVisualEffectCustomFilterViewTest01Screen() {
       >
         {emojiString}
       </Animated.Text>
-      <RNIVisualEffectCustomFilterView
+      <CustomFilterView
         style={styles.effectOverlay}
         currentFilters={filerGroupCurrent}
       />

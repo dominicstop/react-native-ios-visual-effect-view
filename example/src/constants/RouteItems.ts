@@ -1,12 +1,12 @@
 import { HomeScreen } from "../components/HomeScreen";
 
-import { RNIBlurViewBasicUsage01 } from "../examples/RNIBlurViewBasicUsage01";
-import { RNIBlurViewTest01Screen } from "../examples/RNIBlurViewTest01Screen";
-import { RNIBlurViewTest02Screen } from "../examples/RNIBlurViewTest02Screen";
-import { RNIBlurViewTest03Screen } from "../examples/RNIBlurViewTest03Screen";
-import { RNIBlurViewTest04Screen } from "../examples/RNIBlurViewTest04Screen";
+import { BlurViewBasicUsage01 } from "../examples/BlurViewBasicUsage01";
+import { BlurViewTest01Screen } from "../examples/BlurViewTest01Screen";
+import { BlurViewTest02Screen } from "../examples/BlurViewTest02Screen";
+import { BlurViewTest03Screen } from "../examples/BlurViewTest03Screen";
+import { BlurViewTest04Screen } from "../examples/BlurViewTest04Screen";
 
-import { RNIVisualEffectCustomFilterViewTest01Screen } from "../examples/RNIVisualEffectCustomFilterViewTest01Screen";
+import { CustomFilterViewTest01Screen } from "../examples/CustomFilterViewTest01Screen";
 
 import type { RouteKey } from "./RouteKeys";
 
@@ -22,26 +22,26 @@ export const ROUTE_ITEMS: Array<RouteEntry> = [{
   }, 
   {
     routeKey: 'blurViewBasicUsage01',
-    component: RNIBlurViewBasicUsage01,
+    component: BlurViewBasicUsage01,
   },
   {
     routeKey: 'visualEffectCustomFilterViewTest01',
-    component: RNIVisualEffectCustomFilterViewTest01Screen,
+    component: CustomFilterViewTest01Screen,
   }, 
   {
     routeKey: 'blurViewTest01',
-    component: RNIBlurViewTest01Screen,
+    component: BlurViewTest01Screen,
   }, 
   {
     routeKey: 'blurViewTest02',
-    component: RNIBlurViewTest02Screen,
+    component: BlurViewTest02Screen,
   }, 
   {
     routeKey: 'blurViewTest03',
-    component: RNIBlurViewTest03Screen,
+    component: BlurViewTest03Screen,
   },
   {
     routeKey: 'blurViewTest04',
-    component: RNIBlurViewTest04Screen,
+    component: BlurViewTest04Screen,
   },
 ];

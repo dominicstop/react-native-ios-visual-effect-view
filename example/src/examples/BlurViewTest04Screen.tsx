@@ -3,7 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { CardButton, Colors, ExampleItemCard, Helpers, ObjectPropertyDisplay, UIBlurEffectStyleItems, type UIBlurEffectStyle } from 'react-native-ios-utilities';
-import { RNIBlurView } from 'react-native-ios-visual-effect-view';
+import { BlurView } from 'react-native-ios-visual-effect-view';
 import Slider from '@react-native-community/slider';
 import { AnimationConfigPresets } from '../constants/AnimationConfigPresets';
 
@@ -14,7 +14,7 @@ var blurRadiusCached = 0;
 
 const MAX_BLUR_RADIUS = 64;
 
-export function RNIBlurViewTest04Screen() {
+export function BlurViewTest04Screen() {
 
   const [
     blurRadiusSlider, 
@@ -77,7 +77,7 @@ export function RNIBlurViewTest04Screen() {
       <Text style={styles.label}>
         {'❤️\n🧡\n💛\n💚\n💙\n💜\n💖\n💃\n✨'}
       </Text>
-      <RNIBlurView
+      <BlurView
         style={styles.effectOverlay}
         blurMode={{
           mode: 'blurEffectCustomBlurRadius',

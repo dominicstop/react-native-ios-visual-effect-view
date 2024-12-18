@@ -35,8 +35,8 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
     {
       ...ROUTE_MAP.blurViewBasicUsage01,
       type: 'screen',
-      title: 'RNIBlurViewBasicUsage01',
-      subtitle: "Basic Usage - RNIBlurView",
+      title: 'BlurViewBasicUsage01',
+      subtitle: "Basic Usage - BlurView",
       desc: [
         "Basic example for demonstrating how to use: `blurMode` + `animationConfig`"
       ], 
@@ -44,7 +44,7 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
     {
       ...ROUTE_MAP.visualEffectCustomFilterViewTest01,
       type: 'screen',
-      title: "RNIVisualEffectCustomFilterViewTest01",
+      title: "CustomFilterViewTest01",
       desc: [
         "⚠️ API for RN not implemented yet, just a demo for now",
       ],
@@ -52,7 +52,7 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
     {
       ...ROUTE_MAP.blurViewTest01,
       type: 'screen',
-      title: "RNIBlurViewTest01",
+      title: "BlurViewTest01",
       desc: [
         "Test for `blurMode` (standard mode) + `animationConfig`",
         "Cycle through `UIBlurEffectStyle` + `AnimationConfig` presets",
@@ -61,7 +61,7 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
     {
       ...ROUTE_MAP.blurViewTest02,
       type: 'screen',
-      title: "RNIBlurViewTest02",
+      title: "BlurViewTest02",
       desc: [
         "Test for `blurMode` (`customEffectIntensity` mode) + `animationConfig`",
         "Cycle through `UIBlurEffectStyle` presets, and set a custom"
@@ -71,7 +71,7 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
     {
       ...ROUTE_MAP.blurViewTest03,
       type: 'screen',
-      title: "RNIBlurViewTest03",
+      title: "BlurViewTest03",
       desc: [
         "Test for `blurMode` (`customBlurRadius` mode) + `animationConfig`",
         "Cycle through `UIBlurEffectStyle` presets, and set a custom"
@@ -81,12 +81,12 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
     {
       ...ROUTE_MAP.blurViewTest04,
       type: 'screen',
-      title: "RNIBlurViewTest04",
+      title: "BlurViewTest04",
       desc: [
         "Test for `blurMode` (`customBlurRadius` mode) + `animationConfig`",
         "Cycle through `UIBlurEffectStyle` + `AnimationConfig` presets, and set"
           + " set a custom `VisualEffectBlurMode.blurRadius`",
-        "This is an animated version of `RNIBlurViewTest03`",
+        "This is an animated version of `BlurViewTest03`",
       ],
     }
   ];

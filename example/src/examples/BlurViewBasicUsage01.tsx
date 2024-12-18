@@ -1,17 +1,17 @@
 // import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { RNIBlurView } from 'react-native-ios-visual-effect-view';
+import { BlurView } from 'react-native-ios-visual-effect-view';
 
 
-export function RNIBlurViewBasicUsage01() {
+export function BlurViewBasicUsage01() {
 
   return (
     <View style={styles.container}>
       <Text style={styles.label}>
         {'❤️\n🧡\n💛\n💚\n💙\n💜\n💖\n💃\n✨'}
       </Text>
-      <RNIBlurView
+      <BlurView
         style={styles.effectOverlay}
         blurMode={{
           mode: 'blurEffectSystem',

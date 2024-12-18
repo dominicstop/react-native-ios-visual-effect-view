@@ -76,15 +76,15 @@ pod update
 
 ## C. Basic Usage
 
-hello! please see [`RNIBlurViewBasicUsage01`](example/src/examples/RNIBlurViewBasicUsage01.tsx) for the full example
+hello! please see [`RNIBlurViewBasicUsage01`](example/src/examples/BlurViewBasicUsage01.tsx) for the full example
 
 
 ```js
 // 📝 Note: for the sake of brevity, some of the code is omitted...
-import { RNIBlurView } from 'react-native-ios-visual-effect-view';
+import { BlurView } from 'react-native-ios-visual-effect-view';
 
 
-export function RNIBlurViewBasicUsage01() {
+export function BlurViewBasicUsage01() {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>

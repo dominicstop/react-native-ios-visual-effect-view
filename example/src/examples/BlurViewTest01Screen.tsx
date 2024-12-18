@@ -3,7 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { CardButton, Colors, ExampleItemCard, ObjectPropertyDisplay, UIBlurEffectStyleItems } from 'react-native-ios-utilities';
-import { RNIBlurView } from 'react-native-ios-visual-effect-view';
+import { BlurView } from 'react-native-ios-visual-effect-view';
 import { AnimationConfigPresets } from '../constants/AnimationConfigPresets';
 
 
@@ -12,7 +12,7 @@ var cache = {
   animationConfigPresetCounter: 0,
 };
 
-export function RNIBlurViewTest01Screen() {
+export function BlurViewTest01Screen() {
 
   // MARK: blurEffectStyle
   // ---------------------
@@ -63,7 +63,7 @@ export function RNIBlurViewTest01Screen() {
       <Text style={styles.label}>
         {'❤️\n🧡\n💛\n💚\n💙\n💜\n💖\n💃\n✨'}
       </Text>
-      <RNIBlurView
+      <BlurView
         style={styles.effectOverlay}
         blurMode={{
           mode: 'blurEffectSystem',
