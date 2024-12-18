@@ -44,6 +44,14 @@ https://github.com/user-attachments/assets/16d2c2ee-5453-43ea-bd3f-aa8331fbcd58
 
 <br>
 
+### Testflight and Testing
+
+The example app builds are automatically created and submitted on every version release via Xcode cloud, so if you just want to quickly try things out, the example app is available to try out via testflight ([invite link](https://testflight.apple.com/join/YsGzqBxB)).
+
+Alternatively, you can also try out the corresponding example app to the native dependency that this library uses under the hood: [`VisualEffectBlurView`](https://github.com/dominicstop/VisualEffectBlurView) ([invite link](https://testflight.apple.com/join/rP5yWFYx)).
+
+<br>
+
 ### Other Related Gifs
 
 [`Experiment02ViewController.swift`](https://github.com/dominicstop/VisualEffectBlurView/blob/main/example/Routes/Experiment02ViewController.swift)
