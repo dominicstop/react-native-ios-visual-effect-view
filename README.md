@@ -32,6 +32,10 @@ very special thanks to: [junzhengca](https://github.com/junzhengca), [brentvatne
 
 https://github.com/user-attachments/assets/74bf8afa-91ed-49d8-80aa-a17b8e7969b0
 
+https://github.com/user-attachments/assets/16d2c2ee-5453-43ea-bd3f-aa8331fbcd58
+
+<br>
+
 * ❤️ Support for using `UIVisualEffectView` + all the system [`UIBlurEffectStyles`](https://github.com/dominicstop/react-native-ios-utilities/blob/master/src/constants/UIBlurEffectStyles.ts).
 * 🧡 Support for using custom blur radius and effect intensity (percent).
 * 💚 Support for animating the blur effect style + blur radius changes.
