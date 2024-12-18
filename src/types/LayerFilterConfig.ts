@@ -1,5 +1,5 @@
-import type { Angle, ImageGradientConfig, ColorValue } from "react-native-ios-utilities";
-import type { ColorMatrixRGBA } from "./ColorMatrixRGBA";
+import type { Angle, ColorValue, ImageConfigGradient } from "react-native-ios-utilities";
+import type { ColorMatrixRGBAInit } from "./ColorMatrixRGBA";
 import type { ColorTransformInit } from "./ColorTransform";
 
 
@@ -53,11 +53,11 @@ export type AnimatableLayerFilterConfig = {
 
 } | {
   filterName: 'colorMatrix';
-  colorMatrix: ColorMatrixRGBA;
+  colorMatrix: ColorMatrixRGBAInit;
 
 } | {
   filterName: 'colorMatrixVibrant';
-  colorMatrix: ColorMatrixRGBA;
+  colorMatrix: ColorMatrixRGBAInit;
 
 } | {
   filterName: 'colorTransform';
@@ -70,7 +70,7 @@ export type AnimatableLayerFilterConfig = {
 } | {
   filterName: 'variadicBlur';
   radius: number;
-  maskImage: ImageGradientConfig;
+  gradientMask: ImageConfigGradient;
   shouldNormalizeEdges: boolean;
 };
 
