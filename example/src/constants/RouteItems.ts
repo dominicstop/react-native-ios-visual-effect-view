@@ -25,7 +25,7 @@ export const ROUTE_ITEMS: Array<RouteEntry> = [{
     component: BlurViewBasicUsage01,
   },
   {
-    routeKey: 'visualEffectCustomFilterViewTest01',
+    routeKey: 'customFilterViewTest01',
     component: CustomFilterViewTest01Screen,
   }, 
   {

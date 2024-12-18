@@ -42,11 +42,11 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
       ], 
     },
     {
-      ...ROUTE_MAP.visualEffectCustomFilterViewTest01,
+      ...ROUTE_MAP.customFilterViewTest01,
       type: 'screen',
       title: "CustomFilterViewTest01",
       desc: [
-        "⚠️ API for RN not implemented yet, just a demo for now",
+        "Test for creating and combining custom filters together",
       ],
     }, 
     {
