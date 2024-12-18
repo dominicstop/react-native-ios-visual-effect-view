@@ -20,7 +20,7 @@ This library + documentation is currently not finished yet. For now, please brow
 
 ### Acknowledgements
 
-The initial version of this library  (i.e. version `0.x`) was made possible through a generous `$3,750` sponsorship by [natew](https://github.com/natew) + [tamagui](https://github.com/tamagui/tamagui) over the course of 4 months (from: `05/27/24` to `09/30/24`) 🐦✨
+The initial version of this library  (i.e. version `0.x`) was made possible through a generous `$3,750` sponsorship by [tamagui](https://github.com/tamagui/tamagui) over the course of 4 months (from: `05/27/24` to `09/30/24`) 🐦✨
 
 <br>
 
@@ -109,6 +109,18 @@ export function RNIBlurViewBasicUsage01() {
 ```
 
 <img src="assets/RNIBlurViewBasicUsage01.gif" width="400">
+
+<br><br>
+
+## D. Documentation
+
+TBA
+
+<br><br>
+
+## E. Examples
+
+TBA
 
 <br><br>
 
