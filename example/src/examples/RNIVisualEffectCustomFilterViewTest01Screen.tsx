@@ -725,6 +725,11 @@ export function RNIVisualEffectCustomFilterViewTest01Screen() {
     Object.keys(filerGroupCurrent).length == 0;
 
   const filterNames = filerGroupCurrent.map((item) => item.filterName);
+
+  const filterNamesAsString = filterNames.reduce((acc, curr, index) => {
+    const isLast = index === filterNames.length - 1;
+    return acc + curr + (isLast ? "" : ", ");
+  }, '');
   
   const emojiList = [
     "❤️🛑🍒🍓💃",
@@ -817,7 +822,7 @@ export function RNIVisualEffectCustomFilterViewTest01Screen() {
                     ? 'No Filters...'
                     : filerGroupCurrent,
                 } : {
-                  currentFilters: filterNames,
+                  currentFilters: [filterNamesAsString],
                 })
               }}
             />
