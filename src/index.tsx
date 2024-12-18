@@ -1,3 +1,5 @@
+export * from './components/BlurView';
+
 export * from './native_components/RNIVisualEffectCustomFilterView';
 export * from './native_components/RNIBlurView';
 
