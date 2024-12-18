@@ -10,8 +10,8 @@
 
 #include "RNIBlurViewShadowNode.h"
 
-#include <react_native_ios_utilities/RNIBaseViewComponentDescriptor.h>
-#include <react_native_ios_utilities/RNIBaseViewState.h>
+#import RNI_UTILITIES_HEADER(RNIBaseViewComponentDescriptor.h)
+#import RNI_UTILITIES_HEADER(RNIBaseViewState.h)
 
 #include <react/renderer/core/ConcreteComponentDescriptor.h>
 

@@ -8,9 +8,11 @@
 #if __cplusplus
 #pragma once
 
-#include <react_native_ios_utilities/RNIBaseViewShadowNode.h>
-#include <react_native_ios_utilities/RNIBaseViewProps.h>
-#include <react_native_ios_utilities/RNIBaseViewEventEmitter.h>
+#import "RNIVisualEffectViewHeaderUtils.h"
+
+#import RNI_UTILITIES_HEADER(RNIBaseViewShadowNode.h)
+#import RNI_UTILITIES_HEADER(RNIBaseViewProps.h)
+#import RNI_UTILITIES_HEADER(RNIBaseViewEventEmitter.h)
 
 #include <react/renderer/components/RNIVisualEffectViewSpec/EventEmitters.h>
 #include <react/renderer/components/RNIVisualEffectViewSpec/Props.h>

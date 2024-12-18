@@ -8,11 +8,8 @@
 #import "RNIVisualEffectCustomFilterView.h"
 #import <objc/runtime.h>
 
-#if __has_include(<react_native_ios_utilities/RNIBaseViewUtils.h>)
-#import <react_native_ios_utilities/RNIBaseViewUtils.h>
-#else
-#import <react-native-ios-utilities/RNIBaseViewUtils.h>
-#endif
+#import "RNIVisualEffectViewHeaderUtils.h"
+#import RNI_UTILITIES_HEADER(RNIBaseViewUtils.h)
 
 #import "RCTBridge.h"
 #import <React/RCTViewManager.h>
