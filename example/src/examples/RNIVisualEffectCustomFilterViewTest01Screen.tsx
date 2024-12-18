@@ -679,6 +679,77 @@ const FILTER_GROUPS: Array<Array<LayerFilterConfig>> = [
       },
     },
   ],
+  [
+    {
+      filterName: 'colorTransform',
+      colorTransform: {
+        saturation: -1,
+        invert: 1,
+        hueRotate: {
+          mode: 'degrees',
+          value: -8,
+        },
+      },
+    },
+    {
+      filterName: 'saturateColors',
+      amount: 2,
+    },
+    {
+      filterName: 'variadicBlur',
+      radius: 8,
+      shouldNormalizeEdges: true,
+      gradientMask: {
+        type: 'axial',
+        colors: [
+          createDepthColor(1),
+          createDepthColor(0.1),
+          createDepthColor(0),
+          createDepthColor(0.1),
+          createDepthColor(1)
+        ],
+        startPointPreset: 'centerLeft',
+        endPointPreset: 'centerRight',
+        size: {
+          height: WINDOW_SIZE.height,
+          width: WINDOW_SIZE.width,
+        },
+      }
+    },
+  ],
+  [
+    {
+      filterName: 'colorTransform',
+      colorTransform: {
+        hueRotate: {
+          mode: 'degrees',
+          value: -16,
+        },
+      },
+    },
+    {
+      filterName: 'variadicBlur',
+      radius: 16,
+      shouldNormalizeEdges: true,
+      gradientMask: {
+        type: 'axial',
+        colors: [
+          createDepthColor(1),
+          createDepthColor(0.1),
+          createDepthColor(0),
+          createDepthColor(0),
+          createDepthColor(0.1),
+          createDepthColor(1)
+        ],
+        startPointPreset: 'centerLeft',
+        endPointPreset: 'centerRight',
+        size: {
+          height: WINDOW_SIZE.height,
+          width: WINDOW_SIZE.width,
+        },
+      }
+    },
+  ],
 
   // misc test
   [
@@ -822,7 +893,9 @@ export function RNIVisualEffectCustomFilterViewTest01Screen() {
                     ? 'No Filters...'
                     : filerGroupCurrent,
                 } : {
-                  currentFilters: [filterNamesAsString],
+                  currentFilters: {
+                    [filterNames.length]: filterNamesAsString
+                  },
                 })
               }}
             />
