@@ -64,7 +64,9 @@ extension ColorMatrixRGBA: InitializableFromDictionary {
         );
             
       case "preset":
-        let presetName: String = try dict.getValue(forKey: "preset");
+        let presetDict = try dict.getDict(forKey: "preset");
+        let presetName: String = try presetDict.getValue(forKey: "presetName");
+        
         let preset = try ColorMatrixRGBAPreset(fromString: presetName);
         self = preset.colorMatrix;
         
