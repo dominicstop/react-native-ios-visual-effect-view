@@ -4,6 +4,11 @@ A simple library to use `UIVisualEffectView` in `react-native`.
 
 <img src="./assets/example-demo-01.gif" alt="example-demo-01" style="zoom:67%;" />
 
+<br>
+
+[`RNIVisualEffectCustomFilterViewTest01Screen`](example/src/examples/RNIVisualEffectCustomFilterViewTest01Screen.tsx)
+
+![RNIVisualEffectCustomFilterViewTest01Screen.tsx](./assets/RNIVisualEffectCustomFilterViewTest01Screen.gif)
 
 <br><br>
 
