@@ -19,6 +19,7 @@ export function BlurView(props: BlurViewProps){
 
   return (
     <RNIBlurView
+      {...viewProps}
       blurMode={blurMode}
     >
       {props.children}
