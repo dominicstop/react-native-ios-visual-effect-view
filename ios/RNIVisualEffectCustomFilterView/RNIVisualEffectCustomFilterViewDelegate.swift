@@ -27,8 +27,7 @@ public final class RNIVisualEffectCustomFilterViewDelegate: UIView, RNIContentVi
   
   var _didSetup = false;
   
-  
-  var visualEffectView: VisualEffectView?;
+  var effectView: VisualEffectCustomFilterView?;
   
   // MARK: - Properties - RNIContentViewDelegate
   // -------------------------------------------
@@ -43,6 +42,21 @@ public final class RNIVisualEffectCustomFilterViewDelegate: UIView, RNIContentVi
   public var currentFilters: [LayerFilterConfig] = [];
   @objc public var currentFiltersProp: NSArray? {
     willSet {
+      let items = newValue ?? [];
+      
+      self.currentFilters = items.compactMap {
+        guard let dict = $0 as? Dictionary<String, Any> else {
+          return nil;
+        };
+        
+        let filter: LayerFilterConfig? = try? .init(fromDict: dict);
+        return filter;
+      };
+      
+      print("currentFilters", currentFilters);
+      
+      try? self._setupContentIfNeeded();
+      try? self.applyCurrentFilterItems();
     }
   };
   
@@ -57,90 +71,58 @@ public final class RNIVisualEffectCustomFilterViewDelegate: UIView, RNIContentVi
     fatalError("init(coder:) has not been implemented");
   }
   
-  // MARK: Functions
-  // ---------------
+  // MARK: Functions: View Lifecycle
+  // -------------------------------
   
   public override func didMoveToWindow() {
-    guard self.window != nil,
-          let parentReactView = self.parentReactView
-    else { return };
+    guard self.window != nil else {
+      return;
+    };
+    
+    try? self._setupContentIfNeeded();
   };
   
-  func _setupContent(){
+  // MARK: - Functions
+  // -----------------
+
+  private func _setupContentIfNeeded() throws {
+    guard !self._didSetup else {
+      return;
+    };
     
-    let imageConfig: ImageConfigGradient = ImageConfigGradient(
-      colors: [.black, .clear],
-      startPointPreset: .top,
-      endPointPreset: .bottom,
-      size: UIScreen.main.bounds.size
+    let effectView = try VisualEffectCustomFilterView(
+      withInitialFilters: self.currentFilters
     );
     
-    let gradientImage = try! imageConfig.makeImage();
-    
-    let visualEffectView = try! VisualEffectView(rawFilterTypes: []);
-    self.visualEffectView = visualEffectView;
-    
-    self.addSubview(visualEffectView);
-    visualEffectView.translatesAutoresizingMaskIntoConstraints = false;
-    visualEffectView.shouldOnlyShowBgLayer = true;
+    self.effectView = effectView;
+
+    self.addSubview(effectView);
+    effectView.translatesAutoresizingMaskIntoConstraints = false;
     
     NSLayoutConstraint.activate([
-      visualEffectView.leadingAnchor.constraint(
+      effectView.leadingAnchor.constraint(
         equalTo: self.leadingAnchor
       ),
-      visualEffectView.trailingAnchor.constraint(
+      effectView.trailingAnchor.constraint(
         equalTo: self.trailingAnchor
       ),
-      visualEffectView.topAnchor.constraint(
+      effectView.topAnchor.constraint(
         equalTo: self.topAnchor
       ),
-      visualEffectView.bottomAnchor.constraint(
+      effectView.bottomAnchor.constraint(
         equalTo: self.bottomAnchor
       ),
     ]);
     
-    try! visualEffectView.setFiltersViaEffectDesc(
-      withFilterTypes: [
-        .variadicBlur(
-          radius: 0,
-          maskImage: gradientImage.cgImage,
-          shouldNormalizeEdges: true
-        ),
-        .colorBlackAndWhite(amount: 0.1),
-      ],
-      shouldImmediatelyApplyFilter: true
-    );
-
-    let tapGesture = UITapGestureRecognizer();
-    tapGesture.isEnabled = true;
+    self._didSetup = true;
+  };
+  
+  public func applyCurrentFilterItems() throws {
+    guard let effectView = self.effectView else {
+      return;
+    };
     
-    tapGesture.addAction { _ in
-      try! visualEffectView.updateCurrentFiltersViaEffectDesc(
-        withFilterTypes: [
-          .variadicBlur(
-            radius: 16,
-            maskImage: gradientImage.cgImage,
-            shouldNormalizeEdges: true
-          ),
-        ]
-      );
-    
-      UIView.animate(withDuration: 1) {
-        try! visualEffectView.applyRequestedFilterEffects();
-        
-      } completion: { _ in
-          try! visualEffectView.updateCurrentFiltersViaEffectDesc(
-            withFilterTypes: [
-              .colorBlackAndWhite(amount: 0.75),
-            ]
-          );
-          UIView.animate(withDuration: 1) {
-            try! visualEffectView.applyRequestedFilterEffects();
-          };
-        };
-      };
-      
-    visualEffectView.addGestureRecognizer(tapGesture);
+    try effectView.immediatelyApplyFilters(self.currentFilters);
   };
 };
 
