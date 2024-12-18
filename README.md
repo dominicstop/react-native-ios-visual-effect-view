@@ -6,7 +6,7 @@ A simple library to use `UIVisualEffectView` in `react-native`.
 
 <br>
 
-[`RNIVisualEffectCustomFilterViewTest01Screen`](example/src/examples/RNIVisualEffectCustomFilterViewTest01Screen.tsx)
+[`VisualEffectCustomFilterViewTest01Screen`](example/src/examples/CustomFilterViewTest01Screen.tsx)
 
 ![RNIVisualEffectCustomFilterViewTest01Screen.tsx](./assets/RNIVisualEffectCustomFilterViewTest01Screen.gif)
 
@@ -42,6 +42,28 @@ https://github.com/user-attachments/assets/16d2c2ee-5453-43ea-bd3f-aa8331fbcd58
 * 💙 Support for creating and using filters (WIP)
 * 💜 Runs on the old + new architecture (paper + fabric).
 
+<br>
+
+### Other Related Gifs
+
+[`Experiment02ViewController.swift`](https://github.com/dominicstop/VisualEffectBlurView/blob/main/example/Routes/Experiment02ViewController.swift)
+
+![Experiment02ViewController](https://github.com/dominicstop/VisualEffectBlurView/raw/main/assets/Experiment02ViewController.gif)
+
+<br>
+
+[`VisualEffectBlurTestViewController.swift`](https://github.com/dominicstop/VisualEffectBlurView/blob/main/example/Routes/VisualEffectBlurTestViewController.swift)
+
+![VisualEffectBlurTestViewController](https://github.com/dominicstop/VisualEffectBlurView/raw/main/assets/VisualEffectBlurTestViewController.gif)
+
+<br>
+
+[`VisualEffectViewExperiment01ViewController.swift`](https://github.com/dominicstop/VisualEffectBlurView/blob/main/example/Routes/VisualEffectViewExperiment01ViewController.swift)
+
+![VisualEffectViewExperiment01ViewController-01](https://github.com/dominicstop/VisualEffectBlurView/raw/main/assets/Demo-VisualEffectBlurTestViewController-01.gif)
+
+![VisualEffectViewExperiment01ViewController-02](https://github.com/dominicstop/VisualEffectBlurView/raw/main/assets/Demo-VisualEffectBlurTestViewController-02.gif)
+
 <br><br>
 
 ## B. Installation
@@ -76,7 +98,7 @@ pod update
 
 ## C. Basic Usage
 
-hello! please see [`RNIBlurViewBasicUsage01`](example/src/examples/BlurViewBasicUsage01.tsx) for the full example
+hello! please see [`BlurViewBasicUsage01`](example/src/examples/BlurViewBasicUsage01.tsx) for the full example
 
 
 ```js
