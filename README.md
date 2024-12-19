@@ -152,7 +152,21 @@ Please see the [examples directory](example/src/examples) for the full list of e
 
 ### `CustomFilterViewExample01`
 
-```react
+**Summary**: Create a custom filter that darkens the views in the background, and applies a variable blur.
+
+<br>
+
+| Notes                                                        |
+| :----------------------------------------------------------- |
+| 1️⃣ — The `CustomFilterView.currentFilters` prop accepts an array of `LayerFilterConfig` object. <br/>This object will be used to create and configure the `UIVisualEffectView` backdrop effects. |
+| 2️⃣ — `LayerFilterConfig` object is an tagged union type, with the `LayerFilterConfig.filterName` property being the "discriminant" that separates all the possible combinations.<br><br>The `filterName` defines what filter to use, and different types of filters have different inputs to control the look/behavior of the filter.<br><br>In the example below, we pass 4 filters to the `CustomFilterView.currentFilters` prop: `variadicBlur` (variable blur), `colorBlackAndWhite` (color monochrome), `brightenColors` (color brightness), and `contrastColors` (color contrast).<br><br>📝 **Note**: The names for the filter are a bit weird because we can't use the internal filters directly. Please see  [`LayerFilterTypeName.swift`](https://github.com/dominicstop/VisualEffectBlurView/blob/1ac12b049e53ace5dce4ce46870024d5f98b052a/Sources/ObjectWrappers/LayerFilterWrapper/LayerFilterTypeName.swift) for the implementation details. |
+| TBA                                                          |
+
+<br>
+
+[🔗 Full Example](example/src/examples/CustomFilterViewExample01.tsx)
+
+```jsx
 export function CustomFilterViewExample01() {
   return (
     <View style={styles.container}>
