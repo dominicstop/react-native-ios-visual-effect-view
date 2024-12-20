@@ -7,7 +7,7 @@ export interface NativeProps extends ViewProps {
   onDidSetViewID: BubblingEventHandler<{}>;
   
   currentFilters: string;
-  backgroundLayerSamplingSizeScale: Double;
+  backgroundLayerSamplingSizeScale?: Double;
 };
 
 // stubs
