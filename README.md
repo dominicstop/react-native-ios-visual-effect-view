@@ -175,6 +175,9 @@ export function CustomFilterViewExample01() {
       </Text>
       <CustomFilterView
         style={styles.effectOverlay}
+        // increase quality (usually: 0.25...1)
+        backgroundLayerSamplingSizeScale={2}
+
         // set the filters to use,
         // accepts an array of `LayerFilterConfig`
         currentFilters={[
@@ -184,6 +187,7 @@ export function CustomFilterViewExample01() {
             filterName: 'variadicBlur',
             radius: 8,
             shouldNormalizeEdges: true,
+
             // define the intensity of blur via a gradient
             gradientMask: {
               type: 'axial',
@@ -199,18 +203,21 @@ export function CustomFilterViewExample01() {
               },
             }
           },
+
           // filter 2 of 4
           // Slightly desaturate colors
           {
             filterName: 'colorBlackAndWhite',
             amount: 0.5
           },
+
           // filter 3 of 4
           // reduce brightness
           {
             filterName: 'brightenColors',
             amount: -0.5
           },
+
           // filter 4 of 4
           // decrease contrast
           {
