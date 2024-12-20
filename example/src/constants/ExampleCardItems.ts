@@ -64,7 +64,7 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
       type: 'screen',
       title: "BlurViewTest02",
       desc: [
-        "Test for `blurMode` (`customEffectIntensity` mode) + `animationConfig`",
+        "Test for `blurMode` (`customEffectIntensity` mode)",
         "Cycle through `UIBlurEffectStyle` presets, and set a custom"
           + "  `VisualEffectBlurMode.intensity` (percent)",
       ],
@@ -74,7 +74,7 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
       type: 'screen',
       title: "BlurViewTest03",
       desc: [
-        "Test for `blurMode` (`customBlurRadius` mode) + `animationConfig`",
+        "Test for `blurMode` (`customBlurRadius` mode)",
         "Cycle through `UIBlurEffectStyle` presets, and set a custom"
           + "  `VisualEffectBlurMode.blurRadius`",
       ],
