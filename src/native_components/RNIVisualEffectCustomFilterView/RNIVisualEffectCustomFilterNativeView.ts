@@ -16,6 +16,7 @@ export type RNIVisualEffectCustomFilterNativeViewBaseProps = RemapObject<
   RNIVisualEffectCustomFilterViewNativeComponentBaseProps, 
   {
     currentFilters: Array<LayerFilterConfig>;
+    backgroundLayerSamplingSizeScale: number;
   }
 >;
 

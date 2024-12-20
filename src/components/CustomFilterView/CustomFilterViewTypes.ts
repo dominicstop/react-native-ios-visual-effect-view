@@ -9,19 +9,19 @@ export type CustomFilterViewRef = Pick<RNIVisualEffectCustomFilterViewRef,
   | 'getViewID'
 >;
 
-// export type CustomFilterViewInheritedOptionalProps = Partial<Pick<RNIVisualEffectCustomFilterViewProps,
-//  | ''
-// >>;
+export type CustomFilterViewInheritedOptionalProps = Partial<Pick<RNIVisualEffectCustomFilterViewProps,
+ | 'backgroundLayerSamplingSizeScale'
+>>;
 
 export type CustomFilterViewInheritedRequiredProps = Required<Pick<RNIVisualEffectCustomFilterViewProps,
   | 'currentFilters'
 >>;
 
-// export type CustomFilterViewInheritedProps =
-//    CustomFilterViewInheritedOptionalProps
-//  & CustomFilterViewInheritedRequiredProps;
+export type CustomFilterViewInheritedProps =
+   CustomFilterViewInheritedOptionalProps
+ & CustomFilterViewInheritedRequiredProps;
 
 export type CustomFilterViewProps = PropsWithChildren<
-    CustomFilterViewInheritedRequiredProps 
+    CustomFilterViewInheritedProps 
   & ViewProps
 >;

@@ -11,6 +11,7 @@ export type RNIVisualEffectCustomFilterViewRef = {
 
 export type RNIVisualEffectCustomFilterViewInheritedOptionalProps = Partial<Pick<RNIVisualEffectCustomFilterNativeViewProps,
   | 'onDidSetViewID'
+  | 'backgroundLayerSamplingSizeScale'
 >>;
 
 export type RNIVisualEffectCustomFilterViewInheritedRequiredProps = Pick<RNIVisualEffectCustomFilterNativeViewProps,

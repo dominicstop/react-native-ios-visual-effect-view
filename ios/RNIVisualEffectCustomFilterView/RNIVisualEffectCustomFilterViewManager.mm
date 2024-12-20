@@ -30,5 +30,8 @@ RCT_EXPORT_MODULE(RNIVisualEffectCustomFilterView)
 }
 #endif
 
+RNI_EXPORT_VIEW_PROPERTY(currentFilters, NSDictionary);
+RNI_EXPORT_VIEW_PROPERTY(backgroundLayerSamplingSizeScale, NSNumber);
+
 @end
 

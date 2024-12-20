@@ -16,6 +16,7 @@ public final class RNIVisualEffectCustomFilterViewDelegate: UIView, RNIContentVi
   
   public static let propKeyPathMap: PropKeyPathMap = [
     "currentFilters": \.currentFiltersProp,
+    "backgroundLayerSamplingSizeScale": \.backgroundLayerSamplingSizeScaleProp,
   ];
   
   public enum Events: String, CaseIterable {
@@ -57,6 +58,15 @@ public final class RNIVisualEffectCustomFilterViewDelegate: UIView, RNIContentVi
       
       try? self._setupContentIfNeeded();
       try? self.applyCurrentFilterItems();
+    }
+  };
+  
+  public var backgroundLayerSamplingSizeScale: CGFloat?;
+  @objc public var backgroundLayerSamplingSizeScaleProp: NSNumber? {
+    willSet {
+      let newValue = newValue?.doubleValue as? CGFloat;
+      self.backgroundLayerSamplingSizeScale = newValue;
+      self.effectView?.backgroundLayerSamplingSizeScale = newValue;
     }
   };
   
