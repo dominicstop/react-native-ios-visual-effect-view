@@ -1,5 +1,5 @@
 import codegenNativeComponent from 'react-native/Libraries/Utilities/codegenNativeComponent';
-import type { BubblingEventHandler } from 'react-native/Libraries/Types/CodegenTypes';
+import type { BubblingEventHandler, Double } from 'react-native/Libraries/Types/CodegenTypes';
 import type { HostComponent, ViewProps } from 'react-native';
 
 // stubs
@@ -8,7 +8,8 @@ export interface NativeProps extends ViewProps {
   
   blurMode: string;
   animationConfig?: string;
-  animationDelay?: string;
+  animationDelay?: Double;
+  backgroundLayerSamplingSizeScale?: Double;
 };
 
 // stubs

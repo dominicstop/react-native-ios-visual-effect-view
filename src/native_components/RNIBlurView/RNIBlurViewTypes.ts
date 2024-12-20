@@ -14,6 +14,7 @@ export type RNIBlurViewInheritedOptionalProps = Partial<Pick<RNIBlurNativeViewPr
   | 'onDidSetViewID'
   | 'animationConfig'
   | 'animationDelay'
+  | 'backgroundLayerSamplingSizeScale'
 >>;
 
 export type RNIBlurViewInheritedRequiredProps = Required<Pick<RNIBlurNativeViewProps,

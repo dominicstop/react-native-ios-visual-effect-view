@@ -10,6 +10,7 @@ import react_native_ios_utilities
 import DGSwiftUtilities
 import VisualEffectBlurView
 
+
 @objc(RNIBlurViewDelegate)
 public final class RNIBlurViewDelegate: UIView, RNIContentView {
   
@@ -18,6 +19,7 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
       "blurMode": \.blurModeProp,
       "animationConfig": \.animationConfigProp,
       "animationDelay": \.animationDelayProp,
+      "backgroundLayerSamplingSizeScale": \.backgroundLayerSamplingSizeScaleProp,
     ];
   };
   
@@ -92,6 +94,15 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
   @objc public var animationDelayProp: NSNumber? {
     willSet {
       self.animationDelay = newValue?.doubleValue;
+    }
+  };
+  
+  public var backgroundLayerSamplingSizeScale: CGFloat?;
+  @objc public var backgroundLayerSamplingSizeScaleProp: NSNumber? {
+    willSet {
+      let newValue = newValue?.doubleValue as? CGFloat;
+      self.backgroundLayerSamplingSizeScale = newValue;
+      self.blurView?.backgroundLayerSamplingSizeScale = newValue;
     }
   };
 

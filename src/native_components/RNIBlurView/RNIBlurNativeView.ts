@@ -16,6 +16,7 @@ export type RNIBlurNativeViewBaseProps = RemapObject<RNIBlurViewNativeComponentB
   blurMode: VisualEffectBlurMode;
   animationConfig: AnimationConfig;
   animationDelay: number;
+  backgroundLayerSamplingSizeScale: number;
 }>;
 
 export type RNIBlurNativeViewProps = 

@@ -13,6 +13,7 @@ export type BlurViewRef = Pick<RNIBlurViewRef,
 export type BlurViewInheritedOptionalProps = Partial<Pick<RNIBlurViewProps,
   | 'animationConfig'
   | 'animationDelay'
+  | 'backgroundLayerSamplingSizeScale'
 >>;
 
 export type BlurViewInheritedRequiredProps = Required<Pick<RNIBlurViewProps,

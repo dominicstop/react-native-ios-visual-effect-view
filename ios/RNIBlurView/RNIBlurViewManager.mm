@@ -32,6 +32,8 @@ RCT_EXPORT_MODULE(RNIBlurView)
 
 RNI_EXPORT_VIEW_PROPERTY(blurMode, NSDictionary);
 RNI_EXPORT_VIEW_PROPERTY(animationConfig, NSDictionary);
+RNI_EXPORT_VIEW_PROPERTY(animationDelay, NSNumber);
+RNI_EXPORT_VIEW_PROPERTY(backgroundLayerSamplingSizeScale, NSNumber);
 
 @end
 
