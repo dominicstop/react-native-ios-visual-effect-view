@@ -7,6 +7,7 @@ export const ROUTE_KEYS = {
   blurViewTest02: 'blurViewTest02',
   blurViewTest03: 'blurViewTest03',
   blurViewTest04: 'blurViewTest04',
+  blurViewTest05: 'blurViewTest05',
   customFilterViewExample01: 'customFilterViewExample01',
 };
 

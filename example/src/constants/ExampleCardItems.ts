@@ -91,6 +91,18 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
       ],
     },
     {
+      ...ROUTE_MAP.blurViewTest05,
+      type: 'screen',
+      title: "BlurViewTest05",
+      desc: [
+        "Test for `blurMode` (`customEffectIntensity` mode) + `animationConfig`",
+        "Cycle through `UIBlurEffectStyle` presets, and set a custom"
+          + "  `VisualEffectBlurMode.intensity` (percent)",
+        "This is an animated version of `BlurViewTest02`",
+
+      ],
+    }, 
+    {
       ...ROUTE_MAP.customFilterViewTest01,
       type: 'screen',
       title: "CustomFilterViewTest01",
