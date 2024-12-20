@@ -82,6 +82,7 @@ export function BlurViewTest05Screen() {
           blurEffectStyle: blurEffectStyleCurrent,
           effectIntensity: blurIntensity,
         }}
+        backgroundLayerSamplingSizeScale={1}
         {...(shouldApplyAnimationConfig && {
           animationConfig: animationConfigPresetCurrent,
           animationDelay: shouldDelay ? 0.5 : 0,

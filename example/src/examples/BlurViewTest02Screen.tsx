@@ -28,6 +28,7 @@ export function BlurViewTest02Screen() {
           blurEffectStyle: blurEffectStyleCurrent,
           effectIntensity: effectIntensity,
         }}
+        backgroundLayerSamplingSizeScale={1}
       />
       <SafeAreaView style={styles.debugOverlayContainer}>
         <ExampleItemCard

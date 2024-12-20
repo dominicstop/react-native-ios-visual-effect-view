@@ -872,6 +872,7 @@ export function CustomFilterViewTest01Screen() {
       <CustomFilterView
         style={styles.effectOverlay}
         currentFilters={filerGroupCurrent}
+        backgroundLayerSamplingSizeScale={1}
       />
       <SafeAreaView style={styles.debugOverlayContainer}>
         <ExampleItemCard

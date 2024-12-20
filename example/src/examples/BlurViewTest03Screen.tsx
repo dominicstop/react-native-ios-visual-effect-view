@@ -33,6 +33,7 @@ export function BlurViewTest03Screen() {
           customBlurRadius: blurRadius,
           effectIntensityForOtherEffects,
         }}
+        backgroundLayerSamplingSizeScale={1}
       />
       <SafeAreaView style={styles.debugOverlayContainer}>
         <ExampleItemCard

@@ -85,6 +85,7 @@ export function BlurViewTest04Screen() {
           customBlurRadius: blurRadius,
           effectIntensityForOtherEffects: blurRadius / MAX_BLUR_RADIUS,
         }}
+        backgroundLayerSamplingSizeScale={1}
         {...(shouldApplyAnimationConfig && {
           animationConfig: animationConfigPresetCurrent,
           animationDelay: shouldDelay ? 0.5 : 0,
