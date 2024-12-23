@@ -101,7 +101,7 @@ public final class RNIVisualEffectCustomFilterViewDelegate: UIView, RNIContentVi
     };
     
     let effectView = try VisualEffectCustomFilterView(
-      withInitialFilters: self.currentFilters
+      withInitialBackgroundFilters: self.currentFilters
     );
     
     self.effectView = effectView;
@@ -132,7 +132,9 @@ public final class RNIVisualEffectCustomFilterViewDelegate: UIView, RNIContentVi
       return;
     };
     
-    try effectView.immediatelyApplyFilters(self.currentFilters);
+    try effectView.immediatelyApplyFilters(
+      backgroundFilters: self.currentFilters
+    );
   };
 };
 
