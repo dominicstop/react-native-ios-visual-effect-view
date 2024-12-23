@@ -170,8 +170,8 @@ extension RNIVisualEffectCustomFilterViewDelegate: RNIContentViewDelegate {
     superBlock();
     #endif
     
-    // Note: Window might not be available yet
-    self.addSubview(childComponentView);
+    try? self._setupContentIfNeeded();
+    self.effectView?.contentView.addSubview(childComponentView);
   };
   
   public func notifyOnUnmountChildComponentView(
