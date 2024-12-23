@@ -10,3 +10,4 @@ export * from './types/LayerFilterConfig';
 export * from './types/FilterMetadata';
 export * from './types/VisualEffectBlurMode';
 export * from './types/BlendMode';
+export * from './types/TintConfig';
