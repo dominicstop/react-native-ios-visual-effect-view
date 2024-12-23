@@ -3,8 +3,8 @@ import type { TintConfig } from "./TintConfig";
 
 
 export type CustomFilterConfig = {
-  backgroundFilters: [LayerFilterConfig];
-  foregroundFilters?: [LayerFilterConfig];
+  backgroundFilters: Array<LayerFilterConfig>;
+  foregroundFilters?: Array<LayerFilterConfig>;
   tintConfig?: TintConfig;
   backgroundOpacity?: number;
   foregroundOpacity?: number;
