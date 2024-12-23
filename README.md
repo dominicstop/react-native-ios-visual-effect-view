@@ -1,6 +1,6 @@
 # react-native-ios-visual-effect-view
 
-A simple library to use `UIVisualEffectView` in `react-native`.
+A small library to use `UIVisualEffectView` in `react-native`.
 
 <img src="./assets/example-demo-01.gif" alt="example-demo-01" style="zoom:67%;" />
 
@@ -67,6 +67,12 @@ Alternatively, you can also try out the corresponding example app to the native 
 ![VisualEffectViewExperiment01ViewController-01](https://github.com/dominicstop/VisualEffectBlurView/raw/main/assets/Demo-VisualEffectBlurTestViewController-01.gif)
 
 ![VisualEffectViewExperiment01ViewController-02](https://github.com/dominicstop/VisualEffectBlurView/raw/main/assets/Demo-VisualEffectBlurTestViewController-02.gif)
+
+<br>
+
+[`VisualEffectCustomFilterViewTest02Controller.swift`](https://github.com/dominicstop/VisualEffectBlurView/blob/main/example/Routes/VisualEffectCustomFilterViewTest02Controller.swift)
+
+![VisualEffectCustomFilterViewTest02Controller](https://github.com/dominicstop/VisualEffectBlurView/raw/main/assets/VisualEffectCustomFilterViewTest02Controller.gif)
 
 <br><br>
 
