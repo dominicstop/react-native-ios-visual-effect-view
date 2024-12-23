@@ -13,11 +13,10 @@ import VisualEffectBlurView
 extension VisualEffectBlurMode: InitializableFromDictionary {
 
   public init(fromDict dict: Dictionary<String, Any>) throws {
-    let mode: String = try dict.getValueFromDictionary(forKey: "mode");
+    let mode: String = try dict.getValue(forKey: "mode");
     
     func extractBlurEffectStyle() throws -> UIBlurEffect.Style {
-      let rawValue: String =
-        try dict.getValueFromDictionary(forKey: "blurEffectStyle");
+      let rawValue: String = try dict.getValue(forKey: "blurEffectStyle");
         
       let blurStyle: UIBlurEffect.Style? = .init(fromString: rawValue);
       guard let blurStyle = blurStyle else {
@@ -44,7 +43,7 @@ extension VisualEffectBlurMode: InitializableFromDictionary {
       case "blurEffectCustomIntensity":
         let blurEffectStyle = try extractBlurEffectStyle();
         
-        let effectIntensity = try dict.getValueFromDictionary(
+        let effectIntensity = try dict.getNumber(
           forKey: "effectIntensity",
           type: CGFloat.self
         );
@@ -57,12 +56,12 @@ extension VisualEffectBlurMode: InitializableFromDictionary {
       case "blurEffectCustomBlurRadius":
         let blurEffectStyle = try extractBlurEffectStyle();
         
-        let customBlurRadius = try dict.getValueFromDictionary(
+        let customBlurRadius = try dict.getNumber(
           forKey: "customBlurRadius",
           type: CGFloat.self
         );
         
-        let effectIntensityForOtherEffects = try dict.getValueFromDictionary(
+        let effectIntensityForOtherEffects = try dict.getNumber(
           forKey: "effectIntensityForOtherEffects",
           type: CGFloat.self
         );
