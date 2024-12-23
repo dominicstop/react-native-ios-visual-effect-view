@@ -40,21 +40,15 @@ public final class RNIVisualEffectCustomFilterViewDelegate: UIView, RNIContentVi
   
   public var reactProps: NSDictionary = [:];
   
-  public var currentFilters: [LayerFilterConfig] = [];
-  @objc public var currentFiltersProp: NSArray? {
+  public var currentFilters: RNICustomFilterConfig = .noFilter;
+  @objc public var currentFiltersProp: NSDictionary? {
     willSet {
-      let items = newValue ?? [];
-      
-      self.currentFilters = items.compactMap {
-        guard let dict = $0 as? Dictionary<String, Any> else {
-          return nil;
-        };
-        
-        let filter: LayerFilterConfig? = try? .init(fromDict: dict);
-        return filter;
+      guard let newValue = newValue as? Dictionary<String, Any> else {
+        return;
       };
       
-      print("currentFilters", currentFilters);
+      let nextConfig: RNICustomFilterConfig? = try? .init(fromDict: newValue);
+      self.currentFilters = nextConfig ?? .noFilter;
       
       try? self._setupContentIfNeeded();
       try? self.applyCurrentFilterItems();
@@ -100,9 +94,20 @@ public final class RNIVisualEffectCustomFilterViewDelegate: UIView, RNIContentVi
       return;
     };
     
+    let config = self.currentFilters;
+ 
+
     let effectView = try VisualEffectCustomFilterView(
-      withInitialBackgroundFilters: self.currentFilters
+      withInitialBackgroundFilters: config.backgroundFilters,
+      initialForegroundFilters: config.foregroundFilters,
+      tintConfig: config.tintConfig
     );
+    
+    effectView.backgroundEffectOpacity = config.backgroundOpacity;
+    
+    if let foregroundOpacity = config.foregroundOpacity {
+      effectView.contentView.alpha = foregroundOpacity;
+    };
     
     self.effectView = effectView;
 
@@ -132,9 +137,19 @@ public final class RNIVisualEffectCustomFilterViewDelegate: UIView, RNIContentVi
       return;
     };
     
+    let config = self.currentFilters;
+    
     try effectView.immediatelyApplyFilters(
-      backgroundFilters: self.currentFilters
+      backgroundFilters: config.backgroundFilters,
+      foregroundFilters: config.foregroundFilters,
+      tintConfig: config.tintConfig
     );
+    
+    effectView.backgroundEffectOpacity = config.backgroundOpacity;
+    
+    if let foregroundOpacity = config.foregroundOpacity {
+      effectView.contentView.alpha = foregroundOpacity;
+    };
   };
 };
 
