@@ -71,6 +71,7 @@ export function BlurViewTest01Screen() {
         }}
         animationConfig={animationConfigPresetCurrent}
         animationDelay={animationDelay}
+        backgroundLayerSamplingSizeScale={1}
       />
       <SafeAreaView style={styles.debugOverlayContainer}>
         <ExampleItemCard

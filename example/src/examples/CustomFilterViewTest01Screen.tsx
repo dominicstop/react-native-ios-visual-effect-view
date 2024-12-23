@@ -871,7 +871,9 @@ export function CustomFilterViewTest01Screen() {
       </Animated.Text>
       <CustomFilterView
         style={styles.effectOverlay}
-        currentFilters={filerGroupCurrent}
+        currentFilters={{
+          backgroundFilters: filerGroupCurrent,
+        }}
         backgroundLayerSamplingSizeScale={1}
       />
       <SafeAreaView style={styles.debugOverlayContainer}>
