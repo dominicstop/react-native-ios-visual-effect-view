@@ -50,6 +50,14 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
         "Basic example for defining and combining filters"
       ],
     },
+        {
+      ...ROUTE_MAP.customFilterViewExample02,
+      type: 'screen',
+      title: "CustomFilterViewExample02",
+      desc: [
+        "TBA"
+      ],
+    }, 
     {
       ...ROUTE_MAP.blurViewTest01,
       type: 'screen',
@@ -99,7 +107,6 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
         "Cycle through `UIBlurEffectStyle` presets, and set a custom"
           + "  `VisualEffectBlurMode.intensity` (percent)",
         "This is an animated version of `BlurViewTest02`",
-
       ],
     }, 
     {

@@ -8,7 +8,9 @@ import { BlurViewTest04Screen } from "../examples/BlurViewTest04Screen";
 import { BlurViewTest05Screen } from "../examples/BlurViewTest05Screen";
 
 import { CustomFilterViewTest01Screen } from "../examples/CustomFilterViewTest01Screen";
+
 import { CustomFilterViewExample01 } from "../examples/CustomFilterViewExample01";
+import { CustomFilterViewExample02 } from "../examples/CustomFilterViewExample02";
 
 import type { RouteKey } from "./RouteKeys";
 
@@ -53,5 +55,9 @@ export const ROUTE_ITEMS: Array<RouteEntry> = [{
   {
     routeKey: 'customFilterViewExample01',
     component: CustomFilterViewExample01,
+  },
+  {
+    routeKey: 'customFilterViewExample02',
+    component: CustomFilterViewExample02,
   },
 ];
