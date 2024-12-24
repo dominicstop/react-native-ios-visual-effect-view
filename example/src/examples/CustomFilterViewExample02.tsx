@@ -1,10 +1,8 @@
 // @ts-ignore
 import * as React from 'react';
-import { StyleSheet, View, Text, Dimensions } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 
 import { CustomFilterView } from 'react-native-ios-visual-effect-view';
-
-const WINDOW_SIZE = Dimensions.get('window');
 
 // 1 = black, 0 = transparent
 
@@ -130,7 +128,6 @@ export function CustomFilterViewExample02() {
                 },
               },
             },
-            
           ]
         }}
       >
