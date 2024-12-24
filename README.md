@@ -245,6 +245,80 @@ export function CustomFilterViewExample01() {
 
 <img src="assets/ CustomFilterViewExample01.png" alt="CustomFilterViewExample01" height="600" />
 
+<br>
+
+### `CustomFilterViewExample02`
+
+**Summary**: TBA
+
+[🔗 Full Example](example/src/examples/CustomFilterViewExample02.tsx)
+
+```jsx
+export function CustomFilterViewExample02() {
+  // ...
+  return (
+    <View style={styles.container}>
+      { /* ... */ }
+      <CustomFilterView
+        style={styles.effectOverlay}
+        backgroundLayerSamplingSizeScale={2}
+        currentFilters={{
+          backgroundFilters: [
+            {
+              filterName: 'gaussianBlur',
+              radius: 18,
+              shouldNormalizeEdges: true,
+            },
+            {
+              filterName: 'brightenColors',
+              amount: -0.5
+            },
+            {
+              filterName: 'contrastColors',
+              amount: 0.3,
+            },
+            {
+              filterName: 'colorBlackAndWhite',
+              amount: 1,
+            },
+          ],
+          tintConfig: {
+            opacity: 0.75,
+            blendMode: 'color',
+            tintColor: 'red',
+          },
+          foregroundFilters: [
+            {
+              filterName: 'gaussianBlur',
+              radius: 4,
+              shouldNormalizeEdges: false
+            },
+            {
+              filterName: 'colorMatrixVibrant',
+              colorMatrix: {
+                mode: 'preset',
+                preset: {
+                  mode: 'presetName',
+                  presetName: 'preset14'
+                },
+              },
+            },
+          ]
+        }}
+      >
+        <View style={styles.effectContent}>
+          <CounterDisplay
+            counter={counter}
+          />
+        </View>
+      </CustomFilterView>
+    </View>
+  );
+}
+```
+
+<img src="assets/ CustomFilterViewExample02.png" alt="CustomFilterViewExample02" height="600" />
+
 <br><br>
 
 ## Contributing
