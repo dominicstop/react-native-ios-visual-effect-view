@@ -12,3 +12,4 @@ export * from './types/VisualEffectBlurMode';
 export * from './types/BlendMode';
 export * from './types/TintConfig';
 export * from './types/CustomFilterConfig';
+export * from './types/CustomFilterKeyframeConfig';
