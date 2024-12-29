@@ -68,55 +68,44 @@ extension LayerFilterConfig: InitializableFromDictionary {
           shouldNormalizeEdges:
             try dict.getValue(forKey: "shouldNormalizeEdges"),
             
-          shouldNormalizeEdgesToTransparent: try? dict.getValue(
-            forKey: "shouldNormalizeEdgesToTransparent",
-            type: Bool.self
-          ),
-          shouldUseHardEdges: try? dict.getValue(
-            forKey: "shouldUseHardEdges",
-            type: Bool.self
-          )
+          shouldNormalizeEdgesToTransparent:
+            try? dict.getBool(forKey: "shouldNormalizeEdgesToTransparent"),
+            
+          shouldUseHardEdges:
+            try? dict.getBool(forKey: "shouldUseHardEdges")
         );
         
       case "colorMatrixVibrant":
-        let colorMatrixDict = try dict.getValue(
+        let colorMatrix = try dict.getValue(
           forKey: "colorMatrix",
-          type: Dictionary<String, Any>.self
+          type: ColorMatrixRGBA.self
         );
         
-        self = .colorMatrixVibrant(
-          try .init(fromDict: colorMatrixDict)
-        );
+         self = .colorMatrixVibrant(colorMatrix);
         
       case "colorMatrix":
-        let colorMatrixDict = try dict.getValue(
+        let colorMatrix = try dict.getValue(
           forKey: "colorMatrix",
-          type: Dictionary<String, Any>.self
+          type: ColorMatrixRGBA.self
         );
         
-        self = .colorMatrix(
-          try .init(fromDict: colorMatrixDict)
-        );
+        self = .colorMatrix(colorMatrix);
         
       case "colorTransform":
-        let colorTransformDict = try dict.getValue(
+        let colorTransform = try dict.getValue(
           forKey: "colorTransform",
-          type: Dictionary<String, Any>.self
+          type: ColorTransform.self
         );
       
-        self = .colorTransform(
-          try .init(fromDict: colorTransformDict)
-        );
+        self = .colorTransform(colorTransform);
         
       case "colorTransformVibrant":
-        let colorTransformDict = try dict.getValue(
+        let colorTransform = try dict.getValue(
           forKey: "colorTransform",
-          type: Dictionary<String, Any>.self
+          type: ColorTransform.self
         );
       
-        self = .colorTransformVibrant(
-          try .init(fromDict: colorTransformDict)
-        );
+        self = .colorTransformVibrant(colorTransform);
         
       case "variadicBlur":
         let imageGradientConfig: ImageConfigGradient = try {
@@ -132,10 +121,10 @@ extension LayerFilterConfig: InitializableFromDictionary {
             try dict.getValue(forKey: "shouldNormalizeEdges"),
             
           shouldNormalizeEdgesToTransparent:
-            try? dict.getValue(forKey: "shouldNormalizeEdgesToTransparent"),
+            try? dict.getBool(forKey: "shouldNormalizeEdgesToTransparent"),
             
           shouldUseHardEdges:
-            try? dict.getValue(forKey: "shouldUseHardEdges")
+            try? dict.getBool(forKey: "shouldUseHardEdges")
         );
         
       case "darkVibrant":
