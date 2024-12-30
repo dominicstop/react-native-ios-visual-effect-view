@@ -4,6 +4,7 @@ export * from './components/AnimatableCustomFilterView';
 
 export * from './constants/LayerFilterConfigTypes';
 export * from './constants/AlphaGradientMaskPresets';
+export * from './constants/IdentityBackgroundFilterConfigListPreset';
 
 export * from './types/ColorMatrixRGBA';
 export * from './types/ColorMatrixRGBAPreset';
