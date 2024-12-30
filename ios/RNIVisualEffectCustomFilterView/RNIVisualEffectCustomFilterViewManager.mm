@@ -28,10 +28,13 @@ RCT_EXPORT_MODULE(RNIVisualEffectCustomFilterView)
 {
   return [[RNIVisualEffectCustomFilterView alloc] initWithBridge:self.bridge];
 }
-#endif
+
+
+RNI_EXPORT_VIEW_EVENT(onDidSetViewID, RCTBubblingEventBlock)
 
 RNI_EXPORT_VIEW_PROPERTY(currentFilters, NSDictionary);
 RNI_EXPORT_VIEW_PROPERTY(backgroundLayerSamplingSizeScale, NSNumber);
+#endif
 
 @end
 

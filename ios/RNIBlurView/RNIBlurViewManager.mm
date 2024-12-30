@@ -28,12 +28,14 @@ RCT_EXPORT_MODULE(RNIBlurView)
 {
   return [[RNIBlurView alloc] initWithBridge:self.bridge];
 }
-#endif
+
+RNI_EXPORT_VIEW_EVENT(onDidSetViewID, RCTBubblingEventBlock);
 
 RNI_EXPORT_VIEW_PROPERTY(blurMode, NSDictionary);
 RNI_EXPORT_VIEW_PROPERTY(animationConfig, NSDictionary);
 RNI_EXPORT_VIEW_PROPERTY(animationDelay, NSNumber);
 RNI_EXPORT_VIEW_PROPERTY(backgroundLayerSamplingSizeScale, NSNumber);
+#endif
 
 @end
 

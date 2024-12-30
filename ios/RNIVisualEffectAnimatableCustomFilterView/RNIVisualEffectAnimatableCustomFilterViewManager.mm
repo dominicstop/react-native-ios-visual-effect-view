@@ -28,10 +28,22 @@ RCT_EXPORT_MODULE(RNIVisualEffectAnimatableCustomFilterView)
 {
   return [[RNIVisualEffectAnimatableCustomFilterView alloc] initWithBridge:self.bridge];
 }
+
+RNI_EXPORT_VIEW_EVENT(onDidSetViewID, RCTBubblingEventBlock)
+
+// required props
+RNI_EXPORT_VIEW_PROPERTY(identityBackgroundFilters, NSArray);
+RNI_EXPORT_VIEW_PROPERTY(identityForegroundFilters, NSArray);
+RNI_EXPORT_VIEW_PROPERTY(initialKeyframe, NSDictionary);
+RNI_EXPORT_VIEW_PROPERTY(animationConfig, NSDictionary);
+
+// optional props
+RNI_EXPORT_VIEW_PROPERTY(backgroundLayerSamplingSizeScale, NSNumber);
 #endif
 
-RNI_EXPORT_VIEW_PROPERTY(currentFilters, NSDictionary);
-RNI_EXPORT_VIEW_PROPERTY(backgroundLayerSamplingSizeScale, NSNumber);
+
+
+
 
 @end
 
