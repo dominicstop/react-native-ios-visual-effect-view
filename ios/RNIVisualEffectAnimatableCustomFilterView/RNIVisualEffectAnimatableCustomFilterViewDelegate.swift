@@ -15,7 +15,12 @@ import VisualEffectBlurView
 public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RNIContentView {
   
   public static let propKeyPathMap: PropKeyPathMap = [
-    "currentFilters": \.currentFiltersProp,
+    // required props
+    "identityBackgroundFilters": \.identityBackgroundFiltersProp,
+    "identityForegroundFilters": \.identityForegroundFiltersProp,
+    "initialKeyframe": \.initialKeyframeProp,
+    
+    // optional props
     "backgroundLayerSamplingSizeScale": \.backgroundLayerSamplingSizeScaleProp,
   ];
   
@@ -27,8 +32,7 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
   // ----------------
   
   var _didSetup = false;
-  
-  var effectView: VisualEffectCustomFilterView?;
+  var effectView: VisualEffectAnimatableCustomFilterView?;
   
   // MARK: - Properties - RNIContentViewDelegate
   // -------------------------------------------
@@ -40,18 +44,52 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
   
   public var reactProps: NSDictionary = [:];
   
-  public var currentFilters: RNICustomFilterConfig = .noFilter;
-  @objc public var currentFiltersProp: NSDictionary? {
+  public var identityBackgroundFilters: [LayerFilterConfig]?;
+  @objc var identityBackgroundFiltersProp: NSArray? {
     willSet {
-      guard let newValue = newValue as? Dictionary<String, Any> else {
+      guard let newValue = newValue,
+            let rawValues = newValue.asAnyArray,
+            let dictValues = rawValues.asDictValues.nilIfEmpty,
+            let filterConfigItems = dictValues.asLayerFilterConfig.nilIfEmpty
+      else {
+        self.identityBackgroundFilters = [];
         return;
       };
       
-      let nextConfig: RNICustomFilterConfig? = try? .init(fromDict: newValue);
-      self.currentFilters = nextConfig ?? .noFilter;
+      self.identityBackgroundFilters = filterConfigItems;
+    }
+  };
+  
+  public var identityForegroundFilters: [LayerFilterConfig]?;
+  @objc var identityForegroundFiltersProp: NSArray? {
+    willSet {
+      guard let newValue = newValue,
+            let rawValues = newValue.asAnyArray,
+            let dictValues = rawValues.asDictValues.nilIfEmpty,
+            let filterConfigItems = dictValues.asLayerFilterConfig.nilIfEmpty
+      else {
+        self.identityForegroundFilters = [];
+        return;
+      };
       
-      try? self._setupContentIfNeeded();
-      try? self.applyCurrentFilterItems();
+      self.identityForegroundFilters = filterConfigItems;
+    }
+  };
+  
+  
+  public var initialKeyframe: CustomFilterKeyframeConfig?;
+  @objc var initialKeyframeProp: NSDictionary? {
+    willSet {
+      guard let newValue = newValue,
+            let dict = newValue.asAnyDict,
+            let keyframeConfig =
+              try? CustomFilterKeyframeConfig(fromDict: dict)
+      else {
+        self.initialKeyframe = nil;
+        return;
+      };
+      
+      self.initialKeyframe = keyframeConfig;
     }
   };
   
@@ -90,26 +128,24 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
   // -----------------
 
   private func _setupContentIfNeeded() throws {
-    guard !self._didSetup else {
+    guard !self._didSetup,
+          let identityBackgroundFilters = self.identityBackgroundFilters,
+          let identityForegroundFilters = self.identityForegroundFilters,
+          let initialKeyframe = self.initialKeyframe
+    else {
       return;
     };
-    
-    let config = self.currentFilters;
- 
 
-    let effectView = try VisualEffectCustomFilterView(
-      withInitialBackgroundFilters: config.backgroundFilters,
-      initialForegroundFilters: config.foregroundFilters,
-      tintConfig: config.tintConfig
+    let effectView = try VisualEffectAnimatableCustomFilterView(
+      identityBackgroundFilters: identityBackgroundFilters,
+      identityForegroundFilters: identityForegroundFilters,
+      initialKeyframe: initialKeyframe
     );
     
-    effectView.backgroundEffectOpacity = config.backgroundOpacity;
-    
-    if let foregroundOpacity = config.foregroundOpacity {
-      effectView.contentView.alpha = foregroundOpacity;
-    };
-    
     self.effectView = effectView;
+    defer {
+      self._didSetup = true;
+    };
 
     self.addSubview(effectView);
     effectView.translatesAutoresizingMaskIntoConstraints = false;
@@ -128,28 +164,6 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
         equalTo: self.bottomAnchor
       ),
     ]);
-    
-    self._didSetup = true;
-  };
-  
-  public func applyCurrentFilterItems() throws {
-    guard let effectView = self.effectView else {
-      return;
-    };
-    
-    let config = self.currentFilters;
-    
-    try effectView.immediatelyApplyFilters(
-      backgroundFilters: config.backgroundFilters,
-      foregroundFilters: config.foregroundFilters,
-      tintConfig: config.tintConfig
-    );
-    
-    effectView.backgroundEffectOpacity = config.backgroundOpacity;
-    
-    if let foregroundOpacity = config.foregroundOpacity {
-      effectView.contentView.alpha = foregroundOpacity;
-    };
   };
 };
 
@@ -170,7 +184,6 @@ extension RNIVisualEffectAnimatableCustomFilterViewDelegate: RNIContentViewDeleg
     superBlock();
     #endif
     
-    try? self._setupContentIfNeeded();
     self.effectView?.contentView.addSubview(childComponentView);
   };
   
@@ -185,6 +198,10 @@ extension RNIVisualEffectAnimatableCustomFilterViewDelegate: RNIContentViewDeleg
     #else
     childComponentView.removeFromSuperview();
     #endif
+  };
+  
+  public func notifyDidSetProps(sender: RNIContentViewParentDelegate) {
+    try? self._setupContentIfNeeded();
   };
   
   // MARK: Fabric Only
@@ -203,3 +220,56 @@ extension RNIVisualEffectAnimatableCustomFilterViewDelegate: RNIContentViewDeleg
   
   #endif
 };
+
+public extension NSArray {
+  
+  var asAnyArray: [Any]? {
+    self as? Array<Any>;
+  };
+  
+  var asDictArray: [Dictionary<String, Any>]? {
+    self.asAnyArray?.asDictValues;
+  };
+};
+
+public extension NSDictionary {
+  
+  var asAnyDict: [String: Any]? {
+    self as? Dictionary<String, Any>;
+  };
+};
+
+public extension Array {
+  
+  var nilIfEmpty: Self? {
+    self.count > 0 ? self : nil;
+  };
+};
+
+public extension Dictionary {
+  
+  var nilIfEmpty: Self? {
+    self.count > 0 ? self : nil;
+  };
+};
+
+
+public extension Array where Element == Any {
+  var asDictValues: [Dictionary<String, Any>] {
+    self.compactMap {
+      switch $0 {
+        case let dict as Dictionary<String, Any>:
+          return dict;
+          
+        case let objcDict as NSDictionary:
+          return objcDict as? Dictionary<String, Any>;
+      
+        default:
+          return nil;
+      };
+    };
+  };
+};
+
+
+

@@ -14,7 +14,9 @@ export type AnimatableCustomFilterViewInheritedOptionalProps = Partial<Pick<RNIV
 >>;
 
 export type AnimatableCustomFilterViewInheritedRequiredProps = Required<Pick<RNIVisualEffectAnimatableCustomFilterViewProps,
-  | never
+  | 'identityBackgroundFilters'
+  | 'identityForegroundFilters'
+  | 'initialKeyframe'
 >>;
 
 export type AnimatableCustomFilterViewInheritedProps =

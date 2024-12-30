@@ -5,7 +5,11 @@ import type { HostComponent, ViewProps } from 'react-native';
 
 export interface NativeProps extends ViewProps {
   onDidSetViewID: BubblingEventHandler<{}>;
-  
+
+  identityBackgroundFilters: Array<{}>;
+  identityForegroundFilters: Array<{}>;
+  initialKeyframe: {};
+
   backgroundLayerSamplingSizeScale?: Double;
 };
 

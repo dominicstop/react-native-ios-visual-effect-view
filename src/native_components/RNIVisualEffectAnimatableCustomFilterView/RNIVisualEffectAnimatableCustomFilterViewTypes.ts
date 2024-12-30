@@ -16,6 +16,9 @@ export type RNIVisualEffectAnimatableCustomFilterViewInheritedOptionalProps = Pa
 
 export type RNIVisualEffectAnimatableCustomFilterViewInheritedRequiredProps = Pick<RNIVisualEffectAnimatableCustomFilterNativeViewProps,
   | 'onDidSetViewID'
+  | 'identityBackgroundFilters'
+  | 'identityForegroundFilters'
+  | 'initialKeyframe'
 >;
 
 export type RNIVisualEffectAnimatableCustomFilterViewInheritedProps =

@@ -9,7 +9,19 @@ import type { AnimatableCustomFilterViewProps } from './AnimatableCustomFilterVi
 
 
 export function AnimatableCustomFilterView(props: AnimatableCustomFilterViewProps){
-  const { children, ...viewProps } = props;
+  const { 
+    // required props
+    identityBackgroundFilters,
+    identityForegroundFilters,
+    initialKeyframe,
+
+    // optional props
+    backgroundLayerSamplingSizeScale,
+
+    // react + view props
+    children,
+    ...viewProps
+  } = props;
 
   if(!LIB_ENV.isVisualEffectViewSupported) {
     return (
@@ -21,6 +33,10 @@ export function AnimatableCustomFilterView(props: AnimatableCustomFilterViewProp
 
   return (
     <RNIVisualEffectAnimatableCustomFilterView
+      identityBackgroundFilters={identityBackgroundFilters}
+      identityForegroundFilters={identityForegroundFilters}
+      initialKeyframe={initialKeyframe}
+      backgroundLayerSamplingSizeScale={backgroundLayerSamplingSizeScale}
       {...viewProps}
     >
       {children}
