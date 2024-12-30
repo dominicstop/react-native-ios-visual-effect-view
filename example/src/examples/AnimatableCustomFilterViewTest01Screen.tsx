@@ -2,6 +2,7 @@ import * as React from 'react';
 import { StyleSheet, View, Animated, Easing, Dimensions } from 'react-native';
 
 import { AnimatableCustomFilterView, IdentityBackgroundFilterConfigListPreset, IdentityForegroundFilterConfigListPreset, type LayerFilterConfig } from 'react-native-ios-visual-effect-view';
+import { CounterDisplay } from '../components/CounterDisplay';
 const WINDOW_SIZE = Dimensions.get('window');
 
 // 1 = black, 0 = transparent
@@ -97,7 +98,16 @@ export function AnimatableCustomFilterViewTest01Screen() {
             }
           ]
         }}
-      />
+        animationConfig={{
+          mode: 'presetCurve',
+          duration: 1,
+          curve: 'linear',
+        }}
+      >
+        <View style={styles.effectContent}>
+          <CounterDisplay/>
+        </View>
+      </AnimatableCustomFilterView>
     </View>
   );
 }
@@ -118,5 +128,10 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
+  },
+  effectContent: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
