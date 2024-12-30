@@ -1,5 +1,6 @@
 export * from './components/BlurView';
 export * from './components/CustomFilterView';
+export * from './components/AnimatableCustomFilterView';
 
 export * from './constants/LayerFilterConfigTypes';
 
