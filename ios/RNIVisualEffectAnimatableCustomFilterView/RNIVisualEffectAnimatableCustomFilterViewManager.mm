@@ -29,7 +29,9 @@ RCT_EXPORT_MODULE(RNIVisualEffectAnimatableCustomFilterView)
   return [[RNIVisualEffectAnimatableCustomFilterView alloc] initWithBridge:self.bridge];
 }
 
+// required events
 RNI_EXPORT_VIEW_EVENT(onDidSetViewID, RCTBubblingEventBlock)
+RNI_EXPORT_VIEW_EVENT(onRequestFromNative, RCTBubblingEventBlock)
 
 // required props
 RNI_EXPORT_VIEW_PROPERTY(identityBackgroundFilters, NSArray);

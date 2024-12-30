@@ -5,6 +5,7 @@ import type { HostComponent, ViewProps } from 'react-native';
 
 export interface NativeProps extends ViewProps {
   onDidSetViewID: BubblingEventHandler<{}>;
+  onRequestFromNative: BubblingEventHandler<{}>;
 
   identityBackgroundFilters: Array<{}>;
   identityForegroundFilters: Array<{}>;

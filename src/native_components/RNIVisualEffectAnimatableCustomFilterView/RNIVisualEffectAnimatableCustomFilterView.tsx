@@ -7,6 +7,8 @@ import type {
 	RNIVisualEffectAnimatableCustomFilterViewProps, 
 	RNIVisualEffectAnimatableCustomFilterViewRef, 
 } from './RNIVisualEffectAnimatableCustomFilterViewTypes';
+import type { OnRequestFromNativeEvent } from './RNIVisualEffectAnimatableCustomFilterViewEvents';
+
 
 export const RNIVisualEffectAnimatableCustomFilterView = React.forwardRef<
 	RNIVisualEffectAnimatableCustomFilterViewRef, 
@@ -25,6 +27,18 @@ export const RNIVisualEffectAnimatableCustomFilterView = React.forwardRef<
 		},
 	}));
 
+	const [shouldMountContent, setShouldMountContent] = React.useState(false);
+	const handleRequestFromNative = React.useCallback<OnRequestFromNativeEvent>((event) => {
+		switch (event.nativeEvent.requestKey) {
+			case 'requestToMountCount':
+				setShouldMountContent(true);
+				break;
+				
+			default:
+				break;
+		}
+  }, []); 
+
 	return (
 		<RNIVisualEffectAnimatableCustomFilterNativeView
 			{...props}
@@ -33,8 +47,9 @@ export const RNIVisualEffectAnimatableCustomFilterView = React.forwardRef<
 				setReactTag(event.nativeEvent.reactTag);
 				props.onDidSetViewID?.(event);
 			}}
+			onRequestFromNative={handleRequestFromNative}
 		>
-			{props.children}
+			{shouldMountContent && (props.children)}
 		</RNIVisualEffectAnimatableCustomFilterNativeView>
 	);
 });

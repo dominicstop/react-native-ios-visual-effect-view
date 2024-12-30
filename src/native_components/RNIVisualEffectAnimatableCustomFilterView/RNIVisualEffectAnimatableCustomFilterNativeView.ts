@@ -8,6 +8,7 @@ import {
 import type { SharedViewEvents, NativeComponentBaseProps, RemapObject, AnimationConfig } from 'react-native-ios-utilities';
 import type { LayerFilterConfig } from '../../types/LayerFilterConfig';
 import type { CustomFilterKeyframeConfig } from '../../types/CustomFilterKeyframeConfig';
+import type { OnRequestFromNativeEvent } from './RNIVisualEffectAnimatableCustomFilterViewEvents';
 
 
 type RNIVisualEffectAnimatableCustomFilterViewNativeComponentBaseProps = 
@@ -16,6 +17,8 @@ type RNIVisualEffectAnimatableCustomFilterViewNativeComponentBaseProps =
 export type RNIVisualEffectAnimatableCustomFilterNativeViewBaseProps = RemapObject<
   RNIVisualEffectAnimatableCustomFilterViewNativeComponentBaseProps, 
   {
+    onRequestFromNative: OnRequestFromNativeEvent;
+
     backgroundLayerSamplingSizeScale: number;
     identityBackgroundFilters: Array<LayerFilterConfig>;
     identityForegroundFilters: Array<LayerFilterConfig>;

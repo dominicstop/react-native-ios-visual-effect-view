@@ -26,14 +26,17 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
   ];
   
   public enum Events: String, CaseIterable {
+    // required events
     case onDidSetViewID;
-  }
+    case onRequestFromNative;
+  };
   
   // MARK: Properties
   // ----------------
   
   var _didSetup = false;
-  var effectView: VisualEffectAnimatableCustomFilterView?;
+  
+  public var effectView: VisualEffectAnimatableCustomFilterView?;
   public var currentAnimator: UIViewPropertyAnimator?;
   
   // MARK: - Properties - RNIContentViewDelegate
@@ -77,7 +80,6 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
       self.identityForegroundFilters = filterConfigItems;
     }
   };
-  
   
   public var initialKeyframe: CustomFilterKeyframeConfig?;
   @objc var initialKeyframeProp: NSDictionary? {
@@ -181,6 +183,12 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
         equalTo: self.bottomAnchor
       ),
     ]);
+    
+    self.dispatchEvent(
+      for: .onRequestFromNative,
+      withPayload: ["requestKey": "requestToMountCount"]
+    );
+  };
   };
 };
 
