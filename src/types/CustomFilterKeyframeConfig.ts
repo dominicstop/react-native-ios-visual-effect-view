@@ -8,8 +8,8 @@ export type CustomFilterKeyframeConfig = {
   contentKeyframe?: BasicViewKeyframe;
   backdropKeyframe?: BasicViewKeyframe;
 
-  backgroundFilters?: LayerFilterConfig;
-  foregroundFilters?: LayerFilterConfig;
+  backgroundFilters?: Array<LayerFilterConfig>;
+  foregroundFilters?: Array<LayerFilterConfig>;
 
   tintConfig?: TintConfig;
 };
