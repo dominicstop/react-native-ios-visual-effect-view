@@ -1,11 +1,7 @@
 import * as React from 'react';
-import { StyleSheet, View, Animated, Easing, Dimensions, Pressable } from 'react-native';
+import { StyleSheet, View, Animated, Easing, Dimensions } from 'react-native';
 
 import { AnimatableCustomFilterView, IdentityBackgroundFilterConfigListPreset, IdentityForegroundFilterConfigListPreset, type LayerFilterConfig } from 'react-native-ios-visual-effect-view';
-import { SafeAreaView } from 'react-native-safe-area-context';
-
-import { CardButton, Colors, ExampleItemCard, ObjectPropertyDisplay } from 'react-native-ios-utilities';
-
 const WINDOW_SIZE = Dimensions.get('window');
 
 // 1 = black, 0 = transparent
@@ -87,7 +83,8 @@ export function AnimatableCustomFilterViewTest01Screen() {
         style={styles.effectOverlay}
         backgroundLayerSamplingSizeScale={1}
         identityBackgroundFilters={
-          IdentityBackgroundFilterConfigListPreset}
+          IdentityBackgroundFilterConfigListPreset
+        }
         identityForegroundFilters={
           IdentityForegroundFilterConfigListPreset
         }

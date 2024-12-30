@@ -3,18 +3,8 @@ import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
 import { CustomFilterView } from 'react-native-ios-visual-effect-view';
+import { CounterDisplay } from '../components/CounterDisplay';
 
-// 1 = black, 0 = transparent
-
-const textColors = [
-  'rgb(0,0,0)',
-  'rgb(25,25,25)',
-  'rgb(50,50,50)',
-  'rgb(75,75,75)',
-  'rgb(100,100,100)',
-  'rgb(125,125,125)',
-  'rgb(150,150,150)',
-];
 
 const emojiString = 
     "❤️🛑🍒🍓💃"
@@ -27,58 +17,8 @@ const emojiString =
   + "\n🤍✨🌙🦢🦄"
   + "\n🖤🌑🦇🕷️🕸️";
 
-function formatCounter(counter: number){
-  return counter.toString().padStart(4, '0');
-};
-
-function getCounterColor(counter: number){
-  return textColors[counter % textColors.length];
-};
-
-function CounterDisplay(props: {
-  counter: number;
-}){
-  return(
-    <React.Fragment>
-      <Text style={[
-        { color: getCounterColor(props.counter) },
-        styles.counterLabel
-      ]}>
-        {formatCounter(props.counter)}
-      </Text>
-      <Text style={[
-        { color: getCounterColor(props.counter + 1) },
-        styles.counterLabel
-      ]}>
-        {formatCounter(props.counter + 1)}
-      </Text>
-      <Text style={[
-        { color: getCounterColor(props.counter + 2) },
-        styles.counterLabel
-      ]}>
-        {formatCounter(props.counter + 2)}
-      </Text>
-      <Text style={[
-        { color: getCounterColor(props.counter + 2) },
-        styles.counterLabel
-      ]}>
-        {formatCounter(props.counter + 3)}
-      </Text>
-    </React.Fragment>
-  );
-};
 
 export function CustomFilterViewExample02() {
-  const [counter, setCounter] = React.useState(0);
-
-  React.useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCounter((prevCounter) => prevCounter + 1);
-    }, 1000);
-
-    return () => clearInterval(intervalId);
-  }, []);
-
   return (
     <View style={styles.container}>
       <Text style={styles.label}>
@@ -132,9 +72,7 @@ export function CustomFilterViewExample02() {
         }}
       >
         <View style={styles.effectContent}>
-          <CounterDisplay
-            counter={counter}
-          />
+          <CounterDisplay/>
         </View>
       </CustomFilterView>
     </View>
@@ -162,10 +100,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  counterLabel: {
-    fontSize: 124,
-    fontWeight: '900',
-    fontVariant: ['tabular-nums'],
   },
 });
