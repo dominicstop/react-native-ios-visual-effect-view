@@ -113,7 +113,7 @@ Pod::Spec.new do |s|
   s.dependency 'react-native-ios-utilities'
   s.dependency 'ComputableLayout'
 
-  s.dependency 'DGSwiftUtilities', '~> 0.36'
+  s.dependency 'DGSwiftUtilities', '~> 0.44'
   s.dependency 'VisualEffectBlurView', '~> 7.0'
 
   if fabric_enabled

@@ -11,10 +11,10 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		19E777DB89226BE74E1ACEFA /* Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113C896CCE56ED6240E5C077 /* Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework */; };
 		364BBB994AEAE1FA72B005E2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = E0CB7BBAC20AEEC04DF86BF1 /* PrivacyInfo.xcprivacy */; };
-		65D353CB31223CA227AC1A11 /* Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1BD839E2D2CE15F1F2CECB /* Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		B13B57995C8C7D53F059E489 /* Pods_IosVisualEffectViewExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1D04A00C34541D88D67B4D3 /* Pods_IosVisualEffectViewExample.framework */; };
+		A0E03EB9F990A819BB9AC7E9 /* Pods_IosVisualEffectViewExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76792EED1BA5AFFD12C1445 /* Pods_IosVisualEffectViewExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +31,7 @@
 		00E356EE1AD99517003FC87E /* IosVisualEffectViewExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IosVisualEffectViewExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* IosVisualEffectViewExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IosVisualEffectViewExampleTests.m; sourceTree = "<group>"; };
+		113C896CCE56ED6240E5C077 /* Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* IosVisualEffectViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosVisualEffectViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = IosVisualEffectViewExample/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = IosVisualEffectViewExample/AppDelegate.mm; sourceTree = "<group>"; };
@@ -38,15 +39,14 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = IosVisualEffectViewExample/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = IosVisualEffectViewExample/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = IosVisualEffectViewExample/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		1C1BD839E2D2CE15F1F2CECB /* Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2671F76B142C712192EEE475 /* Pods-IosVisualEffectViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosVisualEffectViewExample.release.xcconfig"; path = "Target Support Files/Pods-IosVisualEffectViewExample/Pods-IosVisualEffectViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		290CECE6B6F56EABBB82154E /* Pods-IosVisualEffectViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosVisualEffectViewExample.debug.xcconfig"; path = "Target Support Files/Pods-IosVisualEffectViewExample/Pods-IosVisualEffectViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 		2A33319156B2D32C45C90AED /* Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests/Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = IosVisualEffectViewExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		883788DD2C71C0EF007F2293 /* ci_post_clone.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_clone.sh; sourceTree = "<group>"; };
 		E0CB7BBAC20AEEC04DF86BF1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = IosVisualEffectViewExample/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		E76792EED1BA5AFFD12C1445 /* Pods_IosVisualEffectViewExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosVisualEffectViewExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F1D04A00C34541D88D67B4D3 /* Pods_IosVisualEffectViewExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosVisualEffectViewExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7686772ED84C52578D88918 /* Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.release.xcconfig"; path = "Target Support Files/Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests/Pods-IosVisualEffectViewExample-IosVisualEffectViewExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65D353CB31223CA227AC1A11 /* Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework in Frameworks */,
+				19E777DB89226BE74E1ACEFA /* Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B13B57995C8C7D53F059E489 /* Pods_IosVisualEffectViewExample.framework in Frameworks */,
+				A0E03EB9F990A819BB9AC7E9 /* Pods_IosVisualEffectViewExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				F1D04A00C34541D88D67B4D3 /* Pods_IosVisualEffectViewExample.framework */,
-				1C1BD839E2D2CE15F1F2CECB /* Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework */,
+				E76792EED1BA5AFFD12C1445 /* Pods_IosVisualEffectViewExample.framework */,
+				113C896CCE56ED6240E5C077 /* Pods_IosVisualEffectViewExample_IosVisualEffectViewExampleTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -483,7 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 132;
+				CURRENT_PROJECT_VERSION = 137;
 				DEVELOPMENT_TEAM = ZC7A6XV8GR;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = IosVisualEffectViewExample/Info.plist;
@@ -516,7 +516,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 132;
+				CURRENT_PROJECT_VERSION = 137;
 				DEVELOPMENT_TEAM = ZC7A6XV8GR;
 				INFOPLIST_FILE = IosVisualEffectViewExample/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "RNIVisualEffectView Example";
