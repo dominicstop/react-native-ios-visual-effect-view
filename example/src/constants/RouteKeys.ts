@@ -10,6 +10,7 @@ export const ROUTE_KEYS = {
   blurViewTest05: 'blurViewTest05',
   customFilterViewExample01: 'customFilterViewExample01',
   customFilterViewExample02: 'customFilterViewExample02',
+  animatableCustomFilterViewTest01: 'animatableCustomFilterTest01',
 };
 
 export type RouteKey = keyof (typeof ROUTE_KEYS);

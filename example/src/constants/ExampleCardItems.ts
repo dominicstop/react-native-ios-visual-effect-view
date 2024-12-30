@@ -35,7 +35,7 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
     {
       ...ROUTE_MAP.blurViewBasicUsage01,
       type: 'screen',
-      title: 'BlurViewBasicUsage01',
+      title: 'BlurView - BasicUsage01',
       subtitle: "Basic Usage - BlurView",
       desc: [
         "Basic example for demonstrating how to use: `blurMode` + `animationConfig`"
@@ -44,7 +44,7 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
     {
       ...ROUTE_MAP.customFilterViewExample01,
       type: 'screen',
-      title: 'CustomFilterViewExample01',
+      title: 'CustomFilterView - Example01',
       subtitle: 'example usage, define custom filter',
       desc: [
         "Basic example for defining and combining filters"
@@ -53,7 +53,7 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
         {
       ...ROUTE_MAP.customFilterViewExample02,
       type: 'screen',
-      title: "CustomFilterViewExample02",
+      title: "CustomFilterView - Example02",
       desc: [
         "TBA"
       ],
@@ -61,7 +61,7 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
     {
       ...ROUTE_MAP.blurViewTest01,
       type: 'screen',
-      title: "BlurViewTest01",
+      title: "BlurView - Test01",
       desc: [
         "Test for `blurMode` (standard mode) + `animationConfig`",
         "Cycle through `UIBlurEffectStyle` + `AnimationConfig` presets",
@@ -70,7 +70,7 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
     {
       ...ROUTE_MAP.blurViewTest02,
       type: 'screen',
-      title: "BlurViewTest02",
+      title: "BlurView - Test02",
       desc: [
         "Test for `blurMode` (`customEffectIntensity` mode)",
         "Cycle through `UIBlurEffectStyle` presets, and set a custom"
@@ -80,7 +80,7 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
     {
       ...ROUTE_MAP.blurViewTest03,
       type: 'screen',
-      title: "BlurViewTest03",
+      title: "BlurView - Test03",
       desc: [
         "Test for `blurMode` (`customBlurRadius` mode)",
         "Cycle through `UIBlurEffectStyle` presets, and set a custom"
@@ -90,7 +90,7 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
     {
       ...ROUTE_MAP.blurViewTest04,
       type: 'screen',
-      title: "BlurViewTest04",
+      title: "BlurView - Test04",
       desc: [
         "Test for `blurMode` (`customBlurRadius` mode) + `animationConfig`",
         "Cycle through `UIBlurEffectStyle` + `AnimationConfig` presets, and set"
@@ -101,7 +101,7 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
     {
       ...ROUTE_MAP.blurViewTest05,
       type: 'screen',
-      title: "BlurViewTest05",
+      title: "BlurView - Test05",
       desc: [
         "Test for `blurMode` (`customEffectIntensity` mode) + `animationConfig`",
         "Cycle through `UIBlurEffectStyle` presets, and set a custom"
@@ -112,9 +112,17 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
     {
       ...ROUTE_MAP.customFilterViewTest01,
       type: 'screen',
-      title: "CustomFilterViewTest01",
+      title: "CustomFilterView - Test01",
       desc: [
         "Test for creating and combining custom filters together",
+      ],
+    }, 
+    {
+      ...ROUTE_MAP.animatableCustomFilterViewTest01,
+      type: 'screen',
+      title: "AnimatableCustomFilterView - Test01",
+      desc: [
+        "TBA",
       ],
     }, 
   ];
