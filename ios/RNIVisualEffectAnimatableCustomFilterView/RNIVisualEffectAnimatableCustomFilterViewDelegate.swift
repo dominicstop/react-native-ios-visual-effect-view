@@ -19,6 +19,7 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
     "identityBackgroundFilters": \.identityBackgroundFiltersProp,
     "identityForegroundFilters": \.identityForegroundFiltersProp,
     "initialKeyframe": \.initialKeyframeProp,
+    "animationConfig": \.animationConfigProp,
     
     // optional props
     "backgroundLayerSamplingSizeScale": \.backgroundLayerSamplingSizeScaleProp,
@@ -33,6 +34,7 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
   
   var _didSetup = false;
   var effectView: VisualEffectAnimatableCustomFilterView?;
+  public var currentAnimator: UIViewPropertyAnimator?;
   
   // MARK: - Properties - RNIContentViewDelegate
   // -------------------------------------------
@@ -90,6 +92,21 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
       };
       
       self.initialKeyframe = keyframeConfig;
+    }
+  };
+  
+  public var animationConfig: AnimationConfig?;
+  @objc var animationConfigProp: NSDictionary? {
+    willSet {
+      guard let dict = newValue?.asAnyDict,
+            let animationConfig = try? AnimationConfig(fromDict: dict)
+      else {
+        self.animationConfig = nil;
+        self.currentAnimator?.stopAnimation(true);
+        return;
+      };
+      
+      self.animationConfig = animationConfig;
     }
   };
   

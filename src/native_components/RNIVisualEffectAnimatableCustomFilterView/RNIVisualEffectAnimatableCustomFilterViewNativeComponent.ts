@@ -9,6 +9,7 @@ export interface NativeProps extends ViewProps {
   identityBackgroundFilters: Array<{}>;
   identityForegroundFilters: Array<{}>;
   initialKeyframe: {};
+  animationConfig: {};
 
   backgroundLayerSamplingSizeScale?: Double;
 };

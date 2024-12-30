@@ -19,6 +19,7 @@ export type RNIVisualEffectAnimatableCustomFilterViewInheritedRequiredProps = Pi
   | 'identityBackgroundFilters'
   | 'identityForegroundFilters'
   | 'initialKeyframe'
+  | 'animationConfig'
 >;
 
 export type RNIVisualEffectAnimatableCustomFilterViewInheritedProps =

@@ -17,6 +17,7 @@ export type AnimatableCustomFilterViewInheritedRequiredProps = Required<Pick<RNI
   | 'identityBackgroundFilters'
   | 'identityForegroundFilters'
   | 'initialKeyframe'
+  | 'animationConfig'
 >>;
 
 export type AnimatableCustomFilterViewInheritedProps =

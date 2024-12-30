@@ -14,6 +14,7 @@ export function AnimatableCustomFilterView(props: AnimatableCustomFilterViewProp
     identityBackgroundFilters,
     identityForegroundFilters,
     initialKeyframe,
+    animationConfig,
 
     // optional props
     backgroundLayerSamplingSizeScale,
@@ -36,6 +37,7 @@ export function AnimatableCustomFilterView(props: AnimatableCustomFilterViewProp
       identityBackgroundFilters={identityBackgroundFilters}
       identityForegroundFilters={identityForegroundFilters}
       initialKeyframe={initialKeyframe}
+      animationConfig={animationConfig}
       backgroundLayerSamplingSizeScale={backgroundLayerSamplingSizeScale}
       {...viewProps}
     >
