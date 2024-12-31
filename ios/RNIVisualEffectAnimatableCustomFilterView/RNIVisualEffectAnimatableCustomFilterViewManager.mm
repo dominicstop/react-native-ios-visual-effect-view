@@ -38,6 +38,7 @@ RNI_EXPORT_VIEW_PROPERTY(identityBackgroundFilters, NSArray);
 RNI_EXPORT_VIEW_PROPERTY(identityForegroundFilters, NSArray);
 RNI_EXPORT_VIEW_PROPERTY(initialKeyframe, NSDictionary);
 RNI_EXPORT_VIEW_PROPERTY(animationConfig, NSDictionary);
+RNI_EXPORT_VIEW_PROPERTY(currentKeyframe, NSDictionary);
 
 // optional props
 RNI_EXPORT_VIEW_PROPERTY(backgroundLayerSamplingSizeScale, NSNumber);

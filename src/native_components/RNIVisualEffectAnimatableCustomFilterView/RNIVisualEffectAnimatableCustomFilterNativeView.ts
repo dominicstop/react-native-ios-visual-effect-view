@@ -24,6 +24,7 @@ export type RNIVisualEffectAnimatableCustomFilterNativeViewBaseProps = RemapObje
     identityForegroundFilters: Array<LayerFilterConfig>;
     initialKeyframe: CustomFilterKeyframeConfig;
     animationConfig: AnimationConfig;
+    currentKeyframe: CustomFilterKeyframeConfig;
   }
 >;
 

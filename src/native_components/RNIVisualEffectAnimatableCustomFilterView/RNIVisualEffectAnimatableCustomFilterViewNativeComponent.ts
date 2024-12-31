@@ -4,14 +4,18 @@ import type { HostComponent, ViewProps } from 'react-native';
 
 
 export interface NativeProps extends ViewProps {
+  // required events
   onDidSetViewID: BubblingEventHandler<{}>;
   onRequestFromNative: BubblingEventHandler<{}>;
 
+  // required props
   identityBackgroundFilters: Array<{}>;
   identityForegroundFilters: Array<{}>;
   initialKeyframe: {};
   animationConfig: {};
+  currentKeyframe: {};
 
+  // optional props
   backgroundLayerSamplingSizeScale?: Double;
 };
 

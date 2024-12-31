@@ -20,6 +20,7 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
     "identityForegroundFilters": \.identityForegroundFiltersProp,
     "initialKeyframe": \.initialKeyframeProp,
     "animationConfig": \.animationConfigProp,
+    "currentKeyframe": \.currentKeyframeProp,
     
     // optional props
     "backgroundLayerSamplingSizeScale": \.backgroundLayerSamplingSizeScaleProp,
@@ -109,6 +110,29 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
       };
       
       self.animationConfig = animationConfig;
+    }
+  };
+  
+  public var currentKeyframe: CustomFilterKeyframeConfig?;
+  @objc var currentKeyframeProp: NSDictionary? {
+    willSet {
+      guard let newValue = newValue,
+            let dict = newValue.asAnyDict,
+            let nextKeyframeConfig =
+              try? CustomFilterKeyframeConfig(fromDict: dict)
+      else {
+        self.currentKeyframe = nil;
+        return;
+      };
+      
+      let oldValue = self.currentKeyframeProp;
+      let didKeyframeChange = newValue != oldValue;
+
+      guard didKeyframeChange else {
+        return;
+      };
+      
+      self.currentKeyframe = nextKeyframeConfig;
     }
   };
   

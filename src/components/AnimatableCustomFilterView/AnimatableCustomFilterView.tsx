@@ -15,9 +15,10 @@ export function AnimatableCustomFilterView(props: AnimatableCustomFilterViewProp
     identityForegroundFilters,
     initialKeyframe,
     animationConfig,
+    currentKeyframe,
 
     // optional props
-    backgroundLayerSamplingSizeScale,
+    // backgroundLayerSamplingSizeScale,
 
     // react + view props
     children,
@@ -34,11 +35,12 @@ export function AnimatableCustomFilterView(props: AnimatableCustomFilterViewProp
 
   return (
     <RNIVisualEffectAnimatableCustomFilterView
+      // required props
       identityBackgroundFilters={identityBackgroundFilters}
       identityForegroundFilters={identityForegroundFilters}
       initialKeyframe={initialKeyframe}
       animationConfig={animationConfig}
-      backgroundLayerSamplingSizeScale={backgroundLayerSamplingSizeScale}
+      currentKeyframe={currentKeyframe}
       {...viewProps}
     >
       {children}
