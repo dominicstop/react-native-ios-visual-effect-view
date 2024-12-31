@@ -36,6 +36,8 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
   // ----------------
   
   var _didSetup = false;
+  var _isFirstAnimation = true;
+  var _hasPendingAnimations = false;
   
   public var effectView: VisualEffectAnimatableCustomFilterView?;
   public var currentAnimator: UIViewPropertyAnimator?;
@@ -95,6 +97,7 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
       };
       
       self.initialKeyframe = keyframeConfig;
+      self.prevKeyframe = keyframeConfig;
     }
   };
   
@@ -113,6 +116,7 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
     }
   };
   
+  public var prevKeyframe: CustomFilterKeyframeConfig?;
   public var currentKeyframe: CustomFilterKeyframeConfig?;
   @objc var currentKeyframeProp: NSDictionary? {
     willSet {
@@ -132,7 +136,9 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
         return;
       };
       
+      self.prevKeyframe = self.currentKeyframe;
       self.currentKeyframe = nextKeyframeConfig;
+      self._hasPendingAnimations = true;
     }
   };
   
@@ -213,6 +219,54 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
       withPayload: ["requestKey": "requestToMountCount"]
     );
   };
+  
+  public func applyPendingAnimationsIfNeeded(){
+    guard self._hasPendingAnimations,
+          let animationConfig = self.animationConfig,
+          let nextKeyframe = self.currentKeyframe,
+          let effectView = self.effectView
+    else {
+      return;
+    };
+    
+    let prevKeyframe = self.prevKeyframe;
+    
+    self.currentAnimator?.stopAnimation(true);
+    let animator = animationConfig.createAnimator();
+    
+    let animationBlocks = try? nextKeyframe.createAnimations(
+      forTarget: effectView,
+      withPrevKeyframe: prevKeyframe,
+      forPropertyAnimator: animator
+    );
+    
+    guard let animationBlocks = animationBlocks else {
+      return;
+    };
+    
+    effectView.isBeingAnimated = true;
+    try? animationBlocks.setup();
+
+    animator.addAnimations {
+      animationBlocks.applyKeyframe();
+    };
+    
+    animator.addCompletion {
+      let didCancel = $0 != .end;
+      animationBlocks.completion(didCancel);
+      
+      // if self._isFirstAnimation {
+      //   try? effectView.reapplyEffects();
+      // };
+      
+      effectView.isBeingAnimated = false;
+      self._isFirstAnimation = false;
+      self.currentAnimator = nil;
+    };
+
+    animator.startAnimation();
+    self._hasPendingAnimations = false;
+    self.currentAnimator = animator;
   };
 };
 
@@ -251,6 +305,32 @@ extension RNIVisualEffectAnimatableCustomFilterViewDelegate: RNIContentViewDeleg
   
   public func notifyDidSetProps(sender: RNIContentViewParentDelegate) {
     try? self._setupContentIfNeeded();
+    
+    // TODO: Find fix for first mount animations
+    /// Temp workaround for initial animations not being applied
+    let shouldDelayAnimation: Bool = {
+      let hasTintView =
+        self.effectView?.wrapper.tintViewWrapped?.wrappedObject != nil;
+        
+      let willAnimateTintView =
+        self.currentKeyframe?.tintConfig != nil;
+        
+      let nextAnimationRequiresTintView =
+        willAnimateTintView ? hasTintView : false;
+      
+      return nextAnimationRequiresTintView || self._isFirstAnimation;
+    }();
+    
+    
+    if shouldDelayAnimation {
+      self.effectView?.displayNow();
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        self.applyPendingAnimationsIfNeeded();
+      };
+      
+    } else {
+      self.applyPendingAnimationsIfNeeded();
+    };
   };
   
   // MARK: Fabric Only
