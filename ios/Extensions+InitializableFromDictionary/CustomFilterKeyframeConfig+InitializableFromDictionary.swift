@@ -22,7 +22,7 @@ extension CustomFilterKeyframeConfig: InitializableFromDictionary {
     );
     
     self.contentKeyframe = try? dict.getValue(
-      forKey: "rootKeyframe",
+      forKey: "contentKeyframe",
       type: BasicViewKeyframe<UIView>.self
     );
     
@@ -42,12 +42,8 @@ extension CustomFilterKeyframeConfig: InitializableFromDictionary {
     );
     
     self.tintConfig = try? dict.getValue(
-      forKey: "backdropKeyframe",
+      forKey: "tintConfig",
       type: TintConfig.self
     );
-    
-    self.contentOpacity = try? dict.getNumber(forKey: "contentOpacity");
-    
-    self.backdropOpacity = try? dict.getNumber(forKey: "backdropOpacity");
   };
 };
