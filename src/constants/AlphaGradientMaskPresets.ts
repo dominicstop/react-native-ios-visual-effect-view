@@ -7,7 +7,7 @@ function createColorAlpha(percent: number): string {
   return `rgba(0,0,0,${percent})`;
 };
 
-export const AlphaGradientMaskPresets: Record<string, ImageConfigGradient> = {
+const Presets = {
   'leftToRight': {
     type: 'axial',
     startPointPreset: 'centerLeft',
@@ -175,34 +175,39 @@ export const AlphaGradientMaskPresets: Record<string, ImageConfigGradient> = {
 
   'outerEdgeToCenter': {
     type: 'radial',
-    startPoint: { x: 1, y: 1 },
-    endPoint: { x: 0.5, y: 0.5 },
+    startPoint: { x: 0.5, y: 0.5 },
+    endPoint: { x: 1, y: 1 },
     colors: [
-      createColorAlpha(0),
       createColorAlpha(1),
+      createColorAlpha(0),
     ],
     size: WINDOW_SIZE,
   },
   'outerEdgeToCenterEdgeOffsetMinus30Percent': {
     type: 'radial',
-    startPoint: { x: 1, y: 1 },
-    endPoint: { x: 0.5, y: 0.5 },
+    startPoint: { x: 0.5, y: 0.5 },
+    endPoint: { x: 1, y: 1 },
     colors: [
-      createColorAlpha(0),
-      createColorAlpha(0.20),
       createColorAlpha(1),
+      createColorAlpha(0.20),
+      createColorAlpha(0),
     ],
     size: WINDOW_SIZE,
   },
   'outerEdgeToCenterEdgeOffsetPlus30Percent': {
     type: 'radial',
-    startPoint: { x: 1, y: 1 },
-    endPoint: { x: 0.5, y: 0.5 },
+    startPoint: { x: 0.5, y: 0.5 },
+    endPoint: { x: 1, y: 1 },
     colors: [
-      createColorAlpha(0),
-      createColorAlpha(0.80),
       createColorAlpha(1),
+      createColorAlpha(0.80),
+      createColorAlpha(0),
     ],
     size: WINDOW_SIZE,
   },
 };
+
+type PresetKeys = keyof typeof Presets;
+
+export const AlphaGradientMaskPresets = 
+  Presets as Record<PresetKeys, ImageConfigGradient>;
