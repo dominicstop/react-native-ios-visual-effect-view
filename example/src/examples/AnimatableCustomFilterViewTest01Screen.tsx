@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { StyleSheet, View, Animated, Easing, Dimensions } from 'react-native';
+import { StyleSheet, View, Animated, Easing, Dimensions, Text } from 'react-native';
 
-import { AnimatableCustomFilterView, IdentityBackgroundFilterConfigListPreset, IdentityForegroundFilterConfigListPreset, type LayerFilterConfig } from 'react-native-ios-visual-effect-view';
+import { AlphaGradientMaskPresets, AnimatableCustomFilterView, IdentityBackgroundFilterConfigListPreset, IdentityForegroundFilterConfigListPreset, type LayerFilterConfig } from 'react-native-ios-visual-effect-view';
 import { CounterDisplay } from '../components/CounterDisplay';
 const WINDOW_SIZE = Dimensions.get('window');
 
@@ -28,6 +28,31 @@ const emojiString = emojiList.reduce((acc, curr, index) => {
   const isLast = index === emojiList.length - 1;
   return acc + curr + (isLast ? "" : "\n");
 }, '');
+
+const variableBlurIdentiyFilters: Array<LayerFilterConfig> = Object.values(AlphaGradientMaskPresets).map((gradientConfig) => (
+  {
+    filterName: 'variadicBlur',
+    radius: 0,
+    gradientMask: gradientConfig,
+    shouldNormalizeEdges: true,
+  }
+));
+
+const identityBackgroundFilters: Array<LayerFilterConfig> = [
+  ...IdentityBackgroundFilterConfigListPreset,
+  ...variableBlurIdentiyFilters,
+];
+
+const identityForegroundFilters: Array<LayerFilterConfig> = [
+  ...IdentityForegroundFilterConfigListPreset,
+  false && {
+    filterName: 'colorMatrixVibrant',
+    colorMatrix: {
+      mode: 'constant',
+      value: 'identity',
+    }
+  },
+];
 
 export function AnimatableCustomFilterViewTest01Screen() {
   const translateX = React.useRef(new Animated.Value(0));
@@ -83,12 +108,8 @@ export function AnimatableCustomFilterViewTest01Screen() {
       <AnimatableCustomFilterView
         style={styles.effectOverlay}
         backgroundLayerSamplingSizeScale={1}
-        identityBackgroundFilters={
-          IdentityBackgroundFilterConfigListPreset
-        }
-        identityForegroundFilters={
-          IdentityForegroundFilterConfigListPreset
-        }
+        identityBackgroundFilters={identityBackgroundFilters}
+        identityForegroundFilters={identityForegroundFilters}
         initialKeyframe={{
           backgroundFilters: [
             {
@@ -96,12 +117,21 @@ export function AnimatableCustomFilterViewTest01Screen() {
               radius: 8,
               shouldNormalizeEdges: true,
             }
-          ]
+          ],
         }}
         animationConfig={{
           mode: 'presetCurve',
           duration: 1,
-          curve: 'linear',
+          curve: 'easeIn',
+        }}
+        currentKeyframe={{
+          backgroundFilters: [
+            {
+              filterName: 'gaussianBlur',
+              radius: 0,
+              shouldNormalizeEdges: true,
+            },
+          ]
         }}
       >
         <View style={styles.effectContent}>
