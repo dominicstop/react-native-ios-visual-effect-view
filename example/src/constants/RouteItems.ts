@@ -13,6 +13,7 @@ import { CustomFilterViewExample01 } from "../examples/CustomFilterViewExample01
 import { CustomFilterViewExample02 } from "../examples/CustomFilterViewExample02";
 
 import { AnimatableCustomFilterViewTest01Screen } from "../examples/AnimatableCustomFilterViewTest01Screen";
+import { AnimatableCustomFilterViewTest02Screen } from "../examples/AnimatableCustomFilterViewTest02Screen";
 
 import type { RouteKey } from "./RouteKeys";
 
@@ -66,4 +67,8 @@ export const ROUTE_ITEMS: Array<RouteEntry> = [{
     routeKey: 'animatableCustomFilterViewTest01',
     component: AnimatableCustomFilterViewTest01Screen,
   },
+  {
+    routeKey: 'animatableCustomFilterViewTest02',
+    component: AnimatableCustomFilterViewTest02Screen
+  }
 ];

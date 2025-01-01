@@ -125,6 +125,14 @@ export const EXAMPLE_ITEMS: Array<ExampleItem> = (() => {
         "TBA",
       ],
     }, 
+     {
+      ...ROUTE_MAP.animatableCustomFilterViewTest02,
+      type: 'screen',
+      title: "AnimatableCustomFilterView - Test02",
+      desc: [
+        "TBA",
+      ],
+    }, 
   ];
 
   const cardItems: Array<ExampleItemCard> = []; 
