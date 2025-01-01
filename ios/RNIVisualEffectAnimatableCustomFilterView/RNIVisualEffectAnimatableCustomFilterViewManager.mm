@@ -33,6 +33,10 @@ RCT_EXPORT_MODULE(RNIVisualEffectAnimatableCustomFilterView)
 RNI_EXPORT_VIEW_EVENT(onDidSetViewID, RCTBubblingEventBlock)
 RNI_EXPORT_VIEW_EVENT(onRequestFromNative, RCTBubblingEventBlock)
 
+// optional events
+RNI_EXPORT_VIEW_EVENT(onPropertyAnimatorDidStart, RCTBubblingEventBlock);
+RNI_EXPORT_VIEW_EVENT(onPropertyAnimatorDidComplete, RCTBubblingEventBlock);
+
 // required props
 RNI_EXPORT_VIEW_PROPERTY(identityBackgroundFilters, NSArray);
 RNI_EXPORT_VIEW_PROPERTY(identityForegroundFilters, NSArray);

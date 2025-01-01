@@ -30,6 +30,10 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
     // required events
     case onDidSetViewID;
     case onRequestFromNative;
+    
+    // optional events
+    case onPropertyAnimatorDidStart;
+    case onPropertyAnimatorDidComplete;
   };
   
   // MARK: Properties
@@ -231,7 +235,12 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
     
     let prevKeyframe = self.prevKeyframe;
     
+    let hasPrevRunningAnimator =
+      self.currentAnimator?.isRunning == true;
+    
     self.currentAnimator?.stopAnimation(true);
+    self.currentAnimator = nil;
+    
     let animator = animationConfig.createAnimator();
     
     let animationBlocks = try? nextKeyframe.createAnimations(
@@ -262,11 +271,30 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
       effectView.isBeingAnimated = false;
       self._isFirstAnimation = false;
       self.currentAnimator = nil;
+      
+      let eventPayload = animator.createDidCompleteEventPayload(
+        animationPosition: $0,
+        didCancel: didCancel
+      );
+      
+      self.dispatchEvent(
+      for: .onPropertyAnimatorDidComplete,
+      withPayload: eventPayload
+    );
     };
 
     animator.startAnimation();
     self._hasPendingAnimations = false;
     self.currentAnimator = animator;
+    
+    let eventPayload = animator.createDidStartEventPayload(
+      didCancelPreviousAnimation: hasPrevRunningAnimator
+    );
+    
+    self.dispatchEvent(
+      for: .onPropertyAnimatorDidStart,
+      withPayload: eventPayload
+    );
   };
 };
 

@@ -10,7 +10,8 @@ export type RNIVisualEffectAnimatableCustomFilterViewRef = {
 };
 
 export type RNIVisualEffectAnimatableCustomFilterViewInheritedOptionalProps = Partial<Pick<RNIVisualEffectAnimatableCustomFilterNativeViewProps,
-  | 'onDidSetViewID'
+  | 'onPropertyAnimatorDidStart'
+  | 'onPropertyAnimatorDidComplete'
   | 'backgroundLayerSamplingSizeScale'
 >>;
 

@@ -8,6 +8,10 @@ export interface NativeProps extends ViewProps {
   onDidSetViewID: BubblingEventHandler<{}>;
   onRequestFromNative: BubblingEventHandler<{}>;
 
+  // optional events
+  onPropertyAnimatorDidStart?: BubblingEventHandler<{}>;
+  onPropertyAnimatorDidComplete?: BubblingEventHandler<{}>;
+
   // required props
   identityBackgroundFilters: Array<{}>;
   identityForegroundFilters: Array<{}>;
