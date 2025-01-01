@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, View, Animated, Easing, Dimensions, Text } from 'react-native';
 
-import { AlphaGradientMaskPresets, AnimatableCustomFilterView, IdentityBackgroundFilterConfigListPreset, IdentityForegroundFilterConfigListPreset, type LayerFilterConfig } from 'react-native-ios-visual-effect-view';
+import { AlphaGradientMaskPresets, AnimatableCustomFilterView, IdentityBackgroundFilterConfigListPreset, IdentityForegroundFilterConfigListPreset, type CustomFilterKeyframeConfig, type LayerFilterConfig } from 'react-native-ios-visual-effect-view';
 import { CounterDisplay } from '../components/CounterDisplay';
 const WINDOW_SIZE = Dimensions.get('window');
 
@@ -54,8 +54,65 @@ const identityForegroundFilters: Array<LayerFilterConfig> = [
   },
 ];
 
+
+const KEYFRAME_PRESETS: Array<CustomFilterKeyframeConfig> = [
+  // 0
+  {
+    backgroundFilters: [
+      {
+        filterName: 'gaussianBlur',
+        radius: 12,
+        shouldNormalizeEdges: true,
+      }
+    ],
+  },
+
+  // 1
+  {
+    backgroundFilters: [
+      {
+        filterName: 'gaussianBlur',
+        radius: 0,
+        shouldNormalizeEdges: true,
+      }
+    ],
+    foregroundFilters: [
+      {
+        filterName: 'gaussianBlur',
+        radius: 8,
+        shouldNormalizeEdges: false,
+      }
+    ],
+  },
+
+  // 2
+  {
+    backgroundFilters: [
+      {
+        filterName: 'variadicBlur',
+        radius: 12,
+        shouldNormalizeEdges: true,
+        gradientMask: AlphaGradientMaskPresets.bottomToTop,
+      }
+    ],
+    foregroundFilters: [
+      {
+        filterName: 'gaussianBlur',
+        radius: 0,
+        shouldNormalizeEdges: false,
+      }
+    ],
+  },
+];
+
+const INITIAL_KEYFRAME = KEYFRAME_PRESETS[0]!;
+
 export function AnimatableCustomFilterViewTest02Screen() {
+  const [keyframeQueue, setKeyframeQueue] = React.useState(KEYFRAME_PRESETS.slice(1));
+  const currentKeyframe = keyframeQueue[0]!;
+
   const translateX = React.useRef(new Animated.Value(0));
+
   
   React.useEffect(() => {
     const offsetX = 50;
@@ -108,30 +165,24 @@ export function AnimatableCustomFilterViewTest02Screen() {
       <AnimatableCustomFilterView
         style={styles.effectOverlay}
         backgroundLayerSamplingSizeScale={1}
-        identityBackgroundFilters={identityBackgroundFilters}
-        identityForegroundFilters={identityForegroundFilters}
-        initialKeyframe={{
-          backgroundFilters: [
-            {
-              filterName: 'gaussianBlur',
-              radius: 8,
-              shouldNormalizeEdges: true,
-            }
-          ],
-        }}
         animationConfig={{
           mode: 'presetCurve',
           duration: 1,
           curve: 'easeIn',
         }}
-        currentKeyframe={{
-          backgroundFilters: [
-            {
-              filterName: 'gaussianBlur',
-              radius: 0,
-              shouldNormalizeEdges: true,
-            },
-          ]
+        identityBackgroundFilters={identityBackgroundFilters}
+        identityForegroundFilters={identityForegroundFilters}
+        initialKeyframe={INITIAL_KEYFRAME}
+        currentKeyframe={currentKeyframe}
+        onPropertyAnimatorDidComplete={() => {
+          console.log(keyframeQueue.length);
+          
+          let nextQueue = keyframeQueue.slice(1);
+          if (nextQueue.length <= 0) {
+            return;
+          };
+
+          setKeyframeQueue(nextQueue);
         }}
       >
         <View style={styles.effectContent}>
