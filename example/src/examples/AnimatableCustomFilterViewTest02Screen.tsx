@@ -43,8 +43,9 @@ const identityBackgroundFilters: Array<LayerFilterConfig> = [
   ...variableBlurIdentiyFilters,
 ];
 
-const identityForegroundFilters: Array<LayerFilterConfig> = [
+const identityForegroundFilters: Array<LayerFilterConfig | boolean> = [
   ...IdentityForegroundFilterConfigListPreset,
+
   false && {
     filterName: 'colorMatrixVibrant',
     colorMatrix: {
@@ -85,7 +86,7 @@ const KEYFRAME_PRESETS: Array<CustomFilterKeyframeConfig> = [
     ],
   },
 
-  // 2
+  // 02
   {
     backgroundFilters: [
       {
@@ -103,13 +104,145 @@ const KEYFRAME_PRESETS: Array<CustomFilterKeyframeConfig> = [
       }
     ],
   },
+
+  // 03
+  {
+    backgroundFilters: [
+      {
+        filterName: 'variadicBlur',
+        radius: 0,
+        shouldNormalizeEdges: true,
+        gradientMask: AlphaGradientMaskPresets.bottomToTop,
+      },
+      {
+        filterName: 'variadicBlur',
+        radius: 8,
+        shouldNormalizeEdges: true,
+        gradientMask: AlphaGradientMaskPresets.topToBottom,
+      },
+    ],
+    foregroundFilters: [
+    ],
+  },
+
+  // 04
+  {
+    backgroundFilters: [
+      // old
+      {
+        filterName: 'variadicBlur',
+        radius: 0,
+        shouldNormalizeEdges: true,
+        gradientMask: AlphaGradientMaskPresets.topToBottom,
+      },
+      // new
+      {
+        filterName: 'variadicBlur',
+        radius: 8,
+        shouldNormalizeEdges: true,
+        gradientMask: AlphaGradientMaskPresets.leftToRight,
+      },
+    ],
+    foregroundFilters: [
+    ],
+  },
+
+  // 05
+  {
+    backgroundFilters: [
+      // old
+      {
+        filterName: 'variadicBlur',
+        radius: 0,
+        shouldNormalizeEdges: true,
+        gradientMask: AlphaGradientMaskPresets.leftToRight,
+      },
+      // new
+      {
+        filterName: 'variadicBlur',
+        radius: 8,
+        shouldNormalizeEdges: true,
+        gradientMask: AlphaGradientMaskPresets.rightToLeft,
+      },
+    ],
+    foregroundFilters: [
+    ],
+  },
+
+  // 06
+  {
+    backgroundFilters: [
+      // old
+      {
+        filterName: 'variadicBlur',
+        radius: 0,
+        shouldNormalizeEdges: true,
+        gradientMask: AlphaGradientMaskPresets.rightToLeft,
+      },
+      // new
+      {
+        filterName: 'variadicBlur',
+        radius: 8,
+        shouldNormalizeEdges: true,
+        gradientMask: AlphaGradientMaskPresets.centerToOuterEdge,
+      },
+    ],
+    foregroundFilters: [
+    ],
+  },
+
+  // 07
+  {
+    backgroundFilters: [
+      // old
+      {
+        filterName: 'variadicBlur',
+        radius: 0,
+        shouldNormalizeEdges: true,
+        gradientMask: AlphaGradientMaskPresets.centerToOuterEdge,
+      },
+      // new
+      {
+        filterName: 'variadicBlur',
+        radius: 8,
+        shouldNormalizeEdges: true,
+        gradientMask: AlphaGradientMaskPresets.outerEdgeToCenter,
+      },
+    ],
+    foregroundFilters: [
+    ],
+  },
+
+  // 08
+  {
+    backgroundFilters: [
+      // old
+      {
+        filterName: 'variadicBlur',
+        radius: 0,
+        shouldNormalizeEdges: true,
+        gradientMask: AlphaGradientMaskPresets.outerEdgeToCenter,
+      },
+    ],
+    foregroundFilters: [
+      {
+        filterName: 'gaussianBlur',
+        radius: 12,
+        shouldNormalizeEdges: false,
+      }
+    ],
+  },
 ];
 
+const INITIAL_KEYFRAME_QUEUE = KEYFRAME_PRESETS.slice(1);
 const INITIAL_KEYFRAME = KEYFRAME_PRESETS[0]!;
 
 export function AnimatableCustomFilterViewTest02Screen() {
-  const [keyframeQueue, setKeyframeQueue] = React.useState(KEYFRAME_PRESETS.slice(1));
+  const [keyframeQueue, setKeyframeQueue] = React.useState(INITIAL_KEYFRAME_QUEUE);
+  
   const currentKeyframe = keyframeQueue[0]!;
+  const keyframeIndex = 
+    (KEYFRAME_PRESETS.length - keyframeQueue.length);
 
   const translateX = React.useRef(new Animated.Value(0));
 
@@ -167,7 +300,7 @@ export function AnimatableCustomFilterViewTest02Screen() {
         backgroundLayerSamplingSizeScale={1}
         animationConfig={{
           mode: 'presetCurve',
-          duration: 1,
+          duration: 1.5,
           curve: 'easeIn',
         }}
         identityBackgroundFilters={identityBackgroundFilters}
@@ -189,6 +322,11 @@ export function AnimatableCustomFilterViewTest02Screen() {
           <CounterDisplay/>
         </View>
       </AnimatableCustomFilterView>
+      <View style={styles.overlay}>
+        <Text>
+          {`keyframeIndex: ${keyframeIndex}`}
+        </Text>
+      </View>
     </View>
   );
 }
@@ -214,5 +352,12 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
   },
 });
