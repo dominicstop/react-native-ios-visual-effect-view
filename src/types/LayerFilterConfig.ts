@@ -50,6 +50,8 @@ export type AnimatableLayerFilterConfig = {
   filterName: 'gaussianBlur';
   radius: number;
   shouldNormalizeEdges: boolean;
+  shouldNormalizeEdgesToTransparent?: boolean;
+  shouldUseHardEdges?: boolean;
 
 } | {
   filterName: 'colorMatrix';
@@ -72,6 +74,8 @@ export type AnimatableLayerFilterConfig = {
   radius: number;
   gradientMask: ImageConfigGradient;
   shouldNormalizeEdges: boolean;
+  shouldNormalizeEdgesToTransparent?: boolean;
+  shouldUseHardEdges?: boolean;
 };
 
 /**
