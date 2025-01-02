@@ -2,7 +2,7 @@ PODS:
   - boost (1.84.0)
   - ComputableLayout (0.7.0):
     - DGSwiftUtilities (~> 0.11)
-  - DGSwiftUtilities (0.46.0)
+  - DGSwiftUtilities (0.46.2)
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.75.2)
   - fmt (9.1.0)
@@ -1264,7 +1264,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-ios-visual-effect-view (0.1.0-15):
+  - react-native-ios-visual-effect-view (0.1.0-16):
     - ComputableLayout
     - DGSwiftUtilities (~> 0.44)
     - DoubleConversion
@@ -1288,7 +1288,7 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - VisualEffectBlurView (~> 7.1)
+    - VisualEffectBlurView (~> 7.2)
     - Yoga
   - react-native-safe-area-context (4.14.1):
     - DoubleConversion
@@ -1726,8 +1726,8 @@ PODS:
     - ReactCommon/turbomodule/core
     - Yoga
   - SocketRocket (0.7.0)
-  - VisualEffectBlurView (7.1.0):
-    - DGSwiftUtilities (~> 0.40)
+  - VisualEffectBlurView (7.2.0):
+    - DGSwiftUtilities (~> 0.46)
   - Yoga (0.0.0)
 
 DEPENDENCIES:
@@ -1951,7 +1951,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost: 4cb898d0bf20404aab1850c656dcea009429d6c1
   ComputableLayout: c50faffac4ed9f8f05b0ce5e6f3a60df1f6042c8
-  DGSwiftUtilities: aadcd58de09bbf45988be833f85260d8c94ba54d
+  DGSwiftUtilities: 26ab864a9ef7d92facb211aeb133412efd64ce65
   DoubleConversion: 76ab83afb40bddeeee456813d9c04f67f78771b5
   FBLazyVector: 38bb611218305c3bc61803e287b8a81c6f63b619
   fmt: 4c2741a687cc09f0634a2e2c72a838b99f1ff120
@@ -1987,7 +1987,7 @@ SPEC CHECKSUMS:
   React-Mapbuffer: db173bede5ac5cb1c82d4a6a8597477ba87c5648
   React-microtasksnativemodule: a5cd87542a308060e645d337b036733c327dc01b
   react-native-ios-utilities: 8eb1dfd6a9eeea23ffa75d9f6e35462f84ca82e7
-  react-native-ios-visual-effect-view: bdea11247207aa95c1bd1259931a14e652dabf63
+  react-native-ios-visual-effect-view: c4968e68f1246ae60e16285d02084ac7e32892e7
   react-native-safe-area-context: d71edcee579673b370c053804f34c40c1f250976
   react-native-slider: da7c05c52827d597bb7824c5b1acb35741d41f89
   React-nativeconfig: 5fc2b05a590eb704128f5a4fc8ea6fa7b847e6e8
@@ -2019,7 +2019,7 @@ SPEC CHECKSUMS:
   RNFlashList: 67528478a3686204442522a5a4fc33e0f9b11449
   RNScreens: f493b156fe5de2434806b5a2c410800b2cd76c0e
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
-  VisualEffectBlurView: d5cc96ef9b9298675ff02e6efd86b504ee08b986
+  VisualEffectBlurView: 2db84754ea90a2f4eccb0e84038653caddaa4eff
   Yoga: 36d44f1d31d7c11be1067e5c7a70a12c2eed355c
 
 PODFILE CHECKSUM: a471e1977a5f1639988198527f518bddae24b950
