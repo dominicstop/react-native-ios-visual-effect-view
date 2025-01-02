@@ -80,5 +80,10 @@ extension ColorTransform: InitializableFromDictionary {
       
       return angle;
     }();
+    
+    self.opacity = dict.getNumber(
+      forKey: "opacity",
+      fallbackValue: identity.opacity
+    );
   };
 };

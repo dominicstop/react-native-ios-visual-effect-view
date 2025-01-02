@@ -12,6 +12,7 @@ export type ColorTransform = {
   saturation: number;
   invert: number;
   hueRotate: Angle;
+  opacity: number;
 };
 
 export type ColorTransformInit = Partial<ColorTransform>;
