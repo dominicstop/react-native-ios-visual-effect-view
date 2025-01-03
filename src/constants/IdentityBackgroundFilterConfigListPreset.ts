@@ -38,4 +38,12 @@ export const IdentityBackgroundFilterConfigListPreset: Array<LayerFilterConfig> 
     radius: 0,
     shouldNormalizeEdges: true
   },
+  {
+    filterName: 'luminosityCurveMap',
+    amount: 0,
+    point1: 0,
+    point2: 0.3,
+    point3: 0.7,
+    point4: 1,
+  }
 ];
