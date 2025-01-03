@@ -46,6 +46,7 @@ RNI_EXPORT_VIEW_PROPERTY(currentKeyframe, NSDictionary);
 
 // optional props
 RNI_EXPORT_VIEW_PROPERTY(backgroundLayerSamplingSizeScale, NSNumber);
+RNI_EXPORT_VIEW_PROPERTY(animationDelay, NSNumber);
 #endif
 
 

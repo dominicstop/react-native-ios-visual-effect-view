@@ -12,7 +12,8 @@ export type AnimatableCustomFilterViewRef = Pick<RNIVisualEffectAnimatableCustom
 export type AnimatableCustomFilterViewInheritedOptionalProps = Partial<Pick<RNIVisualEffectAnimatableCustomFilterViewProps,
   | 'onPropertyAnimatorDidStart'
   | 'onPropertyAnimatorDidComplete'
- | 'backgroundLayerSamplingSizeScale'
+  | 'backgroundLayerSamplingSizeScale'
+  | 'animationDelay'
 >>;
 
 export type AnimatableCustomFilterViewInheritedRequiredProps = Required<Pick<RNIVisualEffectAnimatableCustomFilterViewProps,

@@ -18,7 +18,8 @@ export function AnimatableCustomFilterView(props: AnimatableCustomFilterViewProp
     currentKeyframe,
 
     // optional props
-    // backgroundLayerSamplingSizeScale,
+    backgroundLayerSamplingSizeScale,
+    animationDelay,
 
     // react + view props
     children,
@@ -41,6 +42,10 @@ export function AnimatableCustomFilterView(props: AnimatableCustomFilterViewProp
       initialKeyframe={initialKeyframe}
       animationConfig={animationConfig}
       currentKeyframe={currentKeyframe}
+
+      // optional props
+      backgroundLayerSamplingSizeScale={backgroundLayerSamplingSizeScale}
+      animationDelay={animationDelay}
       {...viewProps}
     >
       {children}

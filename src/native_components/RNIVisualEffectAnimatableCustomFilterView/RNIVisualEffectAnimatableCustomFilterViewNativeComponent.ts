@@ -21,6 +21,7 @@ export interface NativeProps extends ViewProps {
 
   // optional props
   backgroundLayerSamplingSizeScale?: Double;
+  animationDelay?: Double;
 };
 
 // stubs

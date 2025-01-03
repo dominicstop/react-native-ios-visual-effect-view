@@ -21,12 +21,14 @@ export type RNIVisualEffectAnimatableCustomFilterNativeViewBaseProps = RemapObje
     onPropertyAnimatorDidStart: OnPropertyAnimatorDidStartEvent;
     onPropertyAnimatorDidComplete: OnPropertyAnimatorDidCompleteEvent;
 
-    backgroundLayerSamplingSizeScale: number;
     identityBackgroundFilters: Array<LayerFilterConfig>;
     identityForegroundFilters: Array<LayerFilterConfig>;
     initialKeyframe: CustomFilterKeyframeConfig;
     animationConfig: AnimationConfig;
     currentKeyframe: CustomFilterKeyframeConfig;
+
+    backgroundLayerSamplingSizeScale: number;
+    animationDelay: number;
   }
 >;
 

@@ -22,6 +22,7 @@ export type RNIVisualEffectAnimatableCustomFilterViewInheritedRequiredProps = Pi
   | 'initialKeyframe'
   | 'animationConfig'
   | 'currentKeyframe'
+  | 'animationDelay'
 >;
 
 export type RNIVisualEffectAnimatableCustomFilterViewInheritedProps =

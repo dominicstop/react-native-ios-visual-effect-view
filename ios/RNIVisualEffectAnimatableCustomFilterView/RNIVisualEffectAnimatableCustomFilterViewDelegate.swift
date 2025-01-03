@@ -24,6 +24,7 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
     
     // optional props
     "backgroundLayerSamplingSizeScale": \.backgroundLayerSamplingSizeScaleProp,
+    "animationDelay": \.animationDelayProp,
   ];
   
   public enum Events: String, CaseIterable {
@@ -152,6 +153,14 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
       let newValue = newValue as? CGFloat;
       self.backgroundLayerSamplingSizeScale = newValue;
       self.effectView?.backgroundLayerSamplingSizeScale = newValue;
+    }
+  };
+  
+  public var animationDelay: CGFloat?;
+  @objc public var animationDelayProp: NSNumber? {
+    willSet {
+      let newValue = newValue as? CGFloat;
+      self.animationDelay = newValue;
     }
   };
   
@@ -334,9 +343,13 @@ extension RNIVisualEffectAnimatableCustomFilterViewDelegate: RNIContentViewDeleg
   public func notifyDidSetProps(sender: RNIContentViewParentDelegate) {
     try? self._setupContentIfNeeded();
     
-    // TODO: Find fix for first mount animations
-    /// Temp workaround for initial animations not being applied
-    let shouldDelayAnimation: Bool = {
+    let animationDelay: CGFloat? = {
+      if let animationDelay = self.animationDelay,
+         animationDelay > 0
+      {
+        return animationDelay;
+      };
+    
       let hasTintView =
         self.effectView?.wrapper.tintViewWrapped?.wrappedObject != nil;
         
@@ -346,13 +359,20 @@ extension RNIVisualEffectAnimatableCustomFilterViewDelegate: RNIContentViewDeleg
       let nextAnimationRequiresTintView =
         willAnimateTintView ? hasTintView : false;
       
-      return nextAnimationRequiresTintView || self._isFirstAnimation;
+      // TODO: Find fix for first mount animations
+      /// Temp workaround for initial animations not being applied
+      ///
+      let shouldDelayAnimation =
+        nextAnimationRequiresTintView || self._isFirstAnimation;
+        
+      return shouldDelayAnimation ? 0.1 : nil;
     }();
     
     
-    if shouldDelayAnimation {
+    if let animationDelay = animationDelay {
       self.effectView?.displayNow();
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + animationDelay) {
         self.applyPendingAnimationsIfNeeded();
       };
       
