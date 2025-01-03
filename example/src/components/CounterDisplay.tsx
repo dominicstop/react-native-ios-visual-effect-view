@@ -62,7 +62,8 @@ export function CounterDisplay(props: {}){
 
 const styles = StyleSheet.create({
   counterLabel: {
-    fontSize: 124,
+    fontSize: 64 + 32,
+    marginVertical: 12,
     fontWeight: '900',
     fontVariant: ['tabular-nums'],
   },
