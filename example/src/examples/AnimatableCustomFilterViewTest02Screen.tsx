@@ -1250,7 +1250,6 @@ export function AnimatableCustomFilterViewTest02Screen() {
       </Animated.Text>
       <AnimatableCustomFilterView
         style={styles.effectOverlay}
-        backgroundLayerSamplingSizeScale={1}
         animationConfig={{
           mode: 'presetCurve',
           duration: 1.6,

@@ -30,7 +30,7 @@ export function CustomFilterViewExample01() {
         style={styles.effectOverlay}
         
         // increase quality (usually: 0.25...1)
-        backgroundLayerSamplingSizeScale={2}
+        backgroundLayerSamplingSizeScale={1}
 
         // set the filters to use,
         // accepts an array of `LayerFilterConfig`

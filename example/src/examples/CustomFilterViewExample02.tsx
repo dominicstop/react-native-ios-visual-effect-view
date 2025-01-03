@@ -26,7 +26,7 @@ export function CustomFilterViewExample02() {
       </Text>
       <CustomFilterView
         style={styles.effectOverlay}
-        backgroundLayerSamplingSizeScale={2}
+        backgroundLayerSamplingSizeScale={1}
         currentFilters={{
           backgroundFilters: [
             {
