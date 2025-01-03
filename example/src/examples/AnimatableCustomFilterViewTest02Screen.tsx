@@ -1253,9 +1253,10 @@ export function AnimatableCustomFilterViewTest02Screen() {
         backgroundLayerSamplingSizeScale={1}
         animationConfig={{
           mode: 'presetCurve',
-          duration: 0.5,
-          curve: 'easeIn',
+          duration: 1.6,
+          curve: 'easeInOut',
         }}
+        animationDelay={ keyframePresetIndex == 1 ? 2 : 0.7}
         identityBackgroundFilters={identityBackgroundFilters}
         identityForegroundFilters={identityForegroundFilters}
         initialKeyframe={INITIAL_KEYFRAME}
