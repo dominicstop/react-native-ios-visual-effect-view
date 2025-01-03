@@ -149,7 +149,7 @@ public final class RNIVisualEffectAnimatableCustomFilterViewDelegate: UIView, RN
   public var backgroundLayerSamplingSizeScale: CGFloat?;
   @objc public var backgroundLayerSamplingSizeScaleProp: NSNumber? {
     willSet {
-      let newValue = newValue?.doubleValue as? CGFloat;
+      let newValue = newValue as? CGFloat;
       self.backgroundLayerSamplingSizeScale = newValue;
       self.effectView?.backgroundLayerSamplingSizeScale = newValue;
     }

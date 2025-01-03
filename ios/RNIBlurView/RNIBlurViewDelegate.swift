@@ -100,7 +100,7 @@ public final class RNIBlurViewDelegate: UIView, RNIContentView {
   public var backgroundLayerSamplingSizeScale: CGFloat?;
   @objc public var backgroundLayerSamplingSizeScaleProp: NSNumber? {
     willSet {
-      let newValue = newValue?.doubleValue as? CGFloat;
+      let newValue = newValue as? CGFloat;
       self.backgroundLayerSamplingSizeScale = newValue;
       self.blurView?.backgroundLayerSamplingSizeScale = newValue;
     }
