@@ -107,7 +107,6 @@ export function AnimatableCustomFilterViewTest01Screen() {
       </Animated.Text>
       <AnimatableCustomFilterView
         style={styles.effectOverlay}
-        backgroundLayerSamplingSizeScale={1}
         identityBackgroundFilters={identityBackgroundFilters}
         identityForegroundFilters={identityForegroundFilters}
         initialKeyframe={{
