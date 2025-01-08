@@ -1240,7 +1240,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-ios-utilities (5.0.0-59):
+  - react-native-ios-utilities (5.0.0):
     - ComputableLayout (~> 0.7)
     - DGSwiftUtilities (~> 0.46)
     - DoubleConversion
@@ -1986,8 +1986,8 @@ SPEC CHECKSUMS:
   React-logger: 8db32983d75dc2ad54f278f344ccb9b256e694fc
   React-Mapbuffer: db173bede5ac5cb1c82d4a6a8597477ba87c5648
   React-microtasksnativemodule: a5cd87542a308060e645d337b036733c327dc01b
-  react-native-ios-utilities: 03afcb9a2925fb59b0e82f42cf7197a148e1ddea
-  react-native-ios-visual-effect-view: a9883a5b8fb1ed33c5a5cf6ea9c71f9ac980935e
+  react-native-ios-utilities: 7817379a0276a6b24e5c276bd05dc8e437c09a07
+  react-native-ios-visual-effect-view: 95b5e4a21f9f2c7f7c7a16e155fb861d1f4a7661
   react-native-safe-area-context: d71edcee579673b370c053804f34c40c1f250976
   react-native-slider: da7c05c52827d597bb7824c5b1acb35741d41f89
   React-nativeconfig: 5fc2b05a590eb704128f5a4fc8ea6fa7b847e6e8
@@ -2022,6 +2022,6 @@ SPEC CHECKSUMS:
   VisualEffectBlurView: 2db84754ea90a2f4eccb0e84038653caddaa4eff
   Yoga: 36d44f1d31d7c11be1067e5c7a70a12c2eed355c
 
-PODFILE CHECKSUM: a471e1977a5f1639988198527f518bddae24b950
+PODFILE CHECKSUM: c0e387b74cd4366d3b60812ac8b1f8f0c60eda8f
 
 COCOAPODS: 1.14.3
