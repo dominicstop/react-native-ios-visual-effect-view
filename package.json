@@ -126,7 +126,7 @@
   "packageManager": "yarn@3.6.1",
   "codegenConfig": {
     "name": "RNIVisualEffectViewSpec",
-    "type": "components",
+    "type": "all",
     "jsSrcsDir": "src"
   },
   "create-react-native-library": {
