@@ -6,13 +6,6 @@
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./lib/typescript/src/index.d.ts",
-      "import": "./lib/module/index.js",
-      "require": "./lib/commonjs/index.js"
-    }
-  },
   "files": [
     "src",
     "lib",
@@ -126,7 +119,7 @@
   "packageManager": "yarn@3.6.1",
   "codegenConfig": {
     "name": "RNIVisualEffectViewSpec",
-    "type": "all",
+    "type": "components",
     "jsSrcsDir": "src"
   },
   "create-react-native-library": {
@@ -153,7 +146,8 @@
       [
         "typescript",
         {
-          "project": "tsconfig.build.json"
+          "project": "tsconfig.build.json",
+          "esm": true
         }
       ]
     ]
