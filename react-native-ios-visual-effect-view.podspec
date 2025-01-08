@@ -54,11 +54,6 @@ Pod::Spec.new do |s|
     '"${PODS_ROOT}/Headers/Public/hermes-engine"',
     '"${PODS_ROOT}/Headers/Private/React-Core"',
     '"${PODS_CONFIGURATION_BUILD_DIR}/React-rendererconsistency/React_rendererconsistency.framework/Headers"',
-    #'"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ios-utilities/Swift Compatibility Header"',
-    #'"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ios-visual-effect-view/Swift Compatibility Header"',
-    #'"${PODS_ROOT}/Headers/Public/react-native-ios-utilities"',
-    #'"${PODS_ROOT}/Headers/Private/react-native-ios-utilities"',
-    #'"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ios-utilities/Swift Compatibility Header"',
   ]
 
   # Swift/Objective-C compatibility
@@ -72,20 +67,11 @@ Pod::Spec.new do |s|
     'OTHER_SWIFT_FLAGS' => "$(inherited) #{fabric_enabled ? fabric_compiler_flags : ''}"
   }
   user_header_search_paths = [
-    '"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ios-utilities/**"',
-    '"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ios-utilities/Swift Compatibility Header"',
-    '"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ios-utilities/**"',
-    '"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ios-visual-effect-view/Swift Compatibility Header"',
-
-    
-    #'"$(PODS_ROOT)/Headers/Private/react-native-ios-utilities"',
-    #'"$(PODS_ROOT)/Headers/Public/react-native-ios-utilities"',
-
+    '"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ios-utilities/Swift\ Compatibility\ Header"',
     '"$(PODS_ROOT)/Headers/Private/React-bridging/react/bridging"',
     '"$(PODS_CONFIGURATION_BUILD_DIR)/React-bridging/react_bridging.framework/Headers"',
     '"$(PODS_ROOT)/Headers/Private/Yoga"',
   ]
-  
   if fabric_enabled && ENV['USE_FRAMEWORKS']
     user_header_search_paths << "\"$(PODS_ROOT)/DoubleConversion\""
     user_header_search_paths << "\"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers\""
@@ -95,17 +81,9 @@ Pod::Spec.new do |s|
     user_header_search_paths << "\"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers/react/nativemodule/core\""
     user_header_search_paths << "\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTFabric/RCTFabric.framework/Headers\""
   end
-
   s.user_target_xcconfig = {
     "HEADER_SEARCH_PATHS" => user_header_search_paths,
   }
-
-  # s.xcconfig = { 
-  #   'HEADER_SEARCH_PATHS' => [
-  #     '"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ios-utilities/Swift Compatibility Header"',
-  #     '"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ios-utilities/**"',
-  #   ],
-  # }
 
   compiler_flags = folly_compiler_flags + ' ' + "-DREACT_NATIVE_TARGET_VERSION=#{reactNativeTargetVersion}"
   if ENV['USE_HERMES'] == nil || ENV['USE_HERMES'] == '1'
@@ -145,12 +123,9 @@ Pod::Spec.new do |s|
     exclude_files.append('common/cpp/fabric/')
   end
 
+  s.public_header_files = 'ios/**/*.h'
+
   s.exclude_files = exclude_files
   s.compiler_flags = compiler_flags
-
-  s.private_header_files = [
-    'ios/**/*+Private.h', 
-    'ios/**/Swift.h', 
-    'ios/Private/**/*.h'
-  ]
+  s.private_header_files = ['ios/**/*+Private.h', 'ios/**/Swift.h']
 end
