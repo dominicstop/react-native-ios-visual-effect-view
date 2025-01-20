@@ -16,6 +16,14 @@ A small library to use `UIVisualEffectView` in `react-native`.
 
 ![AnimatableCustomFilterViewTest02Screen.tsx](./assets/AnimatableCustomFilterViewTest02Screen-01.gif)
 
+<br>
+
+[`VisualEffectCustomFilterViewTest02Screen`](example/src/examples/AnimatableCustomFilterViewTest02Screen.tsx)
+
+![AnimatableCustomFilterViewTest02Screen.tsx](./assets/AnimatableCustomFilterViewTest02Screen-02.gif)
+
+![AnimatableCustomFilterViewTest02Screen.tsx](./assets/AnimatableCustomFilterViewTest02Screen-01.gif)
+
 <br><br>
 
 ## 🚧⚠️  Work in Progress ⚠️🚧
