@@ -26,9 +26,11 @@ A small library to use `UIVisualEffectView` in `react-native`.
 
 <br><br>
 
-## 🚧⚠️  Work in Progress ⚠️🚧
+## 🚧⚠️ Notices ⚠️🚧
 
-This library + documentation is currently not finished yet. For now, please browse through [examples](example/src/examples) directory to get a rough idea on how to use this library. Jump to [basic usage section](#c-basic-usage) for example code + gif.
+📝 **Hiatus Notice**: Unfortunately, i'm no longer doing OSS for the time being, so this library is in maintenance mode (if you're interested in sponsoring my work or picking up the project, please don't hesitate to [contact me](#misc-and-contact)).
+
+📝 **WIP Notice**: This library + documentation is currently not finished yet. For now, please browse through [examples](example/src/examples) directory to get a rough idea on how to use this library. Jump to [basic usage section](#c-basic-usage) for example code + gif.
 
 <br><br>
 
@@ -344,6 +346,17 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 ## License
 
 MIT
+
+<br><br>
+
+## Misc and Contact
+
+* 🐤 **Twitter/X**: [`@GoDominic`](https://x.com/GoDominic)
+* 🦋 **Bluesky**: [`@godominic.bsky.social`](https://bsky.app/profile/godominic.bsky.social)
+* 💌 **Email**: <a href="mailto:dominicgo@dominicgo.dev?">`dominicgo@dominicgo.dev`</a>
+* 🌐 **Website**: [dominicgo.dev](https://dominicgo.dev)
+
+
 
 ---
 
