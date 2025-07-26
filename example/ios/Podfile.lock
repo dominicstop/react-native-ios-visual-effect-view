@@ -2,7 +2,7 @@ PODS:
   - boost (1.84.0)
   - ComputableLayout (0.7.0):
     - DGSwiftUtilities (~> 0.11)
-  - DGSwiftUtilities (0.46.3)
+  - DGSwiftUtilities (0.46.4)
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.75.2)
   - fmt (9.1.0)
@@ -1694,11 +1694,12 @@ DEPENDENCIES:
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - ComputableLayout
     - DGSwiftUtilities
-    - SocketRocket
     - VisualEffectBlurView
+  trunk:
+    - SocketRocket
 
 EXTERNAL SOURCES:
   boost:
@@ -1842,7 +1843,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost: 4cb898d0bf20404aab1850c656dcea009429d6c1
   ComputableLayout: c50faffac4ed9f8f05b0ce5e6f3a60df1f6042c8
-  DGSwiftUtilities: 2f0d35d5ff3d57bd70ccc42f15971460db202c41
+  DGSwiftUtilities: 536456ae3d0e5083ac42e06b6b720921601864b5
   DoubleConversion: 76ab83afb40bddeeee456813d9c04f67f78771b5
   FBLazyVector: 38bb611218305c3bc61803e287b8a81c6f63b619
   fmt: 4c2741a687cc09f0634a2e2c72a838b99f1ff120
@@ -1913,6 +1914,6 @@ SPEC CHECKSUMS:
   VisualEffectBlurView: 2db84754ea90a2f4eccb0e84038653caddaa4eff
   Yoga: a1d7895431387402a674fd0d1c04ec85e87909b8
 
-PODFILE CHECKSUM: c0e387b74cd4366d3b60812ac8b1f8f0c60eda8f
+PODFILE CHECKSUM: 0e704d6b60b96631408c6b6c31109ff03548247a
 
 COCOAPODS: 1.16.2
