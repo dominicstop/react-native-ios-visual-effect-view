@@ -26,7 +26,7 @@ puts " - fabric_enabled: #{fabric_enabled}"
 puts " - linkage: #{linkage}"
 puts "\n"
 
-if reactNativeTargetVersionOverride 
+if reactNativeTargetVersionOverride
   reactNativeTargetVersion = reactNativeTargetVersionOverride.to_i
 end
 
@@ -98,7 +98,7 @@ Pod::Spec.new do |s|
   s.dependency 'react-native-ios-utilities'
   s.dependency 'ComputableLayout'
 
-  s.dependency 'DGSwiftUtilities', '~> 0.46.3'
+  s.dependency 'DGSwiftUtilities', '~> 0.47'
   s.dependency 'VisualEffectBlurView', '~> 7.2'
 
   if fabric_enabled
