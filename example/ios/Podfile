@@ -18,6 +18,33 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
+use_hermes = ENV['USE_HERMES'] == nil || ENV['USE_HERMES'] == '1'
+
+# DGSwiftUtilities
+should_install_locally = ENV['SHOULD_INSTALL_DEV_LIBRARIES_LOCALLY'] == '1'
+library_path_DGSwiftUtilities = ENV['PATH_DEV_LIBRARY_SWIFT_UTILITIES']
+should_install_locally_DGSwiftUtilities = should_install_locally && library_path_DGSwiftUtilities && File.exist?(library_path_DGSwiftUtilities)
+
+# ComputableLayout
+library_path_ComputableLayout = ENV['PATH_DEV_LIBRARY_COMPUTABLE_LAYOUT']
+should_install_locally_ComputableLayout = should_install_locally && library_path_ComputableLayout && File.exist?(library_path_ComputableLayout)
+
+# VisualEffectBlurView
+library_path_VisualEffectBlurView = ENV['PATH_DEV_LIBRARY_VISUAL_EFFECT_BLUR_VIEW']
+should_install_locally_VisualEffectBlurView = should_install_locally && library_path_VisualEffectBlurView && File.exist?(library_path_VisualEffectBlurView)
+
+
+
+puts "\nreact-native-ios-visual-effect-view - example"
+puts " - hermes_enabled: #{use_hermes}"
+puts " - linkage: #{linkage}"
+puts " - SHOULD_INSTALL_DEV_LIBRARIES_LOCALLY: #{should_install_locally}"
+puts " - PATH_DEV_LIBRARY_SWIFT_UTILITIES: #{library_path_DGSwiftUtilities}"
+puts " - should_install_locally_DGSwiftUtilities: #{should_install_locally_DGSwiftUtilities}"
+puts " - PATH_DEV_LIBRARY_VISUAL_EFFECT_BLUR_VIEW: #{library_path_VisualEffectBlurView}"
+puts " - should_install_locally_VisualEffectBlurView: #{should_install_locally_VisualEffectBlurView}"
+puts "\n"
+
 target 'IosVisualEffectViewExample' do
   config = use_native_modules!
 
@@ -26,6 +53,18 @@ target 'IosVisualEffectViewExample' do
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
+
+  if should_install_locally_DGSwiftUtilities
+    pod 'DGSwiftUtilities', :path => library_path_DGSwiftUtilities
+  end
+
+  if should_install_locally_ComputableLayout
+    pod 'ComputableLayout', :path => library_path_ComputableLayout
+  end
+
+  if should_install_locally_VisualEffectBlurView
+    pod 'VisualEffectBlurView', :path => library_path_VisualEffectBlurView
+  end
 
   target 'IosVisualEffectViewExampleTests' do
     inherit! :complete
