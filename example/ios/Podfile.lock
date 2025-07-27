@@ -1617,7 +1617,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - Yoga
   - SocketRocket (0.7.0)
-  - VisualEffectBlurView (7.3.0):
+  - VisualEffectBlurView (7.3.1):
     - DGSwiftUtilities (~> 0.47)
   - Yoga (0.0.0)
 
@@ -1911,9 +1911,9 @@ SPEC CHECKSUMS:
   RNFlashList: d96ba74a4097f2574eae6c9b8e4704d8b3b5c58d
   RNScreens: c7ceced6a8384cb9be5e7a5e88e9e714401fd958
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
-  VisualEffectBlurView: c956646340f3322e4caa28c2700166ee71272ec1
+  VisualEffectBlurView: 32a63c98c970825311575750c5b123fae6d4f3fc
   Yoga: a1d7895431387402a674fd0d1c04ec85e87909b8
 
-PODFILE CHECKSUM: 0e704d6b60b96631408c6b6c31109ff03548247a
+PODFILE CHECKSUM: 9f90d15348816c7abec916b47671767e6dacd561
 
 COCOAPODS: 1.16.2
